@@ -1,0 +1,19 @@
+---
+import styles from "./button.module.scss";
+
+interface Props {
+  href?: string;
+  targetBlank?: boolean;
+  red?: boolean;
+}
+
+const { href, targetBlank, red } = Astro.props;
+---
+
+<a 
+  href={href} 
+  target={targetBlank ? '_blank' : undefined} 
+  class={`${styles.button} ${red ? styles.red : ""}`}
+>
+    <slot />
+</a>
