@@ -8,9 +8,10 @@ import styles from "./layout.module.scss";
 interface Props {
   type: "flex" | "fixed"; // this prop sucks, needed because <body> can't be defined in child layouts
   title: string;
+  class?: string;
 }
 
-const { type, title } = Astro.props;
+const { type, title, class: className } = Astro.props;
 
 const bodyStyles =
   type === "flex" ? styles.flexHeaderBody : styles.fixedHeaderBody;
@@ -32,7 +33,7 @@ const bodyStyles =
     <Header />
     <main>
       <!-- <SideNav /> -->
-      <div class={styles.pageContainer}>
+      <div class={`${styles.pageContainer} ${className}`}>
         <slot />
       </div>
     </main>
