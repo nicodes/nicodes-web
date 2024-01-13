@@ -40,7 +40,7 @@ $animationTime: 0.05s;
 
   // hide nav links on mobile
   @media screen and (max-width: 800px) {
-    & > :not(:first-child) {
+    & > :not(:first-child):not(:last-child) {
       display: none;
     }
   }
