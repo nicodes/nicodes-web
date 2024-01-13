@@ -1,31 +1,33 @@
 ---
-import Button from '../button/Button.astro';
+import Button from "../button/Button.astro";
 import styles from "./hero.module.scss";
 ---
 
 <section class={styles.hero}>
-    <div class={styles.circle}>
-        <img src="https://media.licdn.com/dms/image/C5103AQEq9TCVcdl8Kg/profile-displayphoto-shrink_400_400/0/1517586080421?e=2147483647&v=beta&t=GlJ93UvsE0smWLyOhwRyV_8zDAUkxAzmq0I49lFkZGQ" />
-    </div>
+  <div class={styles.circle}>
+    <img
+      src="https://media.licdn.com/dms/image/C5103AQEq9TCVcdl8Kg/profile-displayphoto-shrink_400_400/0/1517586080421?e=2147483647&v=beta&t=GlJ93UvsE0smWLyOhwRyV_8zDAUkxAzmq0I49lFkZGQ"
+    />
+  </div>
 
   <div class={styles.textContainer}>
     <div class={styles.helloContainer}>
-        <p>Hi! I'm Nico<p>
-        <p class={styles.wave}>👋</p>
+      <p>Hi! I'm Nico</p>
+      <p class={styles.wave}>👋</p>
     </div>
     <p>
-        I <span>design</span> custom
-        <br />
-        web solutions
+      I <span>design</span> custom
+      <br />
+      web solutions
     </p>
     <p>
-        Let's <span>build</span>
-        <br/>
-        something together!
+      Let's <span>build</span>
+      <br />
+      something together!
     </p>
     <div class={styles.buttonsContainer}>
-        <Button  href="/portfolio">Portfolio</Button>
-        <Button red  href="mailto:nicozessoules@gmail.com">Contact</Button>
+      <Button href="/portfolio">Portfolio</Button>
+      <Button red href="mailto:nicozessoules@gmail.com">Contact</Button>
     </div>
   </div>
 </section>
