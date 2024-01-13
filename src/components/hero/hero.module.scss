@@ -2,9 +2,29 @@ $mobilePageGap: 60px;
 $textGap: 20px;
 $imgSize: min(300px, 90%);
 
+@keyframes wave-animation {
+  5% {
+    transform: rotate(20deg);
+  }
+  10% {
+    transform: rotate(0deg);
+  }
+  15% {
+    transform: rotate(20deg);
+  }
+  20% {
+    transform: rotate(0deg);
+  }
+  25% {
+    transform: rotate(20deg);
+  }
+  30% {
+    transform: rotate(0deg);
+  }
+}
+
 .hero {
   margin-top: $mobilePageGap;
-  text-align: center;
 
   display: flex;
   flex-direction: column;
@@ -26,12 +46,15 @@ $imgSize: min(300px, 90%);
 .textContainer {
   display: flex;
   flex-direction: column;
+  align-items: center;
   gap: $textGap;
 
   font-size: 36px;
   font-weight: bold;
+  text-align: center;
 
   @media (min-width: 800px) {
+    align-items: start;
     text-align: left;
   }
 
@@ -48,30 +71,15 @@ $imgSize: min(300px, 90%);
 
 .buttonsContainer {
   margin-top: 8px; // compensate for text line-height
+  font-size: 28px;
 
-  display: grid; // use grid over flex so both buttons are the same size
-  grid-template-columns: 1fr 1fr;
+  display: flex;
+  flex-wrap: wrap;
   gap: 24px;
-}
 
-@keyframes wave-animation {
-  5% {
-    transform: rotate(20deg);
-  }
-  10% {
-    transform: rotate(0deg);
-  }
-  15% {
-    transform: rotate(20deg);
-  }
-  20% {
-    transform: rotate(0deg);
-  }
-  25% {
-    transform: rotate(20deg);
-  }
-  30% {
-    transform: rotate(0deg);
+  // expand both buttons to the same size
+  & > * {
+    flex: 1;
   }
 }
 

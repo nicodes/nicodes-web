@@ -1,6 +1,15 @@
 $initialAnimationDelay: 0.5s;
 $animationTime: 0.05s;
 
+@keyframes drawText {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
 .nav {
   max-width: var(--content-max-width-lg);
   margin: 0 auto;
@@ -29,6 +38,13 @@ $animationTime: 0.05s;
     text-underline-offset: 5px; /* Adjusts the spacing between text and underline */
   }
 
+  // hide nav links on mobile
+  @media screen and (max-width: 800px) {
+    & > :not(:first-child) {
+      display: none;
+    }
+  }
+
   span {
     opacity: 0;
     animation: drawText $animationTime forwards;
@@ -42,6 +58,7 @@ $animationTime: 0.05s;
     &:nth-child(2) {
       animation-delay: $initialAnimationDelay + $animationTime;
 
+      // custom dot on 'i'
       position: relative;
       &::before {
         content: ".";
@@ -76,15 +93,6 @@ $animationTime: 0.05s;
     // s
     &:last-child {
       animation-delay: $initialAnimationDelay + ($animationTime * 6);
-    }
-  }
-
-  @keyframes drawText {
-    from {
-      opacity: 0;
-    }
-    to {
-      opacity: 1;
     }
   }
 }
