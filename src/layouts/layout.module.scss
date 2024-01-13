@@ -3,7 +3,6 @@
   flex-direction: column;
 
   main {
-    flex: 1;
     overflow: scroll;
   }
 }
@@ -19,7 +18,8 @@
   }
 
   main {
-    margin-top: 93.5px; // manually coded header height
+    // using margin breaks the scroller
+    padding-top: 93.5px; // manually coded header height
   }
 }
 

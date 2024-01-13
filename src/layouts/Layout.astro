@@ -1,6 +1,6 @@
 ---
 import Header from "../components/header/Header.astro";
-// import SideNav from "../components/sideNav/SideNav.astro";
+import SideNav from "../components/sideNav/SideNav.astro";
 
 import "../styles.scss";
 import styles from "./layout.module.scss";
@@ -32,7 +32,7 @@ const bodyStyles =
   <body class={bodyStyles}>
     <Header />
     <main>
-      <!-- <SideNav /> -->
+      <SideNav />
       <div class={`${styles.pageContainer} ${className}`}>
         <slot />
       </div>
