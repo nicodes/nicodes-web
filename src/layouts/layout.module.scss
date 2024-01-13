@@ -1,0 +1,33 @@
+.flexHeaderBody {
+  display: flex;
+  flex-direction: column;
+
+  main {
+    flex: 1;
+    overflow: scroll;
+  }
+}
+
+.fixedHeaderBody {
+  position: relative;
+
+  header {
+    z-index: 1; // emojis were showing through header
+    position: fixed;
+    top: 0;
+    left: 0;
+  }
+
+  main {
+    margin-top: 93.5px;
+  }
+}
+
+.pageContainer {
+  max-width: var(--content-max-width-sm);
+  margin: 0 auto;
+  padding: var(--thin);
+
+  display: flex;
+  flex-direction: column;
+}

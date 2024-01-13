@@ -1,13 +1,19 @@
 ---
 import Header from "../components/header/Header.astro";
-import "./global.scss";
+// import SideNav from "../components/sideNav/SideNav.astro";
+
+import "../styles.scss";
+import styles from "./layout.module.scss";
 
 interface Props {
+  type: "flex" | "fixed"; // this prop sucks, needed because <body> can't be defined in child layouts
   title: string;
-  class?: string;
 }
 
-const { title, class: className } = Astro.props;
+const { type, title } = Astro.props;
+
+const bodyStyles =
+  type === "flex" ? styles.flexHeaderBody : styles.fixedHeaderBody;
 ---
 
 <!doctype html>
@@ -20,10 +26,13 @@ const { title, class: className } = Astro.props;
     <meta name="generator" content={Astro.generator} />
     <title>{title}</title>
   </head>
-  <body>
+
+  <!-- for some reason astro won't allow CSS classes on the <body> tag, Ideally I think the <body> tag should be defined in child layouts over here in root -->
+  <body class={bodyStyles}>
     <Header />
     <main>
-      <div class={className}>
+      <!-- <SideNav /> -->
+      <div class={styles.pageContainer}>
         <slot />
       </div>
     </main>

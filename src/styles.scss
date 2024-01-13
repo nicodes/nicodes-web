@@ -24,6 +24,9 @@
   border: 0;
   box-sizing: border-box;
 
+  background-color: var(--black);
+  color: var(--white);
+
   font-family: "Courier New", Courier, monospace;
   // font-size: var(--font-size-sm);
 }
@@ -31,26 +34,4 @@
 html,
 body {
   height: 100%; // can't be 100vh because of mobile browser UI
-}
-
-body {
-  display: flex;
-  flex-direction: column;
-  background-color: var(--black);
-  color: var(--white);
-}
-
-main {
-  flex: 1;
-  overflow: scroll;
-}
-
-// page container
-main > div {
-  max-width: var(--content-max-width-sm);
-  margin: 0 auto;
-  padding: var(--thin);
-
-  display: flex;
-  flex-direction: column;
 }
