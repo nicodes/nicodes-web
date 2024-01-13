@@ -19,7 +19,7 @@
   }
 
   main {
-    margin-top: 93.5px;
+    margin-top: 93.5px; // manually coded header height
   }
 }
 
@@ -27,7 +27,4 @@
   max-width: var(--content-max-width-sm);
   margin: 0 auto;
   padding: var(--thin);
-
-  display: flex;
-  flex-direction: column;
 }
