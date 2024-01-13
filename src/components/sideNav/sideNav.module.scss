@@ -1,0 +1,57 @@
+.fixedContainer {
+  position: fixed;
+  top: 93.5px; // manually coded header height
+  width: 100%;
+}
+
+.relativeContainer {
+  position: relative;
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+.button {
+  position: absolute;
+  // background-color: green;
+}
+
+.drawer {
+  position: absolute;
+  top: 0;
+  height: calc(100vh - 93.5px);
+  display: flex;
+
+  /* Animation properties */
+  transition: transform 0.3s ease-in-out, opacity 0.3s ease-in-out;
+  transform: translateX(-100%); /* Start off screen */
+}
+
+.scroll {
+  overflow: scroll;
+  background-color: var(--black);
+  // padding: var(--thin);
+
+  width: 200px; // TODO remove this
+
+  p {
+    background-color: transparent;
+    border-top: 1px solid var(--white);
+    padding: 20px;
+
+    &:nth-child(2) {
+      border-top: none;
+    }
+  }
+}
+
+.borderContainer {
+  background-color: var(--black);
+  height: 100%;
+  display: flex;
+}
+
+.border {
+  background-color: var(--red);
+  width: 3px;
+  margin: var(--thick) 0;
+}
