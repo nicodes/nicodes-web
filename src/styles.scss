@@ -31,10 +31,11 @@
 
 * {
   // all: unset;
+  box-sizing: border-box;
   margin: 0;
   padding: 0;
   border: 0;
-  box-sizing: border-box;
+  text-decoration: none;
 }
 
 html {
@@ -51,6 +52,5 @@ body {
 
 a {
   color: var(--white);
-  text-decoration: none;
   cursor: pointer;
 }
