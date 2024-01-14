@@ -3,13 +3,21 @@ import styles from "./button.module.scss";
 
 interface Props {
   id?: string;
+  class?: string;
   href?: string;
   targetBlank?: boolean;
   anchor?: boolean;
-  red?: boolean;
+  color?: "white" | "black" | "red";
 }
 
-const { id, href, targetBlank, red, anchor = true } = Astro.props;
+const {
+  id,
+  href,
+  targetBlank,
+  color = "white",
+  anchor = true,
+  class: className,
+} = Astro.props;
 ---
 
 {
@@ -18,12 +26,19 @@ const { id, href, targetBlank, red, anchor = true } = Astro.props;
       id={id}
       href={href}
       target={targetBlank ? "_blank" : undefined}
-      class={`${styles.button} ${red ? styles.red : ""}`}
+      class={`${styles.button} ${color === "red" ? styles.red : ""} ${
+        color === "black" ? styles.black : ""
+      } ${className}`}
     >
       <slot />
     </a>
   ) : (
-    <button id={id} class={`${styles.button} ${red ? styles.red : ""}`}>
+    <button
+      id={id}
+      class={`${styles.button} ${color === "red" ? styles.red : ""} ${
+        color === "black" ? styles.black : ""
+      } ${className}`}
+    >
       <slot />
     </button>
   )

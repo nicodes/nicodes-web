@@ -27,8 +27,12 @@ import styles from "./hero.module.scss";
       something together!
     </p>
     <div class={styles.buttonsContainer}>
-      <Button anchor href="/portfolio">Portfolio</Button>
-      <Button anchor red href="mailto:nicozessoules@gmail.com">Contact</Button>
+      <Button anchor href="/portfolio" class={styles.contactButton}>
+        Portfolio
+      </Button>
+      <Button anchor color="red" href="mailto:nicozessoules@gmail.com">
+        Contact
+      </Button>
     </div>
   </div>
 </section>

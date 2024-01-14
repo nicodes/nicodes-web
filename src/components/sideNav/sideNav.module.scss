@@ -1,19 +1,19 @@
 .fixedContainer {
   position: fixed;
-  top: 93.5px; // manually coded header height
+  top: var(--header-height);
   width: 100%;
 }
 
 .relativeContainer {
   position: relative;
-  max-width: 1200px;
+  max-width: var(--header-max-width);
   margin: 0 auto;
 }
 
 .drawer {
   position: absolute;
   top: 0;
-  height: calc(100vh - 93.5px);
+  height: calc(100vh - var(--header-height));
   display: flex;
 
   /* Animation properties */
@@ -24,17 +24,25 @@
 .scroll {
   overflow: scroll;
   background-color: var(--black);
-  // padding: var(--thin);
+  // padding: var(  --space-sm);
 
   width: 200px; // TODO remove this
 
-  p {
+  a {
+    display: block;
+    cursor: pointer;
     background-color: transparent;
-    border-top: 1px solid var(--white);
-    padding: 20px;
+    border-top: 2px solid var(--white);
+    padding: var(--space-lg);
+
+    transition: font-size 0.5s ease;
 
     &:nth-child(1) {
       border-top: none;
+    }
+
+    &:hover {
+      font-size: var(--font-md);
     }
   }
 }
@@ -48,5 +56,5 @@
 .border {
   background-color: var(--red);
   width: 3px;
-  margin: var(--thick) 0;
+  margin: var(--space-xl) 0;
 }

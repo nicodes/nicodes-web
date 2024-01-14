@@ -3,18 +3,24 @@
   --black: #1a1a1a;
   --white: #f8f8ff;
 
-  --content-max-width-lg: 1200px;
-  --content-max-width-sm: 800px;
+  --header-height: 103.33px;
+  --header-max-width: 1400px;
+  --content-max-width: 1000px;
   --border-radius: 2px;
 
-  --fine: 8px;
-  --thin: 12px;
-  --thick: 24px;
+  --font-xs: 0.8rem;
+  --font-sm: 1rem;
+  --font-md: 1.2rem;
+  --font-lg: 1.4rem;
+  --font-xl: 1.8rem;
+  --font-xxl: 2rem;
 
-  --font-size-lg: 2rem;
-  --font-size-md: 1.6rem;
-  --font-size-sm: 1.2rem;
-  --font-size-xs: 0.8rem;
+  --space-xs: 8px;
+  --space-sm: 12px;
+  --space-md: 16px;
+  --space-lg: 24px;
+  --space-xl: 32px;
+  --space-xxl: 48px;
 }
 
 * {
@@ -23,14 +29,21 @@
   padding: 0;
   border: 0;
   box-sizing: border-box;
+}
 
-  font-family: "Courier New", Courier, monospace;
-  // font-size: var(--font-size-sm);
+html {
+  background-color: var(--black);
+  color: var(--white);
+  font-family: raleway;
+  font-size: var(--font-md);
 }
 
 html,
 body {
   height: 100%; // can't be 100vh because of mobile browser UI
-  background-color: var(--black);
+}
+
+a {
   color: var(--white);
+  text-decoration: none;
 }
