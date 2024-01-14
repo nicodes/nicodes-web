@@ -1,18 +1,22 @@
-$mobilePageGap: 60px;
-$textGap: 20px;
-$imgSize: min(300px, 90%);
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
 
 .hero {
-  margin-top: $mobilePageGap;
-
+  margin-top: var(--space-xxl);
   display: flex;
   flex-direction: column;
   align-items: center;
-  gap: $mobilePageGap;
-  //   transition: all 0.5s ease;
+  gap: var(--space-xxl);
 
   @media (min-width: 800px) {
     flex-direction: row;
+    justify-content: center;
   }
 
   img {
@@ -25,10 +29,9 @@ $imgSize: min(300px, 90%);
   display: flex;
   flex-direction: column;
   align-items: center;
-  gap: $textGap;
+  gap: var(--space-lg);
 
-  font-size: 36px;
-  font-weight: bold;
+  font-size: var(--font-xxl);
   text-align: center;
 
   @media (min-width: 800px) {
@@ -39,30 +42,38 @@ $imgSize: min(300px, 90%);
   span {
     color: var(--red);
   }
-}
 
-.helloContainer {
-  display: flex;
-  align-items: center;
-  gap: 6px;
-}
+  p,
+  .buttonsContainer {
+    opacity: 0;
+    animation: fadeIn 1s forwards;
+  }
 
-.buttonsContainer {
-  margin-top: 8px; // compensate for text line-height
-  font-size: 28px;
+  & > :nth-child(1) {
+    animation-delay: 1s; /* Delay before the animation starts */
+  }
 
-  display: flex;
-  flex-wrap: wrap;
-  gap: 24px;
+  & > :nth-child(2) {
+    animation-delay: 2.5s; /* Delay before the animation starts */
+  }
 
-  // expand both buttons to the same size
-  & > * {
-    flex: 1;
+  & > :nth-child(3),
+  & > :nth-child(4) {
+    animation-delay: 4s; /* Delay before the animation starts */
   }
 }
 
+.buttonsContainer {
+  margin-top: var(--space-xs); // compensate for text line-height
+
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+  gap: var(--space-lg);
+}
+
 .circle {
-  width: $imgSize; /* Width of the circle */
+  width: min(300px, 90%); /* Width of the circle */
   //   height: $imgSize; /* Height of the circle */
   border-radius: 50%; /* Makes the edges fully rounded */
   overflow: hidden;

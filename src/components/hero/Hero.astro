@@ -12,14 +12,14 @@ import styles from "./hero.module.scss";
   </div>
 
   <div class={styles.textContainer}>
-    <div class={styles.helloContainer}>
-      <p>Hi! I'm Nico</p>
+    <p class={styles.helloContainer}>
+      Hi! I'm Nico
       <WavingHand />
-    </div>
+    </p>
     <p>
       I <span>design</span> custom
       <br />
-      web solutions
+      web experiences.
     </p>
     <p>
       Let's <span>build</span>
@@ -27,8 +27,23 @@ import styles from "./hero.module.scss";
       something together!
     </p>
     <div class={styles.buttonsContainer}>
-      <Button href="/portfolio">Portfolio</Button>
-      <Button red href="mailto:nicozessoules@gmail.com">Contact</Button>
+      <Button
+        anchor
+        href="/portfolio"
+        class={styles.contactButton}
+        color="black"
+        extraPadding
+      >
+        Portfolio
+      </Button>
+      <Button
+        anchor
+        href="mailto:nicozessoules@gmail.com"
+        color="red"
+        extraPadding
+      >
+        Contact
+      </Button>
     </div>
   </div>
 </section>
