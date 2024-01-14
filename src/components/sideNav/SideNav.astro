@@ -2,32 +2,29 @@
 import styles from "./sideNav.module.scss";
 ---
 
-<div class={styles.fixedContainer}>
+<nav class={styles.fixedContainer}>
   <div class={styles.relativeContainer}>
-    <button id="button1" class={styles.button}>button1</button>
     <div
       id="drawer"
       class={styles.drawer}
       style="transform: translateX(-100%); opacity: 0"
     >
       <div class={styles.scroll}>
-        <button id="button2" class={styles.button}>button2</button>
         <p>About</p>
         <p>Portfolio</p>
         <p>Github</p>
         <p>Linkedin</p>
-        <!-- {Array.apply(null, Array(400)).map((e) => <p>drawer</p>)} -->
+        {Array.apply(null, Array(400)).map((e) => <p>drawer</p>)}
       </div>
       <div class={styles.borderContainer}>
         <div class={styles.border}></div>
       </div>
     </div>
   </div>
-</div>
+</nav>
 
 <script>
-  const button1 = document.getElementById("button1");
-  const button2 = document.getElementById("button2");
+  const headerButton = document.getElementById("header-button");
   const drawer = document.getElementById("drawer");
 
   function toggleDrawer() {
@@ -40,6 +37,5 @@ import styles from "./sideNav.module.scss";
     }
   }
 
-  button1?.addEventListener("click", toggleDrawer);
-  button2?.addEventListener("click", toggleDrawer);
+  headerButton?.addEventListener("click", toggleDrawer);
 </script>
