@@ -1,98 +1,75 @@
-$initialAnimationDelay: 0.5s;
-$animationTime: 0.05s;
-
-@keyframes drawText {
+@keyframes growBorder {
   from {
-    opacity: 0;
+    width: 0;
   }
   to {
-    opacity: 1;
+    width: 100%;
   }
 }
 
-.nav {
-  max-width: var(--content-max-width-lg);
+.header {
+  width: 100%;
+  max-width: var(--header-max-width);
   margin: 0 auto;
-  padding: var(--thick);
-  border-bottom: 3px solid var(--red);
+  background-color: var(--black);
+}
+
+.content {
+  padding: var(--space-lg);
 
   display: flex;
+  align-items: stretch; // make anchor clickable area to expand vertically to fill flex container
+  gap: var(--space-lg);
+}
+
+.border {
+  width: 0%;
+  height: var(--border-lg);
+  background-color: var(--red);
+  border-radius: var(--border-radius);
+  animation: growBorder 1s forwards;
+}
+
+.nicodes,
+.anchor {
+  display: flex;
   align-items: center;
-  gap: var(--thick);
+  transition: font-size 0.5s ease;
+}
 
-  & > :first-child {
-    margin-right: auto;
+.anchor {
+  &:hover {
+    font-size: var(--font-md);
+  }
+}
+
+.nicodes {
+  margin: 0 auto;
+  font-size: var(--font-xl);
+
+  &:hover {
+    font-size: var(--font-xxl);
   }
 
-  a {
-    cursor: pointer;
-    color: var(--white);
-    text-decoration: none;
-    font-weight: bold;
+  @media screen and (min-width: 800px) {
+    margin-left: 0;
   }
+}
 
-  // exclude last link using button component, so underlines don't conflict
-  a:hover:not(:last-child) {
-    text-decoration: underline; /* Adds underline on hover */
-    text-decoration-color: var(--red); /* Makes the underline red */
-    text-underline-offset: 5px; /* Adjusts the spacing between text and underline */
+// conditional rendering for desktop
+.anchor,
+.contactButton {
+  display: none;
+
+  @media screen and (min-width: 800px) {
+    display: inherit;
   }
+}
 
-  // hide nav links on mobile
-  @media screen and (max-width: 800px) {
-    & > :not(:first-child):not(:last-child) {
-      display: none;
-    }
-  }
+.contactButtonIcon {
+  display: inherit;
 
-  span {
-    opacity: 0;
-    animation: drawText $animationTime forwards;
-
-    // n
-    &:first-child {
-      animation-delay: $initialAnimationDelay;
-    }
-
-    // i
-    &:nth-child(2) {
-      animation-delay: $initialAnimationDelay + $animationTime;
-
-      // custom dot on 'i'
-      position: relative;
-      &::before {
-        content: ".";
-        position: absolute;
-        top: 0;
-        left: 50%;
-        transform: translate(-54%, -47%);
-        color: var(--red);
-      }
-    }
-
-    // c
-    &:nth-child(3) {
-      animation-delay: $initialAnimationDelay + ($animationTime * 2);
-    }
-
-    // o
-    &:nth-child(4) {
-      animation-delay: $initialAnimationDelay + ($animationTime * 3);
-    }
-
-    // d
-    &:nth-child(5) {
-      animation-delay: $initialAnimationDelay + ($animationTime * 4);
-    }
-
-    // e
-    &:nth-child(6) {
-      animation-delay: $initialAnimationDelay + ($animationTime * 5);
-    }
-
-    // s
-    &:last-child {
-      animation-delay: $initialAnimationDelay + ($animationTime * 6);
-    }
+  @media screen and (min-width: 800px) {
+    display: none;
   }
 }

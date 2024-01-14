@@ -1,0 +1,56 @@
+:root {
+  --red: #dc143c;
+  --black: #1a1a1a;
+  --white: #f8f8ff;
+
+  --desktop-break: 800px;
+  --header-height: 105px;
+  --header-max-width: 1400px;
+  --nav-width: 160px;
+  --content-max-width: 1000px;
+  --border-radius: 5px;
+
+  --border-sm: 1px;
+  --border-md: 2px;
+  --border-lg: 3px;
+
+  --font-xs: 0.8rem;
+  --font-sm: 1rem;
+  --font-md: 1.2rem;
+  --font-lg: 1.4rem;
+  --font-xl: 1.8rem;
+  --font-xxl: 2rem;
+
+  --space-xs: 8px;
+  --space-sm: 12px;
+  --space-md: 16px;
+  --space-lg: 24px;
+  --space-xl: 32px;
+  --space-xxl: 48px;
+}
+
+* {
+  // all: unset;
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+  border: 0;
+  text-decoration: none;
+}
+
+html {
+  background-color: var(--black);
+  color: var(--white);
+  font-family: raleway;
+  font-size: var(--font-md);
+}
+
+html,
+body {
+  height: 100%; // can't be 100vh because of mobile browser UI
+}
+
+a {
+  color: var(--white);
+  cursor: pointer;
+}

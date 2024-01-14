@@ -1,17 +1,27 @@
+$buttonPadding: var(--space-sm);
+$buttonBorder: var(--border-lg);
+$clickableArea: 44px;
+
 .button {
   cursor: pointer;
-  padding: 12px;
-  border-radius: 5px;
+  padding: $buttonPadding;
+  border-radius: var(--border-radius);
   transition: all 0.3s;
 
-  color: var(--red);
-  background-color: var(--white);
+  min-width: $clickableArea;
+  min-height: $clickableArea;
+
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
   text-align: center;
   text-decoration: none;
 
+  transition: transform 0.3s ease-in-out;
+
   &:hover {
-    text-decoration: underline;
-    text-underline-offset: 5px;
+    transform: scale(1.1);
   }
 
   &:active {
@@ -19,7 +29,27 @@
   }
 }
 
+.extraPadding {
+  padding: var(--space-lg);
+}
+
+.white {
+  color: var(--red);
+  background-color: var(--white);
+}
+
 .red {
   color: var(--white);
   background-color: var(--red);
+}
+
+.black {
+  color: var(--white);
+  background-color: var(--black);
+  border: $buttonBorder solid var(--white);
+  padding: calc($buttonPadding - $buttonBorder);
+
+  &.extraPadding {
+    padding: calc(var(--space-lg) - $buttonBorder);
+  }
 }
