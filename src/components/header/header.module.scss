@@ -13,9 +13,7 @@ $animationTime: 0.05s;
 .header {
   width: 100%;
   background-color: var(--black);
-}
 
-.nav {
   max-width: var(--content-max-width-lg);
   margin: 0 auto;
   padding: var(--thick);
@@ -25,7 +23,7 @@ $animationTime: 0.05s;
   align-items: center;
   gap: var(--thick);
 
-  & > :first-child {
+  & > :nth-child(2) {
     margin-right: auto;
   }
 
