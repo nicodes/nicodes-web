@@ -11,13 +11,19 @@ import styles from "./header.module.scss";
   <Button color="black" id="header-button">
     <Image src={menuImg} alt="open navigation icon" />
   </Button>
-  <a href="/" class={styles.nicodes}>
-    <h1>Nicodes</h1>
-  </a>
-  <a href="/about">About</a>
-  <a href="/portfolio">Portfolio</a>
-  <a href="https://github.com/nicodes" target="_blank">Github</a>
-  <a href="https://www.linkedin.com/in/nicozessoules/" target="_blank">
+  <h1 class={styles.nicodes}>
+    <a href="/">Nicodes</a>
+  </h1>
+  <a class={styles.anchor} href="/about">About</a>
+  <a class={styles.anchor} href="/portfolio">Portfolio</a>
+  <a class={styles.anchor} href="https://github.com/nicodes" target="_blank"
+    >Github</a
+  >
+  <a
+    class={styles.anchor}
+    href="https://www.linkedin.com/in/nicozessoules/"
+    target="_blank"
+  >
     Linkedin
   </a>
   <Button
