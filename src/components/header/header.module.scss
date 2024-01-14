@@ -1,15 +1,6 @@
 $initialAnimationDelay: 0.5s;
 $animationTime: 0.05s;
 
-@keyframes drawText {
-  from {
-    opacity: 0;
-  }
-  to {
-    opacity: 1;
-  }
-}
-
 .header {
   width: 100%;
   max-width: var(--header-max-width);
@@ -24,7 +15,6 @@ $animationTime: 0.05s;
 
   // exclude the buttons
   & > :not(:first-child):not(.contactButton):not(.contactButtonIcon) {
-    cursor: pointer;
     color: var(--white);
     text-decoration: none;
 
@@ -66,57 +56,6 @@ $animationTime: 0.05s;
   @media screen and (min-width: 800px) {
     margin-left: 0;
   }
-
-  // span {
-  //   opacity: 0;
-  //   animation: drawText $animationTime forwards;
-
-  //   // n
-  //   &:first-child {
-  //     animation-delay: $initialAnimationDelay;
-  //   }
-
-  //   // i
-  //   &.nicodes {
-  //     animation-delay: $initialAnimationDelay + $animationTime;
-
-  //     // custom dot on 'i'
-  //     position: relative;
-  //     &::before {
-  //       content: ".";
-  //       position: absolute;
-  //       top: 0;
-  //       left: 50%;
-  //       transform: translate(-54%, -47%);
-  //       color: var(--red);
-  //     }
-  //   }
-
-  //   // c
-  //   &:nth-child(3) {
-  //     animation-delay: $initialAnimationDelay + ($animationTime * 2);
-  //   }
-
-  //   // o
-  //   &:nth-child(4) {
-  //     animation-delay: $initialAnimationDelay + ($animationTime * 3);
-  //   }
-
-  //   // d
-  //   &:nth-child(5) {
-  //     animation-delay: $initialAnimationDelay + ($animationTime * 4);
-  //   }
-
-  //   // e
-  //   &:nth-child(6) {
-  //     animation-delay: $initialAnimationDelay + ($animationTime * 5);
-  //   }
-
-  //   // s
-  //   &:last-child {
-  //     animation-delay: $initialAnimationDelay + ($animationTime * 6);
-  //   }
-  // }
 }
 
 .contactButtonIcon {

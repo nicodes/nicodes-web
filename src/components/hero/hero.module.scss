@@ -1,15 +1,20 @@
-$mobilePageGap: var(--space-xxl);
-$textGap: var(--space-lg);
 $imgSize: min(300px, 90%);
 
-.hero {
-  margin-top: $mobilePageGap;
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
 
+.hero {
+  margin-top: var(--space-xxl);
   display: flex;
   flex-direction: column;
   align-items: center;
-  gap: $mobilePageGap;
-  //   transition: all 0.5s ease;
+  gap: var(--space-xxl);
 
   @media (min-width: 800px) {
     flex-direction: row;
@@ -26,10 +31,9 @@ $imgSize: min(300px, 90%);
   display: flex;
   flex-direction: column;
   align-items: center;
-  gap: $textGap;
+  gap: var(--space-lg);
 
   font-size: var(--font-xxl);
-  font-weight: bold;
   text-align: center;
 
   @media (min-width: 800px) {
@@ -38,20 +42,25 @@ $imgSize: min(300px, 90%);
   }
 
   span {
-    display: inline-block;
     color: var(--red);
-    transition: transform 0.3s ease-in-out;
-
-    &:hover {
-      transform: scale(1.1); /* Makes the text 20% larger on hover */
-    }
   }
-}
 
-.helloContainer {
-  display: flex;
-  align-items: center;
-  gap: var(--space-sm);
+  p,
+  .buttonsContainer {
+    opacity: 0; /* Start with the text invisible */
+    animation-name: fadeIn;
+    animation-duration: 1s; /* Duration of the fade-in effect */
+    animation-fill-mode: forwards; /* Keeps the text visible after the animation completes */
+  }
+
+  & > :nth-child(2) {
+    animation-delay: 2s; /* Delay before the animation starts */
+  }
+
+  & > :nth-child(3),
+  & > :nth-child(4) {
+    animation-delay: 3.2s; /* Delay before the animation starts */
+  }
 }
 
 .buttonsContainer {
