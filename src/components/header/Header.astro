@@ -8,38 +8,41 @@ import styles from "./header.module.scss";
 ---
 
 <header class={styles.header}>
-  <Button color="black" id="header-button">
-    <Image src={menuImg} width={24} height={24} alt="open navigation icon" />
-  </Button>
-  <h1 class={styles.nicodes}>
-    <a href="/">Nicodes</a>
-  </h1>
-  <a class={styles.anchor} href="/about">About</a>
-  <a class={styles.anchor} href="/portfolio">Portfolio</a>
-  <a class={styles.anchor} href="https://github.com/nicodes" target="_blank"
-    >Github</a
-  >
-  <a
-    class={styles.anchor}
-    href="https://www.linkedin.com/in/nicozessoules/"
-    target="_blank"
-  >
-    Linkedin
-  </a>
-  <Button
-    anchor
-    color="red"
-    href="mailto:nicodes@gmail.com"
-    class={styles.contactButton}
-  >
-    Contact
-  </Button>
-  <Button
-    anchor
-    color="red"
-    href="mailto:nicodes@gmail.com"
-    class={styles.contactButtonIcon}
-  >
-    <Image src={mailImg} width={24} height={24} alt="open navigation icon" />
-  </Button>
+  <div class={styles.content}>
+    <Button color="black" id="header-button">
+      <Image src={menuImg} width={24} height={24} alt="open navigation icon" />
+    </Button>
+    <h1 class={styles.nicodes}>
+      <a href="/">Nicodes</a>
+    </h1>
+    <a class={styles.anchor} href="/about">About</a>
+    <a class={styles.anchor} href="/portfolio">Portfolio</a>
+    <a class={styles.anchor} href="https://github.com/nicodes" target="_blank">
+      Github
+    </a>
+    <a
+      class={styles.anchor}
+      href="https://www.linkedin.com/in/nicozessoules/"
+      target="_blank"
+    >
+      Linkedin
+    </a>
+    <Button
+      anchor
+      color="red"
+      href="mailto:nicodes@gmail.com"
+      class={styles.contactButton}
+    >
+      Contact
+    </Button>
+    <Button
+      anchor
+      color="red"
+      href="mailto:nicodes@gmail.com"
+      class={styles.contactButtonIcon}
+    >
+      <Image src={mailImg} width={24} height={24} alt="open navigation icon" />
+    </Button>
+  </div>
+  <div class={styles.border}></div>
 </header>

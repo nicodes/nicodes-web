@@ -1,14 +1,33 @@
+@keyframes growBorder {
+  from {
+    width: 0;
+  }
+  to {
+    width: 100%;
+  }
+}
+
 .header {
   width: 100%;
   max-width: var(--header-max-width);
   margin: 0 auto;
-  padding: var(--space-lg);
   background-color: var(--black);
-  border-bottom: var(--border-lg) solid var(--red);
+}
+
+.content {
+  padding: var(--space-lg);
 
   display: flex;
   align-items: stretch; // make anchor clickable area to expand vertically to fill flex container
   gap: var(--space-lg);
+}
+
+.border {
+  width: 0%;
+  height: var(--border-lg);
+  background-color: var(--red);
+  border-radius: var(--border-radius);
+  animation: growBorder 1s forwards;
 }
 
 .nicodes,
