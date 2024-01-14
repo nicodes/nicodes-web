@@ -19,7 +19,7 @@ import styles from "./hero.module.scss";
     <p>
       I <span>design</span> custom
       <br />
-      web solutions
+      web solutions.
     </p>
     <p>
       Let's <span>build</span>
@@ -27,10 +27,21 @@ import styles from "./hero.module.scss";
       something together!
     </p>
     <div class={styles.buttonsContainer}>
-      <Button anchor href="/portfolio" class={styles.contactButton}>
+      <Button
+        anchor
+        href="/portfolio"
+        class={styles.contactButton}
+        color="black"
+        extraPadding
+      >
         Portfolio
       </Button>
-      <Button anchor color="red" href="mailto:nicozessoules@gmail.com">
+      <Button
+        anchor
+        href="mailto:nicozessoules@gmail.com"
+        color="red"
+        extraPadding
+      >
         Contact
       </Button>
     </div>

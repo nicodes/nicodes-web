@@ -8,16 +8,25 @@ interface Props {
   targetBlank?: boolean;
   anchor?: boolean;
   color?: "white" | "black" | "red";
+  extraPadding?: boolean;
 }
 
 const {
   id,
+  class: className,
+  anchor,
   href,
   targetBlank,
   color = "white",
-  anchor = true,
-  class: className,
+  extraPadding,
 } = Astro.props;
+
+// what a mess, should add classnames package
+const classes = `${styles.button} ${color === "white" ? styles.white : ""} ${
+  color === "red" ? styles.red : ""
+} ${color === "black" ? styles.black : ""} ${
+  extraPadding ? styles.extraPadding : ""
+} ${className}`;
 ---
 
 {
@@ -26,19 +35,12 @@ const {
       id={id}
       href={href}
       target={targetBlank ? "_blank" : undefined}
-      class={`${styles.button} ${color === "red" ? styles.red : ""} ${
-        color === "black" ? styles.black : ""
-      } ${className}`}
+      class={classes}
     >
       <slot />
     </a>
   ) : (
-    <button
-      id={id}
-      class={`${styles.button} ${color === "red" ? styles.red : ""} ${
-        color === "black" ? styles.black : ""
-      } ${className}`}
-    >
+    <button id={id} class={classes}>
       <slot />
     </button>
   )
