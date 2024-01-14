@@ -1,27 +1,26 @@
 @keyframes wave-animation {
-  5% {
-    transform: rotate(20deg);
-  }
-  10% {
-    transform: rotate(0deg);
-  }
-  15% {
-    transform: rotate(20deg);
-  }
-  20% {
-    transform: rotate(0deg);
-  }
   25% {
     transform: rotate(20deg);
   }
-  30% {
+  50% {
     transform: rotate(0deg);
   }
+  75% {
+    transform: rotate(20deg);
+  }
+  100% {
+    transform: rotate(0deg);
+  }
+  // 25% {
+  //   transform: rotate(20deg);
+  // }
+  // 30% {
+  //   transform: rotate(0deg);
+  // }
 }
 
 .wave {
   display: inline-block;
-  animation: wave-animation 6s infinite ease-in-out;
-  // animation-iteration-count: 3;
-  animation-delay: 2s;
+  animation: wave-animation 1s ease-in-out;
+  animation-delay: 0.5s;
 }

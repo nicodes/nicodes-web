@@ -4,7 +4,7 @@
   --white: #f8f8ff;
 
   --desktop-break: 800px;
-  --header-height: 96px;
+  --header-height: 105px;
   --header-max-width: 1400px;
   --nav-width: 160px;
   --content-max-width: 1000px;
@@ -52,4 +52,5 @@ body {
 a {
   color: var(--white);
   text-decoration: none;
+  cursor: pointer;
 }
