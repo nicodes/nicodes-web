@@ -10,11 +10,15 @@ import styles from "./sideNav.module.scss";
       style="transform: translateX(-100%); opacity: 0"
     >
       <div class={styles.scroll}>
-        <p>About</p>
-        <p>Portfolio</p>
-        <p>Github</p>
-        <p>Linkedin</p>
-        {Array.apply(null, Array(400)).map((e) => <p>drawer</p>)}
+        <a href="/">Home</a>
+        <a href="mailto:nicozessoules@gmail.com">Contact</a>
+        <a href="/about">About</a>
+        <a href="/portfolio">Portfolio</a>
+        <a target="_blank" href="https://github.com/nicodes">Github</a>
+        <a target="_blank" href="https://www.linkedin.com/in/nicozessoules"
+          >Linkedin</a
+        >
+        <!-- {Array.apply(null, Array(400)).map((e) => <a>drawer</a>)} -->
       </div>
       <div class={styles.borderContainer}>
         <div class={styles.border}></div>

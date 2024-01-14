@@ -12,90 +12,110 @@ $animationTime: 0.05s;
 
 .header {
   width: 100%;
-  background-color: var(--black);
-
-  max-width: var(--content-max-width-lg);
+  max-width: var(--header-max-width);
   margin: 0 auto;
-  padding: var(--thick);
+  padding: var(--space-lg);
+  background-color: var(--black);
   border-bottom: 3px solid var(--red);
 
   display: flex;
-  align-items: center;
-  gap: var(--thick);
-
-  & > :nth-child(2) {
-    margin-right: auto;
-  }
+  align-items: stretch;
+  gap: var(--space-lg);
 
   a {
     cursor: pointer;
     color: var(--white);
     text-decoration: none;
-    font-weight: bold;
-  }
 
-  // exclude last link using button component, so underlines don't conflict
-  a:hover:not(:last-child) {
-    text-decoration: underline; /* Adds underline on hover */
-    text-decoration-color: var(--red); /* Makes the underline red */
-    text-underline-offset: 5px; /* Adjusts the spacing between text and underline */
+    // flex: 1; /* Optional: makes the anchors take up equal space in the flexbox */
+    display: flex;
+    align-items: center; /* Centers content vertically */
+
+    transition: font-size 0.5s ease;
+
+    // exclude last link using button component, so underlines don't conflict
+    &:hover:not(.nicodes):not(.contactButton) {
+      font-size: var(--font-md);
+    }
   }
 
   // hide nav links on mobile
-  @media screen and (max-width: 800px) {
-    & > :not(:first-child):not(:nth-child(2)):not(:last-child) {
-      display: none;
+  & > :not(:first-child):not(.nicodes):not(.contactButtonIcon) {
+    display: none;
+    @media screen and (min-width: 800px) {
+      display: inherit;
     }
   }
+}
 
-  span {
-    opacity: 0;
-    animation: drawText $animationTime forwards;
+.nicodes {
+  margin: 0 auto;
 
-    // n
-    &:first-child {
-      animation-delay: $initialAnimationDelay;
-    }
+  h1 {
+    font-size: var(--font-xxl);
+  }
 
-    // i
-    &:nth-child(2) {
-      animation-delay: $initialAnimationDelay + $animationTime;
+  // hide nav links on mobile
+  @media screen and (min-width: 800px) {
+    margin-left: 0;
+  }
 
-      // custom dot on 'i'
-      position: relative;
-      &::before {
-        content: ".";
-        position: absolute;
-        top: 0;
-        left: 50%;
-        transform: translate(-54%, -47%);
-        color: var(--red);
-      }
-    }
+  // span {
+  //   opacity: 0;
+  //   animation: drawText $animationTime forwards;
 
-    // c
-    &:nth-child(3) {
-      animation-delay: $initialAnimationDelay + ($animationTime * 2);
-    }
+  //   // n
+  //   &:first-child {
+  //     animation-delay: $initialAnimationDelay;
+  //   }
 
-    // o
-    &:nth-child(4) {
-      animation-delay: $initialAnimationDelay + ($animationTime * 3);
-    }
+  //   // i
+  //   &.nicodes {
+  //     animation-delay: $initialAnimationDelay + $animationTime;
 
-    // d
-    &:nth-child(5) {
-      animation-delay: $initialAnimationDelay + ($animationTime * 4);
-    }
+  //     // custom dot on 'i'
+  //     position: relative;
+  //     &::before {
+  //       content: ".";
+  //       position: absolute;
+  //       top: 0;
+  //       left: 50%;
+  //       transform: translate(-54%, -47%);
+  //       color: var(--red);
+  //     }
+  //   }
 
-    // e
-    &:nth-child(6) {
-      animation-delay: $initialAnimationDelay + ($animationTime * 5);
-    }
+  //   // c
+  //   &:nth-child(3) {
+  //     animation-delay: $initialAnimationDelay + ($animationTime * 2);
+  //   }
 
-    // s
-    &:last-child {
-      animation-delay: $initialAnimationDelay + ($animationTime * 6);
-    }
+  //   // o
+  //   &:nth-child(4) {
+  //     animation-delay: $initialAnimationDelay + ($animationTime * 3);
+  //   }
+
+  //   // d
+  //   &:nth-child(5) {
+  //     animation-delay: $initialAnimationDelay + ($animationTime * 4);
+  //   }
+
+  //   // e
+  //   &:nth-child(6) {
+  //     animation-delay: $initialAnimationDelay + ($animationTime * 5);
+  //   }
+
+  //   // s
+  //   &:last-child {
+  //     animation-delay: $initialAnimationDelay + ($animationTime * 6);
+  //   }
+  // }
+}
+
+.contactButtonIcon {
+  display: inherit;
+
+  @media screen and (min-width: 800px) {
+    display: none;
   }
 }

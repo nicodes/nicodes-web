@@ -20,12 +20,12 @@
 
   main {
     // using margin breaks the scroller
-    padding-top: 93.5px; // manually coded header height
+    padding-top: var(--header-height); // manually coded header height
   }
 }
 
 .pageContainer {
-  max-width: var(--content-max-width-sm);
+  max-width: var(--content-max-width);
   margin: 0 auto;
-  padding: var(--thin);
+  padding: var(--space-sm);
 }

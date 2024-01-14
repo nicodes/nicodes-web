@@ -1,16 +1,17 @@
 ---
 import { Image } from "astro:assets";
 import menuImg from "../../assets/menu.svg";
+import mailImg from "../../assets/mail.svg";
 
 import Button from "../button/Button.astro";
 import styles from "./header.module.scss";
 ---
 
 <header class={styles.header}>
-  <Button id="header-button">
+  <Button color="black" id="header-button">
     <Image src={menuImg} alt="open navigation icon" />
   </Button>
-  <a href="/">
+  <a href="/" class={styles.nicodes}>
     <h1>
       <span>N</span><span>i</span><span>c</span><span>o</span><span>d</span
       ><span>e</span><span>s</span>
@@ -22,5 +23,20 @@ import styles from "./header.module.scss";
   <a href="https://www.linkedin.com/in/nicozessoules/" target="_blank">
     Linkedin
   </a>
-  <Button anchor red href="mailto:nicodes@gmail.com">Contact</Button>
+  <Button
+    anchor
+    color="red"
+    href="mailto:nicodes@gmail.com"
+    class={styles.contactButton}
+  >
+    Contact
+  </Button>
+  <Button
+    anchor
+    color="red"
+    href="mailto:nicodes@gmail.com"
+    class={styles.contactButtonIcon}
+  >
+    <Image src={mailImg} alt="open navigation icon" />
+  </Button>
 </header>
