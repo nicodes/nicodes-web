@@ -1,18 +1,19 @@
+$buttonPadding: var(--space-sm);
+$buttonBorder: var(--border-lg);
+$clickableArea: 44px;
+
 .button {
   cursor: pointer;
-  padding: var(--space-sm);
-  border-radius: 5px;
+  padding: $buttonPadding;
+  border-radius: var(--border-radius);
   transition: all 0.3s;
 
-  min-width: 44px;
-  min-height: 44px;
+  min-width: $clickableArea;
+  min-height: $clickableArea;
 
   display: flex;
   justify-content: center;
   align-items: center;
-
-  color: var(--red);
-  background-color: var(--white);
 
   text-align: center;
   text-decoration: none;
@@ -20,12 +21,21 @@
   transition: transform 0.3s ease-in-out;
 
   &:hover {
-    transform: scale(1.1); /* Makes the text 20% larger on hover */
+    transform: scale(1.1);
   }
 
   &:active {
     transform: translateY(2px);
   }
+}
+
+.extraPadding {
+  padding: var(--space-lg);
+}
+
+.white {
+  color: var(--red);
+  background-color: var(--white);
 }
 
 .red {
@@ -35,6 +45,11 @@
 
 .black {
   color: var(--white);
-  border: var(--border-lg) solid var(--white);
   background-color: var(--black);
+  border: $buttonBorder solid var(--white);
+  padding: calc($buttonPadding - $buttonBorder);
+
+  &.extraPadding {
+    padding: calc(var(--space-lg) - $buttonBorder);
+  }
 }

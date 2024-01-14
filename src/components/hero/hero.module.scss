@@ -59,7 +59,7 @@ $imgSize: min(300px, 90%);
 
   & > :nth-child(3),
   & > :nth-child(4) {
-    animation-delay: 3.2s; /* Delay before the animation starts */
+    animation-delay: 3.5s; /* Delay before the animation starts */
   }
 }
 
@@ -67,13 +67,9 @@ $imgSize: min(300px, 90%);
   margin-top: var(--space-xs); // compensate for text line-height
 
   display: flex;
+  justify-content: center;
   flex-wrap: wrap;
   gap: var(--space-lg);
-
-  // expand both buttons to the same size
-  & > * {
-    flex: 1;
-  }
 }
 
 .circle {
