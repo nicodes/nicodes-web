@@ -2,18 +2,29 @@
 import styles from "./button.module.scss";
 
 interface Props {
+  id?: string;
   href?: string;
   targetBlank?: boolean;
+  anchor?: boolean;
   red?: boolean;
 }
 
-const { href, targetBlank, red } = Astro.props;
+const { id, href, targetBlank, red, anchor = true } = Astro.props;
 ---
 
-<a 
-  href={href} 
-  target={targetBlank ? '_blank' : undefined} 
-  class={`${styles.button} ${red ? styles.red : ""}`}
->
-    <slot />
-</a>
+{
+  anchor ? (
+    <a
+      id={id}
+      href={href}
+      target={targetBlank ? "_blank" : undefined}
+      class={`${styles.button} ${red ? styles.red : ""}`}
+    >
+      <slot />
+    </a>
+  ) : (
+    <button id={id} class={`${styles.button} ${red ? styles.red : ""}`}>
+      <slot />
+    </button>
+  )
+}

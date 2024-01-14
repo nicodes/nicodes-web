@@ -1,10 +1,15 @@
 ---
+import { Image } from "astro:assets";
+import menuImg from "../../assets/menu.svg";
+
 import Button from "../button/Button.astro";
 import styles from "./header.module.scss";
 ---
 
 <header class={styles.header}>
-  <button id="header-button">HAMBURGER</button>
+  <Button id="header-button">
+    <Image src={menuImg} alt="open navigation icon" />
+  </Button>
   <a href="/">
     <h1>
       <span>N</span><span>i</span><span>c</span><span>o</span><span>d</span
@@ -17,5 +22,5 @@ import styles from "./header.module.scss";
   <a href="https://www.linkedin.com/in/nicozessoules/" target="_blank">
     Linkedin
   </a>
-  <Button red href="mailto:nicodes@gmail.com">Contact</Button>
+  <Button anchor red href="mailto:nicodes@gmail.com">Contact</Button>
 </header>
