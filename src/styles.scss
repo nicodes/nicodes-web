@@ -3,10 +3,16 @@
   --black: #1a1a1a;
   --white: #f8f8ff;
 
-  --header-height: 103.33px;
+  --desktop-break: 800px;
+  --header-height: 96px;
   --header-max-width: 1400px;
+  --nav-width: 160px;
   --content-max-width: 1000px;
   --border-radius: 2px;
+
+  --border-sm: 1px;
+  --border-md: 2px;
+  --border-lg: 3px;
 
   --font-xs: 0.8rem;
   --font-sm: 1rem;

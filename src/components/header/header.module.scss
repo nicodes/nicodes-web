@@ -16,26 +16,28 @@ $animationTime: 0.05s;
   margin: 0 auto;
   padding: var(--space-lg);
   background-color: var(--black);
-  border-bottom: 3px solid var(--red);
+  border-bottom: var(--border-lg) solid var(--red);
 
   display: flex;
   align-items: stretch;
   gap: var(--space-lg);
 
-  a {
+  // exclude the buttons
+  & > :not(:first-child):not(.contactButton):not(.contactButtonIcon) {
     cursor: pointer;
     color: var(--white);
     text-decoration: none;
 
-    // flex: 1; /* Optional: makes the anchors take up equal space in the flexbox */
     display: flex;
-    align-items: center; /* Centers content vertically */
+    align-items: center;
 
-    transition: font-size 0.5s ease;
+    // nav links
+    &:not(.nicodes) {
+      transition: font-size 0.5s ease;
 
-    // exclude last link using button component, so underlines don't conflict
-    &:hover:not(.nicodes):not(.contactButton) {
-      font-size: var(--font-md);
+      &:hover {
+        font-size: var(--font-md);
+      }
     }
   }
 
@@ -52,7 +54,12 @@ $animationTime: 0.05s;
   margin: 0 auto;
 
   h1 {
-    font-size: var(--font-xxl);
+    font-size: var(--font-xl);
+    transition: font-size 0.5s ease;
+
+    &:hover {
+      font-size: var(--font-xxl);
+    }
   }
 
   // hide nav links on mobile

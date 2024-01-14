@@ -24,16 +24,15 @@
 .scroll {
   overflow: scroll;
   background-color: var(--black);
-  // padding: var(  --space-sm);
-
-  width: 200px; // TODO remove this
+  width: var(--nav-width);
 
   a {
     display: block;
     cursor: pointer;
     background-color: transparent;
-    border-top: 2px solid var(--white);
-    padding: var(--space-lg);
+    border-top: var(--border-md) solid var(--white);
+    margin: 0 var(--space-lg);
+    padding: var(--space-lg) 0;
 
     transition: font-size 0.5s ease;
 
@@ -55,6 +54,6 @@
 
 .border {
   background-color: var(--red);
-  width: 3px;
+  width: var(--border-lg);
   margin: var(--space-xl) 0;
 }

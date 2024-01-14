@@ -1,5 +1,5 @@
-$mobilePageGap: 60px;
-$textGap: 20px;
+$mobilePageGap: var(--space-xxl);
+$textGap: var(--space-lg);
 $imgSize: min(300px, 90%);
 
 .hero {
@@ -51,16 +51,15 @@ $imgSize: min(300px, 90%);
 .helloContainer {
   display: flex;
   align-items: center;
-  gap: 6px;
+  gap: var(--space-sm);
 }
 
 .buttonsContainer {
-  margin-top: 8px; // compensate for text line-height
-  font-size: 28px;
+  margin-top: var(--space-xs); // compensate for text line-height
 
   display: flex;
   flex-wrap: wrap;
-  gap: 24px;
+  gap: var(--space-lg);
 
   // expand both buttons to the same size
   & > * {

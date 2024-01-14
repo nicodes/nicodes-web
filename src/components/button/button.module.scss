@@ -1,6 +1,6 @@
 .button {
   cursor: pointer;
-  padding: 0 8px;
+  padding: var(--space-sm);
   border-radius: 5px;
   transition: all 0.3s;
 
@@ -17,9 +17,10 @@
   text-align: center;
   text-decoration: none;
 
+  transition: transform 0.3s ease-in-out;
+
   &:hover {
-    text-decoration: underline;
-    text-underline-offset: 5px;
+    transform: scale(1.1); /* Makes the text 20% larger on hover */
   }
 
   &:active {
@@ -34,6 +35,6 @@
 
 .black {
   color: var(--white);
-  border: 3px solid var(--white);
+  border: var(--border-lg) solid var(--white);
   background-color: var(--black);
 }
