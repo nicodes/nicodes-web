@@ -1,5 +1,6 @@
 ---
 import "@fontsource/raleway";
+import { ViewTransitions } from "astro:transitions";
 
 import Header from "../components/header/Header.astro";
 import SideNav from "../components/sideNav/SideNav.astro";
@@ -28,6 +29,7 @@ const bodyStyles =
     <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
     <meta name="generator" content={Astro.generator} />
     <title>{title}</title>
+    <ViewTransitions />
   </head>
 
   <!-- for some reason astro won't allow CSS classes on the <body> tag, Ideally I think the <body> tag should be defined in child layouts over here in root -->
