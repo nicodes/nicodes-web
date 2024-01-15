@@ -7,13 +7,13 @@ import Button from "../button/Button.astro";
 import styles from "./header.module.scss";
 ---
 
-<header class={styles.header}>
+<header class={styles.header} transition:persist>
   <div class={styles.content}>
     <Button color="black" id="header-button">
       <Image src={menuImg} width={24} height={24} alt="open navigation icon" />
     </Button>
     <h1 class={styles.nicodes}>
-      <a href="/">Nicodes</a>
+      <a href="/">N<span>i</span>codes</a>
     </h1>
     <a class={styles.anchor} href="/about">About</a>
     <a class={styles.anchor} href="/portfolio">Portfolio</a>
@@ -30,7 +30,7 @@ import styles from "./header.module.scss";
     <Button
       anchor
       color="red"
-      href="mailto:nicodes@gmail.com"
+      href="mailto:nicozessoules@gmail.com"
       class={styles.contactButton}
     >
       Contact
@@ -38,7 +38,7 @@ import styles from "./header.module.scss";
     <Button
       anchor
       color="red"
-      href="mailto:nicodes@gmail.com"
+      href="mailto:nicozessoules@gmail.com"
       class={styles.contactButtonIcon}
     >
       <Image src={mailImg} width={24} height={24} alt="open navigation icon" />

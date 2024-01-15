@@ -18,6 +18,12 @@
     flex-direction: row;
     justify-content: center;
   }
+}
+
+.imgContainer {
+  opacity: 0;
+  animation: fadeIn 1s forwards;
+  animation-delay: 1s; /* Delay before the animation starts */
 
   img {
     width: 300px;
