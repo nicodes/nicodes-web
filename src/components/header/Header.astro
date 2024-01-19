@@ -12,8 +12,8 @@ import styles from "./header.module.scss";
     <Button color="black" id="header-button">
       <Image src={menuImg} width={24} height={24} alt="open navigation icon" />
     </Button>
-    <h1 class={styles.nicodes}>
-      <a href="/">N<span>i</span>codes</a>
+    <h1 id="header-index-anchor" class={styles.nicodes}>
+      <a>N<span>i</span>codes</a>
     </h1>
     <a class={styles.anchor} href="/about">About</a>
     <a class={styles.anchor} href="/portfolio">Portfolio</a>
@@ -44,21 +44,17 @@ import styles from "./header.module.scss";
       <Image src={mailImg} width={24} height={24} alt="open navigation icon" />
     </Button>
   </div>
-  <div class={styles.border}></div>
+  <div id="header-border" class={styles.border}></div>
 </header>
 
 <script>
-  import styles from "./header.module.scss";
+  import { borderAnimation } from "./header";
+  import { navigateHome } from "../../scripts/scripts";
+  import { getHeaderIndexAnchorElement } from "../../scripts/elements";
 
-  function borderAnimation() {
-    const currentPath = window.location.pathname;
-
-    if (currentPath === "/") {
-      const headerBorder = document.querySelector(`.${styles.border}`);
-      if (headerBorder) headerBorder.classList.add(styles.borderAnimation);
-    }
-  }
+  const headerIndexAnchor = getHeaderIndexAnchorElement();
 
   borderAnimation();
   document.addEventListener("astro:after-swap", borderAnimation);
+  headerIndexAnchor?.addEventListener("click", navigateHome);
 </script>
