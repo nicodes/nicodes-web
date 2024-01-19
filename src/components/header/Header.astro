@@ -7,8 +7,8 @@ import Button from "../button/Button.astro";
 import styles from "./header.module.scss";
 ---
 
-<header class={styles.header} transition:persist>
-  <div class={styles.content}>
+<header class={styles.header}>
+  <div class={styles.content} transition:persist>
     <Button color="black" id="header-button">
       <Image src={menuImg} width={24} height={24} alt="open navigation icon" />
     </Button>
@@ -46,3 +46,19 @@ import styles from "./header.module.scss";
   </div>
   <div class={styles.border}></div>
 </header>
+
+<script>
+  import styles from "./header.module.scss";
+
+  function borderAnimation() {
+    const currentPath = window.location.pathname;
+
+    if (currentPath === "/") {
+      const headerBorder = document.querySelector(`.${styles.border}`);
+      if (headerBorder) headerBorder.classList.add(styles.borderAnimation);
+    }
+  }
+
+  borderAnimation();
+  document.addEventListener("astro:after-swap", borderAnimation);
+</script>
