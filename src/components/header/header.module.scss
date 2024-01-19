@@ -23,10 +23,13 @@
 }
 
 .border {
-  width: 0%;
+  width: 100%;
   height: var(--border-lg);
   background-color: var(--red);
-  border-radius: var(--border-radius);
+}
+
+.borderAnimation {
+  width: 0%;
   animation: growBorder 1s forwards;
 }
 
