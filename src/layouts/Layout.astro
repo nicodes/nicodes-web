@@ -35,11 +35,11 @@ const bodyStyles =
   <!-- for some reason astro won't allow CSS classes on the <body> tag, Ideally I think the <body> tag should be defined in child layouts over here in root -->
   <body class={bodyStyles}>
     <Header />
-    <SideNav />
     <main>
       <div class={`${styles.pageContainer} ${className}`}>
         <slot />
       </div>
     </main>
+    <SideNav />
   </body>
 </html>

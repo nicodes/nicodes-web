@@ -1,5 +1,8 @@
 ---
+import { Image } from "astro:assets";
+
 import Circle from '../circle/Circle.astro';
+import progressImg from "../../assets/progress.svg";
 
 import styles from "./iframeBrowser.module.scss";
 
@@ -15,11 +18,12 @@ const circleOpacity = 0.8;
 
 <div class={styles.browserContainer}>
   <div class={styles.browserHeader}>
-    <Circle color="var(--red)" diameter={circleDiameter}/>
-    <Circle color="var(--yellow)" diameter={circleDiameter}/>
-    <Circle color="var(--green)" diameter={circleDiameter}/>
+    <Circle color="var(--red)" diameter={circleDiameter} opacity={circleOpacity}/>
+    <Circle color="var(--yellow)" diameter={circleDiameter} opacity={circleOpacity}/>
+    <Circle color="var(--green)" diameter={circleDiameter} opacity={circleOpacity}/>
   </div>
   <div class={styles.iframeContainer}>
+    <Image src={progressImg} width={50} height={50} alt="open navigation icon" />
     <iframe src={src}></iframe>
   </div>
 </div>
