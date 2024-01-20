@@ -22,14 +22,14 @@ import styles from "./nav.module.scss";
         <!-- {Array.apply(null, Array(400)).map((e) => <a>drawer</a>)} -->
       </div>
       <div class={styles.borderContainer}>
-        <div id="header-border" class={styles.border}></div>
+        <div id="nav-border" class={styles.border}></div>
       </div>
     </div>
   </div>
 </nav>
 
 <script>
-  import { toggleDrawer, navigateHome } from "../../scripts/scripts";
+  import { toggleDrawer, navigateHome } from "../../scripts/layout";
 
   const headerButton = document.getElementById("header-button");
   const homeLink = document.getElementById("home-anchor");

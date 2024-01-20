@@ -49,13 +49,12 @@ import styles from "./header.module.scss";
 </header>
 
 <script>
-  import { borderAnimation } from "./header";
-  import { navigateHome } from "../../scripts/scripts";
   import { getHeaderIndexAnchorElement } from "../../scripts/elements";
+  import { animateHeaderBorder, navigateHome } from "../../scripts/layout";
 
   const headerIndexAnchor = getHeaderIndexAnchorElement();
 
-  borderAnimation();
-  document.addEventListener("astro:after-swap", borderAnimation);
+  animateHeaderBorder();
+  document.addEventListener("astro:after-swap", animateHeaderBorder);
   headerIndexAnchor?.addEventListener("click", navigateHome);
 </script>
