@@ -15,7 +15,11 @@
   gap: 20px;
 
   &:not(:first-child) {
-    border-top: 3px solid var(--red);
+    margin-top: 40px;
+  }
+
+  &:not(:last-child) {
+    border-bottom: 3px solid var(--red);
   }
 
   a {
