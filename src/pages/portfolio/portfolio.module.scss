@@ -1,7 +1,22 @@
 .page {
+  h2,
+  h3 {
+    font-size: var(--font-xl);
+  }
+
+  h2 {
+    margin-left: var(--space-xs);
+  }
+
+  h3 {
+    text-align: center;
+  }
+}
+
+.grid {
   display: grid;
   grid-template-columns: 1fr;
-  gap: 20px;
+  gap: var(--space-md);
 
   @media screen and (min-width: 900px) {
     grid-template-columns: 1fr 1fr;
@@ -9,25 +24,19 @@
 }
 
 .section {
-  padding: 20px;
+  padding: var(--space-md);
   display: flex;
   flex-direction: column;
-  gap: 20px;
+  gap: var(--space-md);
   font-size: var(--font-md);
 
   &:not(:first-child) {
-    margin-top: 40px;
+    margin-top: var(--space-lg);
   }
 
   &:not(:last-child) {
     border-bottom: 3px solid var(--red);
   }
-
-  // &:first-child {
-  //   p {
-  //     font-size: var(--font-md);
-  //   }
-  // }
 
   a {
     color: var(--red);
@@ -37,18 +46,6 @@
     &:hover {
       font-size: var(--font-lg);
     }
-  }
-
-  h2 {
-    font-size: var(--font-xxl);
-    font-weight: 900;
-    text-align: center;
-    color: var(--red);
-  }
-
-  h3 {
-    font-size: var(--font-xl);
-    text-align: center;
   }
 
   img {
