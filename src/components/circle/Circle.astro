@@ -1,0 +1,23 @@
+---
+import styles from "./circle.module.scss";
+
+interface Props {
+  diameter?: string;
+  color?: string;
+  border?: string;
+  opacity?: number;
+}
+
+const {
+  diameter = "60px",
+  color = "red",
+  border = "none",
+  opacity = 1,
+} = Astro.props;
+
+const style = `height: ${diameter}; width: ${diameter}; background-color: ${color}; border: ${border}; opacity: ${opacity}`;
+---
+
+<div class={styles.circle} style={style}>
+  <slot />
+</div>
