@@ -1,5 +1,59 @@
 ---
 import Layout from "../../layouts/Layout.astro";
+import IframeBrowser from "../../components/iframeBrowser/IframeBrowser.astro";
+import styles from "./portfolio.module.scss";
+
+const ipsum =
+  "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Consectetur adipiscing elit ut aliquam purus. Dolor sit amet consectetur adipiscing elit duis tristique.";
 ---
 
-<Layout type="fixed" title="Nicodes | Portfolio">portfolio</Layout>
+<Layout type="fixed" title="Nicodes | Portfolio" class={styles.page}>
+  <div class={styles.left}>
+    <div class={styles.section}>
+      <h2>Portfolio</h2>
+      <p>
+        This is a list of some of the projects I've worked. Each has a breif
+        description and relevant links, feel free to try these inbeded demos!
+      </p>
+      <p>
+        I've also worked on many other projects as a professional software
+        engineer, but can't share the details publicly. To learn more or ask any
+        questions please <a>reach out</a>!
+      </p>
+    </div>
+
+    <div class={styles.section}>
+      <h3>Pink Sofa Hour</h3>
+      <IframeBrowser src="https://pinksofahour.com" />
+      <p>
+        {ipsum}
+      </p>
+    </div>
+  </div>
+
+  <div class={styles.right}>
+    <div class={styles.section}>
+      <h3>Schlop Stop</h3>
+      <IframeBrowser src="https://schlopstop.com" />
+      <p>
+        {ipsum}
+      </p>
+    </div>
+
+    <div class={styles.section}>
+      <h3>CT Calc</h3>
+      <IframeBrowser src="https://ctcalc.com" />
+      <p>
+        {ipsum}
+      </p>
+    </div>
+
+    <!-- TODO move this beneath this section, belo should be "tooling" -->
+    <!-- <div class={styles.section}>
+      <h3>React Heading</h3>
+      <p>
+        {ipsum}
+      </p>
+    </div> -->
+  </div>
+</Layout>
