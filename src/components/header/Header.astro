@@ -50,11 +50,11 @@ import styles from "./header.module.scss";
 
 <script>
   import { getHeaderIndexAnchorElement } from "../../scripts/elements";
-  import { animateHeaderBorder, navigateHome } from "../../scripts/layout";
+  import { navigateHome, openHeaderBorder } from "../../scripts/layout";
 
   const headerIndexAnchor = getHeaderIndexAnchorElement();
 
-  animateHeaderBorder();
-  document.addEventListener("astro:after-swap", animateHeaderBorder);
+  openHeaderBorder();
+  document.addEventListener("astro:after-swap", openHeaderBorder);
   headerIndexAnchor?.addEventListener("click", navigateHome);
 </script>

@@ -15,10 +15,15 @@
   top: 0;
   height: calc(100vh - var(--header-height));
   display: flex;
+  opacity: 0;
 
-  /* Animation properties */
   transition: transform 0.3s ease-in-out, opacity 0.3s ease-in-out;
-  transform: translateX(-100%); /* Start off screen */
+  transform: translateX(-100%); // start off screen
+}
+
+.drawerOpen {
+  opacity: 1;
+  transform: translateX(0);
 }
 
 .scroll {

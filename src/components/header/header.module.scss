@@ -7,6 +7,15 @@
   }
 }
 
+@keyframes shrinkBorder {
+  from {
+    width: 100%;
+  }
+  to {
+    width: 0;
+  }
+}
+
 .header {
   width: 100%;
   max-width: var(--header-max-width);
@@ -28,9 +37,12 @@
   background-color: var(--red);
 }
 
-.animateHeaderBorder {
-  width: 0%;
+.headerBorderOpen {
   animation: growBorder 1s forwards;
+}
+
+.headerBorderClose {
+  animation: shrinkBorder 0.5s forwards;
 }
 
 .nicodes,
