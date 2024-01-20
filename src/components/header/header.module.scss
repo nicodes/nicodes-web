@@ -7,6 +7,15 @@
   }
 }
 
+@keyframes shrinkBorder {
+  from {
+    width: 100%;
+  }
+  to {
+    width: 0;
+  }
+}
+
 .header {
   width: 100%;
   max-width: var(--header-max-width);
@@ -23,11 +32,17 @@
 }
 
 .border {
-  width: 0%;
+  width: 100%;
   height: var(--border-lg);
   background-color: var(--red);
-  border-radius: var(--border-radius);
+}
+
+.headerBorderOpen {
   animation: growBorder 1s forwards;
+}
+
+.headerBorderClose {
+  animation: shrinkBorder 0.5s forwards;
 }
 
 .nicodes,
@@ -51,8 +66,12 @@
     font-size: var(--font-xxl);
   }
 
-  @media screen and (min-width: 800px) {
+  @media screen and (min-width: 900px) {
     margin-left: 0;
+  }
+
+  span {
+    color: var(--red);
   }
 }
 
@@ -61,7 +80,7 @@
 .contactButton {
   display: none;
 
-  @media screen and (min-width: 800px) {
+  @media screen and (min-width: 900px) {
     display: inherit;
   }
 }
@@ -69,7 +88,7 @@
 .contactButtonIcon {
   display: inherit;
 
-  @media screen and (min-width: 800px) {
+  @media screen and (min-width: 900px) {
     display: none;
   }
 }

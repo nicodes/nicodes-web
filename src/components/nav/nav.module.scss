@@ -16,9 +16,14 @@
   height: calc(100vh - var(--header-height));
   display: flex;
 
-  /* Animation properties */
   transition: transform 0.3s ease-in-out, opacity 0.3s ease-in-out;
-  transform: translateX(-100%); /* Start off screen */
+  transform: translateX(-100%); // start off screen
+  opacity: 0;
+}
+
+.drawerOpen {
+  opacity: 1;
+  transform: translateX(0);
 }
 
 .scroll {
@@ -56,5 +61,4 @@
   background-color: var(--red);
   width: var(--border-lg);
   margin: var(--space-xl) 0;
-  border-radius: var(--border-radius);
 }

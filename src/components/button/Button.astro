@@ -1,15 +1,23 @@
 ---
 import styles from "./button.module.scss";
 
-interface Props {
+type Props = {
   id?: string;
   class?: string;
-  href?: string;
-  targetBlank?: boolean;
-  anchor?: boolean;
   color?: "white" | "black" | "red";
   extraPadding?: boolean;
-}
+} & (
+  | {
+      anchor: true;
+      href?: string;
+      targetBlank?: boolean;
+    }
+  | {
+      anchor?: undefined;
+      href?: undefined;
+      targetBlank?: undefined;
+    }
+);
 
 const {
   id,
