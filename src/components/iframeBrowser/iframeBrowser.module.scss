@@ -10,7 +10,6 @@
 }
 
 .browserContainer {
-  border: 3px solid var(--white);
   border-radius: 10px; // TODO get formula for this, should be it's own component
 }
 
@@ -18,11 +17,6 @@
   display: flex;
   gap: var(--space-xs);
   padding: var(--space-xs);
-  border-bottom: 3px solid var(--white);
-
-  & > :first-child {
-    margin-left: var(--space-sm);
-  }
 }
 
 // container is needed because iframe has strange bottom gap without it
