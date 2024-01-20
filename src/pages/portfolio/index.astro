@@ -8,49 +8,43 @@ const ipsum =
 ---
 
 <Layout type="fixed" title="Nicodes | Portfolio" class={styles.page}>
-  <div class={styles.left}>
-    <div class={styles.section}>
-      <h2>Portfolio</h2>
-      <p>
-        Welcome to my portfolio! Here you'll find a list of my creations. Each
-        has a breif description and embedded demo.
+  <h2>Welcome to my portfolio!</h2>
 
+  <div class={styles.grid}>
+    <div class={styles.left}>
+      <div class={styles.section}>
+        <p>
+          Here you'll find a list of my creations. Each has a breif description
+          and embedded demo.
+        </p>
         <p>To learn more please <a>reach out</a>!</p>
-      </p>
+      </div>
+
+      <div class={styles.section}>
+        <h3>Pink Sofa Hour</h3>
+        <IframeBrowser src="https://pinksofahour.com" />
+        <p>
+          {ipsum}
+        </p>
+      </div>
     </div>
 
-    <div class={styles.section}>
-      <h3>Pink Sofa Hour</h3>
-      <IframeBrowser src="https://pinksofahour.com" />
-      <p>
-        {ipsum}
-      </p>
-    </div>
-  </div>
+    <div class={styles.right}>
+      <div class={styles.section}>
+        <h3>Schlop Stop</h3>
+        <IframeBrowser src="https://schlopstop.com" />
+        <p>
+          {ipsum}
+        </p>
+      </div>
 
-  <div class={styles.right}>
-    <div class={styles.section}>
-      <h3>Schlop Stop</h3>
-      <IframeBrowser src="https://schlopstop.com" />
-      <p>
-        {ipsum}
-      </p>
+      <div class={styles.section}>
+        <h3>CT Calc</h3>
+        <IframeBrowser src="https://ctcalc.com" />
+        <p>
+          {ipsum}
+        </p>
+      </div>
     </div>
-
-    <div class={styles.section}>
-      <h3>CT Calc</h3>
-      <IframeBrowser src="https://ctcalc.com" />
-      <p>
-        {ipsum}
-      </p>
-    </div>
-
-    <!-- TODO move this beneath this section, belo should be "tooling" -->
-    <!-- <div class={styles.section}>
-      <h3>React Heading</h3>
-      <p>
-        {ipsum}
-      </p>
-    </div> -->
   </div>
 </Layout>
