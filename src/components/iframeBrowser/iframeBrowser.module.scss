@@ -1,0 +1,44 @@
+/* Define the spinning animation */
+@keyframes spin {
+  from {
+    // needs translate because it's position: absolute
+    transform: translate(-50%, -50%) rotate(0deg);
+  }
+  to {
+    transform: translate(-50%, -50%) rotate(360deg);
+  }
+}
+
+.browserContainer {
+  border-radius: 10px; // TODO get formula for this, should be it's own component
+}
+
+.browserHeader {
+  display: flex;
+  gap: var(--space-xs);
+  padding: var(--space-xs);
+}
+
+// container is needed because iframe has strange bottom gap without it
+.iframeContainer {
+  position: relative;
+  height: 400px;
+  overflow: hidden;
+  border-radius: 0 0 10px 10px; // TODO get formula for this
+
+  /* Apply the animation to an image element */
+  img {
+    position: absolute;
+    animation: spin 2s linear infinite;
+
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+  }
+
+  iframe {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+  }
+}
