@@ -1,0 +1,35 @@
+---
+import styles from "./nav.module.scss";
+---
+
+<nav class={styles.fixedContainer} transition:persist>
+  <div class={styles.relativeContainer}>
+    <div id="drawer" class={styles.drawer}>
+      <div class={styles.scroll}>
+        <a href="mailto:nicozessoules@gmail.com">Contact</a>
+        <a id="home-anchor">Home</a>
+        <a href="/about">About</a>
+        <a href="/portfolio">Portfolio</a>
+        <a href="/resume">Resume</a>
+        <a target="_blank" href="https://github.com/nicodes">Github</a>
+        <a target="_blank" href="https://www.linkedin.com/in/nicozessoules"
+          >Linkedin</a
+        >
+        <!-- {Array.apply(null, Array(400)).map((e) => <a>drawer</a>)} -->
+      </div>
+      <div class={styles.borderContainer}>
+        <div id="nav-border" class={styles.border}></div>
+      </div>
+    </div>
+  </div>
+</nav>
+
+<script>
+  import { toggleDrawer, navigateHome } from "../../scripts/layout";
+
+  const headerButton = document.getElementById("header-button");
+  const homeLink = document.getElementById("home-anchor");
+
+  headerButton?.addEventListener("click", toggleDrawer);
+  homeLink?.addEventListener("click", navigateHome);
+</script>
