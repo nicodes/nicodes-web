@@ -1,0 +1,57 @@
+.page {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 20px;
+
+  @media screen and (min-width: 900px) {
+    grid-template-columns: 1fr 1fr;
+  }
+}
+
+.section {
+  padding: 20px;
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+  font-size: var(--font-md);
+
+  &:not(:first-child) {
+    margin-top: 40px;
+  }
+
+  &:not(:last-child) {
+    border-bottom: 3px solid var(--red);
+  }
+
+  // &:first-child {
+  //   p {
+  //     font-size: var(--font-md);
+  //   }
+  // }
+
+  a {
+    color: var(--red);
+    transition: font-size 0.5s ease;
+    white-space: nowrap; // needed for links that wrap, this glitches the transition
+
+    &:hover {
+      font-size: var(--font-lg);
+    }
+  }
+
+  h2 {
+    font-size: var(--font-xxl);
+    font-weight: 900;
+    text-align: center;
+    color: var(--red);
+  }
+
+  h3 {
+    font-size: var(--font-xl);
+    text-align: center;
+  }
+
+  img {
+    max-width: 100%;
+  }
+}
