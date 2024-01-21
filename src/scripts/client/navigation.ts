@@ -1,8 +1,8 @@
 import { navigate } from "astro:transitions/client";
 
 import { delay } from "../utils";
-import { headerBorderAnimate } from "./header";
-import { navIsOpen, navToggle } from "./nav";
+import { headerBorderAnimate } from "../../components/header/header";
+import { navIsOpen, navToggle } from "../../components/nav/nav";
 
 export async function navigateHome() {
   headerBorderAnimate("close");

@@ -1,4 +1,4 @@
-import { getNav } from "./elements";
+import { getNav } from "../../scripts/client/elements";
 
 import navStyles from "../../components/nav/nav.module.scss";
 import type { OpenClose } from "../../types";
