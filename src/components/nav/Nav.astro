@@ -22,6 +22,7 @@ const resumeId = import.meta.env.GOOGLE_DRIVE_RESUME_ID;
         >
         <!-- {Array.apply(null, Array(400)).map((e) => <a>nav</a>)} -->
       </div>
+
       <div class={styles.borderContainer}>
         <div class={styles.border}></div>
       </div>
@@ -30,8 +31,13 @@ const resumeId = import.meta.env.GOOGLE_DRIVE_RESUME_ID;
 </div>
 
 <script>
-  import { getNavIndexAnchor } from "../../scripts/client/elements";
+  import { getNav, getNavIndexAnchor } from "../../scripts/client/elements";
   import { navigateHome } from "../../scripts/client/navigation";
+  import { navId } from "../../scripts/elementIds";
+  import { navToggle } from "./nav";
 
   getNavIndexAnchor()?.addEventListener("click", navigateHome);
+  // getNav()
+  //   ?.querySelectorAll(`a:not(#${navId})`)
+  //   .forEach((a) => a.addEventListener("click", () => navToggle("close")));
 </script>
