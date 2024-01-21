@@ -7,7 +7,9 @@
   }
 }
 
-.fiveRings {
+// need to use img. so it has correct specificity, otherwise section styles will override
+img.fiveRings {
+  align-self: flex-start;
   margin-left: var(--space-xxl);
   animation: rotate 20s linear infinite;
 }
