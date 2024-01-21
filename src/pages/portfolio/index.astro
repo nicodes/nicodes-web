@@ -1,51 +1,59 @@
 ---
-import IframeBrowser from "../../components/iframeBrowser/IframeBrowser.astro";
-import FlexGrid from "../../components/flexGrid/FlexGrid.astro";
-import styles from "./portfolio.module.scss";
 import InfoLayout from "../../layouts/infoLayout/InfoLayout.astro";
+import FlexGrid from "../../components/flexGrid/FlexGrid.astro";
+import Section from "../../components/section/Section.astro";
+import IframeBrowser from "../../components/iframeBrowser/IframeBrowser.astro";
+
+import styles from "./portfolio.module.scss";
 
 const ipsum =
   "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Consectetur adipiscing elit ut aliquam purus. Dolor sit amet consectetur adipiscing elit duis tristique.";
 ---
 
-<InfoLayout title="Nicodes | Portfolio" class={styles.page}>
+<InfoLayout title="Nicodes | Portfolio">
   <h2>Welcome to my portfolio!</h2>
 
-  <FlexGrid class={styles.grid}>
+  <FlexGrid>
     <Fragment slot="left">
-      <section class={styles.section}>
+      <Section>
         <p>
           Here you'll find a list of my creations. Each has a breif description
           and embedded demo.
         </p>
         <p>To learn more please <a>reach out</a>!</p>
-      </section>
+      </Section>
 
-      <section class={styles.section}>
-        <h3>Pink Sofa Hour</h3>
-        <IframeBrowser src="https://pinksofahour.com" />
-        <p>
-          {ipsum}
-        </p>
-      </section>
+      <Section>
+        <div class={styles.iframeTitle}>
+          <h3>Pink Sofa Hour</h3>
+          <IframeBrowser src="https://pinksofahour.com" />
+          <p>
+            {ipsum}
+          </p>
+        </div>
+      </Section>
     </Fragment>
 
     <Fragment slot="right">
-      <section class={styles.section}>
-        <h3>CT Calc</h3>
-        <IframeBrowser src="https://www.ctcalc.com" />
+      <Section>
+        <div class={styles.iframeTitle}>
+          <h3>CT Calc</h3>
+          <IframeBrowser src="https://www.ctcalc.com" />
+        </div>
         <p>
           {ipsum}
         </p>
-      </section>
+      </Section>
 
-      <section class={styles.section}>
-        <h3>Schlop Stop</h3>
-        <IframeBrowser src="https://www.schlopstop.com" />
+      <Section>
+        <div class={styles.iframeTitle}>
+          <h3>Schlop Stop</h3>
+          <IframeBrowser src="https://www.schlopstop.com" />
+        </div>
         <p>
           {ipsum}
         </p>
-      </section>
+      </Section>
     </Fragment>
   </FlexGrid>
 </InfoLayout>
