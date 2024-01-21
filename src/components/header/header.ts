@@ -1,4 +1,4 @@
-import { getHeaderBorder } from "./elements";
+import { getHeaderBorder } from "../../scripts/client/elements";
 import type { OpenClose } from "../../types";
 
 import headerStyles from "../../components/header/header.module.scss";
