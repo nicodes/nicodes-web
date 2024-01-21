@@ -1,0 +1,13 @@
+---
+import styles from "./flexGrid.module.scss";
+---
+
+<div class={styles.grid}>
+  <div class={styles.left}>
+    <slot name="left" />
+  </div>
+
+  <div class={styles.right}>
+    <slot name="right" />
+  </div>
+</div>
