@@ -11,6 +11,7 @@ import fiveRingsImg from "../../assets/icons/fiveRings.png";
 import mountainsImg from "../../assets/photos/mountains.jpg";
 import jugglingImg from "../../assets/photos/juggling.jpg";
 import stonebloomImg from "../../assets/photos/stonebloom.jpg";
+import revikImg from "../../assets/photos/revik.webp";
 
 const ipsum =
   "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Consectetur adipiscing elit ut aliquam purus. Dolor sit amet consectetur adipiscing elit duis tristique.";
@@ -22,7 +23,10 @@ const ipsum =
   <FlexGrid>
     <Fragment slot="left">
       <Section>
-        <p>A list of my hobies and interests.</p>
+        <p>
+          A list of my hobies and interests. A list of my hobies and interests.
+          A list of my hobies and interests. A list of my hobies and interests.
+        </p>
         <p>To learn more please <a>reach out</a>!</p>
       </Section>
 
@@ -53,11 +57,24 @@ const ipsum =
           {ipsum}
         </p>
       </Section>
+
+      <Section>
+        <h3>Game Dev</h3>
+        <Image
+          src={revikImg}
+          width={600}
+          height={600}
+          alt="open navigation icon"
+        />
+        <p>
+          {ipsum}
+        </p>
+      </Section>
     </Fragment>
 
     <Fragment slot="right">
       <Section>
-        <h3>Bird's Eye</h3>
+        <h3>Altitude</h3>
         <Image
           src={mountainsImg}
           width={600}
