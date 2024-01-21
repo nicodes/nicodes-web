@@ -6,7 +6,7 @@
   --green: #228b22;
 
   --desktop-break: 900px;
-  --header-height: 99px;
+  --header-height: 88.98px;
   --header-max-width: 1400px;
   --nav-width: 160px;
   --content-max-width: 1000px;
@@ -23,12 +23,12 @@
   --font-xl: 1.8rem;
   --font-xxl: 2rem;
 
-  --space-xs: 8px;
-  --space-sm: 12px;
-  --space-md: 16px;
-  --space-lg: 24px;
-  --space-xl: 32px;
-  --space-xxl: 48px;
+  --space-xs: 5px;
+  --space-sm: 8px;
+  --space-md: 13px;
+  --space-lg: 21px;
+  --space-xl: 34px;
+  --space-xxl: 55px;
 }
 
 * {
@@ -45,11 +45,6 @@ html {
   color: var(--white);
   font-family: raleway;
   font-size: var(--font-md);
-}
-
-html,
-body {
-  height: 100%; // can't be 100vh because of mobile browser UI
 }
 
 a {

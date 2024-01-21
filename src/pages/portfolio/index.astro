@@ -1,6 +1,7 @@
 ---
 import IframeBrowser from "../../components/iframeBrowser/IframeBrowser.astro";
 import Layout from "../../layouts/Layout.astro";
+import FlexGrid from "../../components/flexGrid/FlexGrid.astro";
 import styles from "./portfolio.module.scss";
 
 const ipsum =
@@ -10,8 +11,8 @@ const ipsum =
 <Layout type="fixed" title="Nicodes | Portfolio" class={styles.page}>
   <h2>Welcome to my portfolio!</h2>
 
-  <div class={styles.grid}>
-    <div class={styles.left}>
+  <FlexGrid>
+    <Fragment slot="left">
       <div class={styles.section}>
         <p>
           Here you'll find a list of my creations. Each has a breif description
@@ -27,14 +28,16 @@ const ipsum =
           {ipsum}
         </p>
       </div>
-    </div>
+    </Fragment>
 
-    <div class={styles.right}>
-      <!-- <div class={styles.section}>
-        <h3>Nicodes</h3>
-        <IframeBrowser src="https://www.ni.codes" />
-        <p>I nested my own site within itself!</p>
-      </div> -->
+    <Fragment slot="right">
+      <div class={styles.section}>
+        <h3>CT Calc</h3>
+        <IframeBrowser src="https://www.ctcalc.com" />
+        <p>
+          {ipsum}
+        </p>
+      </div>
 
       <div class={styles.section}>
         <h3>Schlop Stop</h3>
@@ -43,14 +46,6 @@ const ipsum =
           {ipsum}
         </p>
       </div>
-
-      <div class={styles.section}>
-        <h3>CT Calc</h3>
-        <IframeBrowser src="https://www.ctcalc.com" />
-        <p>
-          {ipsum}
-        </p>
-      </div>
-    </div>
-  </div>
+    </Fragment>
+  </FlexGrid>
 </Layout>
