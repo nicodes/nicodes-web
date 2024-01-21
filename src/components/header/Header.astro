@@ -74,5 +74,5 @@ const resumeId = import.meta.env.GOOGLE_DRIVE_RESUME_ID;
   import { navToggle } from "../nav/nav";
 
   getHeaderLogoAnchor()?.addEventListener("click", navigateHome);
-  getHeaderToggleButton()?.addEventListener("click", navToggle);
+  getHeaderToggleButton()?.addEventListener("click", () => navToggle());
 </script>
