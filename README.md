@@ -9,14 +9,19 @@ Inside of your Astro project, you'll see the following folders and files:
 ```text
 /
 ├── public/
-│   └── favicon.svg
+│   └── favicon.ico
 ├── src/
+│   ├── assets/
+│   │   ├── icons/
+│   │   └── photos/
 │   ├── components/
-│   │   └── Card.astro
 │   ├── layouts/
-│   │   └── Layout.astro
-│   └── pages/
-│       └── index.astro
+│   │   └── rootLayout/
+│   ├── pages/
+│   ├── scripts/
+│   │   ├── client/
+│   │   └── server/
+│   └── types/
 └── package.json
 ```
 
