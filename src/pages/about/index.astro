@@ -2,15 +2,15 @@
 import { Image } from "astro:assets";
 import fiveRingsImg from "../../assets/fiveRings.png";
 
-import BaseLayout from "../../layouts/baseLayout/BaseLayout.astro";
 import FlexGrid from "../../components/flexGrid/FlexGrid.astro";
 import styles from "./portfolio.module.scss";
+import InfoLayout from "../../layouts/infoLayout/InfoLayout.astro";
 
 const ipsum =
   "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Consectetur adipiscing elit ut aliquam purus. Dolor sit amet consectetur adipiscing elit duis tristique.";
 ---
 
-<BaseLayout type="fixed" title="Nicodes | Portfolio" class={styles.page}>
+<InfoLayout title="Nicodes | Portfolio" class={styles.page}>
   <h2>About me!</h2>
 
   <FlexGrid class={styles.grid}>
@@ -58,4 +58,4 @@ const ipsum =
       </section>
     </Fragment>
   </FlexGrid>
-</BaseLayout>
+</InfoLayout>

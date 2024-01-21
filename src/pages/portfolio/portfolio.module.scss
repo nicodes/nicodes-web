@@ -1,24 +1,10 @@
-.page {
-  h2,
-  h3 {
-    font-size: var(--font-xl);
-  }
-
-  h2 {
-    margin-left: var(--space-xs);
-  }
-
-  h3 {
-    text-align: center;
-  }
-}
-
-.grid {
-  margin-top: var(--space-xl);
-}
-
 .section {
   font-size: var(--font-md);
+
+  h3 {
+    font-size: var(--font-xl);
+    text-align: center;
+  }
 
   p {
     margin-top: var(--space-lg);
