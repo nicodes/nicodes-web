@@ -1,56 +1,53 @@
 ---
-import Layout from "../../layouts/Layout.astro";
+import InfoLayout from "../../layouts/infoLayout/InfoLayout.astro";
+import FlexGrid from "../../components/flexGrid/FlexGrid.astro";
+import Section from "../../components/section/Section.astro";
 import IframeBrowser from "../../components/iframeBrowser/IframeBrowser.astro";
+
 import styles from "./portfolio.module.scss";
 
 const ipsum =
   "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Consectetur adipiscing elit ut aliquam purus. Dolor sit amet consectetur adipiscing elit duis tristique.";
 ---
 
-<Layout type="fixed" title="Nicodes | Portfolio" class={styles.page}>
-  <h2>Welcome to my portfolio!</h2>
+<InfoLayout title="Nicodes | Portfolio">
+  <h2>My work!</h2>
 
-  <div class={styles.grid}>
-    <div class={styles.left}>
-      <div class={styles.section}>
+  <FlexGrid>
+    <Fragment slot="left">
+      <Section>
         <p>
           Here you'll find a list of my creations. Each has a breif description
           and embedded demo.
         </p>
         <p>To learn more please <a>reach out</a>!</p>
-      </div>
+      </Section>
 
-      <div class={styles.section}>
+      <Section>
         <h3>Pink Sofa Hour</h3>
         <IframeBrowser src="https://pinksofahour.com" />
         <p>
           {ipsum}
         </p>
-      </div>
-    </div>
+      </Section>
+    </Fragment>
 
-    <div class={styles.right}>
-      <div class={styles.section}>
-        <h3>Nicodes</h3>
-        <IframeBrowser src="https://www.ni.codes" />
-        <p>I nested my own site within itself!</p>
-      </div>
-
-      <div class={styles.section}>
+    <Fragment slot="right">
+      <Section>
         <h3>Schlop Stop</h3>
         <IframeBrowser src="https://www.schlopstop.com" />
         <p>
           {ipsum}
         </p>
-      </div>
+      </Section>
 
-      <div class={styles.section}>
+      <Section>
         <h3>CT Calc</h3>
         <IframeBrowser src="https://www.ctcalc.com" />
         <p>
           {ipsum}
         </p>
-      </div>
-    </div>
-  </div>
-</Layout>
+      </Section>
+    </Fragment>
+  </FlexGrid>
+</InfoLayout>

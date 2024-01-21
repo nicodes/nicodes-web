@@ -1,0 +1,21 @@
+---
+import styles from "./flexGrid.module.scss";
+
+interface Props {
+  class?: string
+}
+
+const {
+  class: className
+} = Astro.props;
+---
+
+<div class={`${styles.grid} ${className}`}>
+  <div class={styles.left}>
+    <slot name="left" />
+  </div>
+
+  <div class={styles.right}>
+    <slot name="right" />
+  </div>
+</div>

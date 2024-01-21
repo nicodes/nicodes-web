@@ -1,0 +1,7 @@
+.infoLayout {
+  // title spacing
+  & > :first-child {
+    margin-left: var(--space-md);
+    margin-bottom: var(--space-xl);
+  }
+}
