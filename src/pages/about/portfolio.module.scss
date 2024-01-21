@@ -1,0 +1,55 @@
+@keyframes rotate {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+.page {
+  h2,
+  h3 {
+    font-size: var(--font-xl);
+  }
+
+  h2 {
+    margin-left: var(--space-xs);
+  }
+
+  h3 {
+    text-align: center;
+  }
+}
+
+.grid {
+  margin-top: var(--space-xl);
+}
+
+.section {
+  font-size: var(--font-md);
+
+  p {
+    margin-top: var(--space-lg);
+  }
+
+  a {
+    color: var(--red);
+    font-weight: 900;
+    transition: font-size 0.5s ease;
+    white-space: nowrap; // needed for links that wrap, this glitches the transition
+
+    &:hover {
+      font-size: var(--font-lg);
+    }
+  }
+
+  img {
+    max-width: 100%;
+    animation: rotate 20s linear infinite;
+
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+  }
+}
