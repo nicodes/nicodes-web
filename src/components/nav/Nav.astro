@@ -1,15 +1,16 @@
 ---
+import { navId, navIndexAnchorId } from "../../scripts/elementIds";
 import styles from "./nav.module.scss";
 
 const resumeId = import.meta.env.GOOGLE_DRIVE_RESUME_ID;
 ---
 
-<nav class={styles.fixedContainer} transition:persist>
-  <div class={styles.relativeContainer}>
-    <div id="drawer" class={styles.drawer}>
+<div class={styles.navFixedContainer} transition:persist>
+  <div class={styles.navRelativeContainer}>
+    <nav id={navId} class={styles.nav}>
       <div class={styles.scroll}>
         <a href="mailto:nicozessoules@gmail.com">Contact</a>
-        <a id="home-anchor">Home</a>
+        <a id={navIndexAnchorId}>Home</a>
         <a href="/about">About</a>
         <a href="/portfolio">Portfolio</a>
         <a href=`https://drive.google.com/uc?export=download&id=${resumeId}`
@@ -19,19 +20,18 @@ const resumeId = import.meta.env.GOOGLE_DRIVE_RESUME_ID;
         <a target="_blank" href="https://www.linkedin.com/in/nicozessoules"
           >Linkedin</a
         >
-        <!-- {Array.apply(null, Array(400)).map((e) => <a>drawer</a>)} -->
+        <!-- {Array.apply(null, Array(400)).map((e) => <a>nav</a>)} -->
       </div>
       <div class={styles.borderContainer}>
-        <div id="nav-border" class={styles.border}></div>
+        <div class={styles.border}></div>
       </div>
-    </div>
+    </nav>
   </div>
-</nav>
+</div>
 
 <script>
+  import { getNavIndexAnchor } from "../../scripts/client/elements";
   import { navigateHome } from "../../scripts/client/navigation";
 
-  const homeLink = document.getElementById("home-anchor");
-
-  homeLink?.addEventListener("click", navigateHome);
+  getNavIndexAnchor()?.addEventListener("click", navigateHome);
 </script>
