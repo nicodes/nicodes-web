@@ -13,12 +13,16 @@
   }
 }
 
+.grid {
+  margin-top: var(--space-xl);
+}
+
 .section {
-  padding: var(--space-md);
-  display: flex;
-  flex-direction: column;
-  gap: var(--space-md);
   font-size: var(--font-md);
+
+  p {
+    margin-top: var(--space-lg);
+  }
 
   a {
     color: var(--red);

@@ -16,13 +16,15 @@
 
   & > * {
     border-bottom: 3px solid var(--red);
+    padding: 0 var(--space-md) var(--space-xl) var(--space-md);
   }
 }
 
 .left {
   & > :last-child {
     @media screen and (min-width: 900px) {
-      grid-template-columns: none;
+      border-bottom: none;
+      padding-bottom: 0;
     }
   }
 }
@@ -30,5 +32,6 @@
 .right {
   & > :last-child {
     border-bottom: none;
+    padding-bottom: 0;
   }
 }
