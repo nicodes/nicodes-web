@@ -1,22 +1,32 @@
 import {
-  drawerId,
+  navId,
   headerLogoAnchorId,
   headerBorderId,
   headerButtonId,
-  homeLinkId,
   headerToggleButtonId,
+  navIndexAnchorId,
 } from "../elementIds";
 
-export const getDrawer = () => document.getElementById(drawerId);
+export function getNav() {
+  return document.getElementById(navId);
+}
 
-export const getHeaderLogoAnchor = () =>
-  document.getElementById(headerLogoAnchorId);
+export function getHeaderLogoAnchor() {
+  return document.getElementById(headerLogoAnchorId);
+}
 
-export const getHeaderToggleButton = () =>
-  document.getElementById(headerToggleButtonId);
+export function getHeaderToggleButton() {
+  return document.getElementById(headerToggleButtonId);
+}
 
-export const getHeaderBorder = () => document.getElementById(headerBorderId);
+export function getHeaderBorder() {
+  return document.getElementById(headerBorderId);
+}
 
-export const getHeaderButton = () => document.getElementById(headerButtonId);
+export function getHeaderButton() {
+  return document.getElementById(headerButtonId);
+}
 
-export const getHomeLink = () => document.getElementById(homeLinkId);
+export function getNavIndexAnchor() {
+  return document.getElementById(navIndexAnchorId);
+}

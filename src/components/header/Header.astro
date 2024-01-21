@@ -66,17 +66,8 @@ const resumeId = import.meta.env.GOOGLE_DRIVE_RESUME_ID;
     getHeaderLogoAnchor,
   } from "../../scripts/client/elements";
   import { navigateHome } from "../../scripts/client/navigation";
-  import { headerBorderAnimate } from "../../scripts/client/header";
   import { navToggle } from "../../scripts/client/nav";
 
-  const headerToggleButton = getHeaderToggleButton();
-  const headerIndexAnchor = getHeaderLogoAnchor();
-
-  headerIndexAnchor?.addEventListener("click", navigateHome);
-  headerToggleButton?.addEventListener("click", () => navToggle());
-
-  headerBorderAnimate("open");
-  document.addEventListener("astro:after-swap", () =>
-    headerBorderAnimate("open")
-  );
+  getHeaderLogoAnchor()?.addEventListener("click", navigateHome);
+  getHeaderToggleButton()?.addEventListener("click", navToggle);
 </script>
