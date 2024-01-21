@@ -1,28 +1,4 @@
-.section {
-  font-size: var(--font-md);
-
-  h3 {
-    font-size: var(--font-xl);
-    text-align: center;
-  }
-
-  p {
-    margin-top: var(--space-lg);
-  }
-
-  a {
-    color: var(--red);
-    font-weight: 900;
-
-    transition: font-size 0.5s ease;
-    white-space: nowrap; // needed for links that wrap, this glitches the transition
-
-    &:hover {
-      font-size: var(--font-lg);
-    }
-  }
-
-  img {
-    max-width: 100%;
-  }
+// used to skip gap between title and iframe
+.iframeTitle {
+  width: 100%;
 }

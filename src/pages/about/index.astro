@@ -1,26 +1,29 @@
 ---
 import { Image } from "astro:assets";
-import fiveRingsImg from "../../assets/fiveRings.png";
 
-import FlexGrid from "../../components/flexGrid/FlexGrid.astro";
-import styles from "./portfolio.module.scss";
 import InfoLayout from "../../layouts/infoLayout/InfoLayout.astro";
+import FlexGrid from "../../components/flexGrid/FlexGrid.astro";
+import Section from "../../components/section/Section.astro";
+
+import styles from "./about.module.scss";
+
+import fiveRingsImg from "../../assets/fiveRings.png";
 
 const ipsum =
   "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Consectetur adipiscing elit ut aliquam purus. Dolor sit amet consectetur adipiscing elit duis tristique.";
 ---
 
-<InfoLayout title="Nicodes | Portfolio" class={styles.page}>
+<InfoLayout title="Nicodes | Portfolio">
   <h2>About me!</h2>
 
-  <FlexGrid class={styles.grid}>
+  <FlexGrid>
     <Fragment slot="left">
-      <section class={styles.section}>
+      <Section>
         <p>A list of my hobies and interests.</p>
         <p>To learn more please <a>reach out</a>!</p>
-      </section>
+      </Section>
 
-      <section class={styles.section}>
+      <Section>
         <h3>Philosophy</h3>
         <Image
           src={fiveRingsImg}
@@ -32,30 +35,30 @@ const ipsum =
         <p>
           {ipsum}
         </p>
-      </section>
+      </Section>
 
-      <section class={styles.section}>
+      <Section>
         <h3>Balancing</h3>
         <p>
           {ipsum}
         </p>
-      </section>
+      </Section>
     </Fragment>
 
     <Fragment slot="right">
-      <section class={styles.section}>
-        <h3>Birds Eye</h3>
+      <Section>
+        <h3>Bird's Eye</h3>
         <p>
           {ipsum}
         </p>
-      </section>
+      </Section>
 
-      <section class={styles.section}>
+      <Section>
         <h3>Juggling</h3>
         <p>
           {ipsum}
         </p>
-      </section>
+      </Section>
     </Fragment>
   </FlexGrid>
 </InfoLayout>
