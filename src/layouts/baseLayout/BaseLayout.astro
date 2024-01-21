@@ -2,11 +2,11 @@
 import "@fontsource/raleway";
 import { ViewTransitions } from "astro:transitions";
 
-import Header from "../components/header/Header.astro";
-import Nav from "../components/nav/Nav.astro";
+import Header from "../../components/header/Header.astro";
+import Nav from "../../components/nav/Nav.astro";
 
-import "../styles.scss";
-import styles from "./layout.module.scss";
+import "../../styles.scss";
+import styles from "./baseLayout.module.scss";
 
 interface Props {
   type: "flex" | "fixed";
