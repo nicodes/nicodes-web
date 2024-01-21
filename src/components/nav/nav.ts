@@ -1,7 +1,7 @@
 import { getNav } from "../../scripts/client/elements";
-
-import navStyles from "../../components/nav/nav.module.scss";
 import type { OpenClose } from "../../types";
+
+import navStyles from "./nav.module.scss";
 
 function navOpen() {
   const nav = getNav();

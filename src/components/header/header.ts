@@ -1,7 +1,7 @@
 import { getHeaderBorder } from "../../scripts/client/elements";
 import type { OpenClose } from "../../types";
 
-import headerStyles from "../../components/header/header.module.scss";
+import headerStyles from "./header.module.scss";
 
 function headerBorderOpen() {
   const headerBorder = getHeaderBorder();
