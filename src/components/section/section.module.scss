@@ -22,4 +22,11 @@
       font-size: var(--font-lg);
     }
   }
+
+  img {
+    max-width: 100%;
+    object-fit: cover;
+    border-radius: var(--border-radius);
+    max-height: 400px;
+  }
 }

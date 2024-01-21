@@ -8,6 +8,9 @@ import Section from "../../components/section/Section.astro";
 import styles from "./about.module.scss";
 
 import fiveRingsImg from "../../assets/icons/fiveRings.png";
+import mountainsImg from "../../assets/photos/mountains.jpg";
+import jugglingImg from "../../assets/photos/juggling.jpg";
+import stonebloomImg from "../../assets/photos/stonebloom.jpg";
 
 const ipsum =
   "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Consectetur adipiscing elit ut aliquam purus. Dolor sit amet consectetur adipiscing elit duis tristique.";
@@ -40,6 +43,12 @@ const ipsum =
 
       <Section>
         <h3>Balancing</h3>
+        <Image
+          src={stonebloomImg}
+          width={600}
+          height={600}
+          alt="open navigation icon"
+        />
         <p>
           {ipsum}
         </p>
@@ -49,6 +58,12 @@ const ipsum =
     <Fragment slot="right">
       <Section>
         <h3>Bird's Eye</h3>
+        <Image
+          src={mountainsImg}
+          width={600}
+          height={600}
+          alt="open navigation icon"
+        />
         <p>
           {ipsum}
         </p>
@@ -56,6 +71,12 @@ const ipsum =
 
       <Section>
         <h3>Juggling</h3>
+        <Image
+          src={jugglingImg}
+          width={600}
+          height={600}
+          alt="open navigation icon"
+        />
         <p>
           {ipsum}
         </p>
