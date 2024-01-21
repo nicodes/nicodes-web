@@ -1,0 +1,19 @@
+---
+import styles from "./infoLayout.module.scss";
+import BaseLayout from "../baseLayout/BaseLayout.astro";
+
+interface Props {
+  title: string;
+  class?: string;
+}
+
+const { title, class: className } = Astro.props;
+---
+
+<BaseLayout
+  type="fixed"
+  title={title}
+  class={`${styles.infoLayout} ${className}`}
+>
+  <slot />
+</BaseLayout>

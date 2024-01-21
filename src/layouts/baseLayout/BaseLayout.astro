@@ -2,14 +2,14 @@
 import "@fontsource/raleway";
 import { ViewTransitions } from "astro:transitions";
 
-import Header from "../components/header/Header.astro";
-import SideNav from "../components/nav/Nav.astro";
+import Header from "../../components/header/Header.astro";
+import Nav from "../../components/nav/Nav.astro";
 
-import "../styles.scss";
-import styles from "./layout.module.scss";
+import "../../styles.scss";
+import styles from "./baseLayout.module.scss";
 
 interface Props {
-  type: "flex" | "fixed"; // this prop sucks, needed because <body> can't be defined in child layouts
+  type: "flex" | "fixed";
   title: string;
   class?: string;
 }
@@ -32,14 +32,15 @@ const bodyStyles =
     <ViewTransitions />
   </head>
 
-  <!-- for some reason astro won't allow CSS classes on the <body> tag, Ideally I think the <body> tag should be defined in child layouts over here in root -->
   <body class={bodyStyles}>
     <Header />
+
     <main>
       <div class={`${styles.pageContainer} ${className}`}>
         <slot />
       </div>
     </main>
-    <SideNav />
+
+    <Nav />
   </body>
 </html>

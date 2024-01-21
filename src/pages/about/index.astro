@@ -1,5 +1,86 @@
 ---
-import Layout from "../../layouts/Layout.astro";
+import { Image } from "astro:assets";
+
+import InfoLayout from "../../layouts/infoLayout/InfoLayout.astro";
+import FlexGrid from "../../components/flexGrid/FlexGrid.astro";
+import Section from "../../components/section/Section.astro";
+
+import styles from "./about.module.scss";
+
+import fiveRingsImg from "../../assets/icons/fiveRings.png";
+import mountainsImg from "../../assets/photos/mountains.jpg";
+import jugglingImg from "../../assets/photos/juggling.jpg";
+import stonebloomImg from "../../assets/photos/stonebloom.jpg";
+
+const ipsum =
+  "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Consectetur adipiscing elit ut aliquam purus. Dolor sit amet consectetur adipiscing elit duis tristique.";
 ---
 
-<Layout type="fixed" title="Nicodes | About">about</Layout>
+<InfoLayout title="Nicodes | Portfolio">
+  <h2>About me!</h2>
+
+  <FlexGrid>
+    <Fragment slot="left">
+      <Section>
+        <p>A list of my hobies and interests.</p>
+        <p>To learn more please <a>reach out</a>!</p>
+      </Section>
+
+      <Section>
+        <h3>Philosophy</h3>
+        <Image
+          src={fiveRingsImg}
+          width={60}
+          height={60}
+          alt="open navigation icon"
+          class={styles.fiveRings}
+        />
+
+        <p>
+          {ipsum}
+        </p>
+      </Section>
+
+      <Section>
+        <h3>Balancing</h3>
+        <Image
+          src={stonebloomImg}
+          width={600}
+          height={600}
+          alt="open navigation icon"
+        />
+        <p>
+          {ipsum}
+        </p>
+      </Section>
+    </Fragment>
+
+    <Fragment slot="right">
+      <Section>
+        <h3>Bird's Eye</h3>
+        <Image
+          src={mountainsImg}
+          width={600}
+          height={600}
+          alt="open navigation icon"
+        />
+        <p>
+          {ipsum}
+        </p>
+      </Section>
+
+      <Section>
+        <h3>Juggling</h3>
+        <Image
+          src={jugglingImg}
+          width={600}
+          height={600}
+          alt="open navigation icon"
+        />
+        <p>
+          {ipsum}
+        </p>
+      </Section>
+    </Fragment>
+  </FlexGrid>
+</InfoLayout>
