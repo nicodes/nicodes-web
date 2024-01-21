@@ -29,11 +29,9 @@ const resumeId = import.meta.env.GOOGLE_DRIVE_RESUME_ID;
 </nav>
 
 <script>
-  import { toggleDrawer, navigateHome } from "../../scripts/layout";
+  import { navigateHome } from "../../scripts/client/navigation";
 
-  const headerButton = document.getElementById("header-button");
   const homeLink = document.getElementById("home-anchor");
 
-  headerButton?.addEventListener("click", toggleDrawer);
   homeLink?.addEventListener("click", navigateHome);
 </script>
