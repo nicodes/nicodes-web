@@ -8,10 +8,11 @@ import Section from "../../components/section/Section.astro";
 import styles from "./about.module.scss";
 
 import fiveRingsImg from "../../assets/icons/fiveRings.png";
-import mountainsImg from "../../assets/photos/mountains.jpg";
-import jugglingImg from "../../assets/photos/juggling.jpg";
 import stonebloomImg from "../../assets/photos/stonebloom.jpg";
 import revikImg from "../../assets/photos/revik.webp";
+import mountainsImg from "../../assets/photos/mountains.jpg";
+import jugglingImg from "../../assets/photos/juggling.jpg";
+import guitarImg from "../../assets/photos/guitar.jpg";
 
 const ipsum =
   "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Consectetur adipiscing elit ut aliquam purus. Dolor sit amet consectetur adipiscing elit duis tristique.";
@@ -135,6 +136,26 @@ const ipsum =
           My practice has taught me to focus on present and managing multiple
           time-critical tasks. This requires guiding each individual element
           while tailoring the orchistration to the circumstances.
+        </p>
+      </Section>
+
+      <Section>
+        <h3>Music</h3>
+        <Image
+          src={guitarImg}
+          width={600}
+          height={600}
+          alt="open navigation icon"
+        />
+        <p>
+          Music is one of my oldest passions. I've been playing piano since I
+          was a child, I grew up playing saxophone my school's jazz and marching
+          bands.
+        </p>
+        <p>
+          My favorite part of music is composition. I've written many of my own
+          songs, and have recently started recording them independantly.
+          Recordings coming soon!
         </p>
       </Section>
     </Fragment>
