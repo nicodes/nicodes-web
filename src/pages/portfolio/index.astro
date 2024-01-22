@@ -11,7 +11,7 @@ const ipsum =
 ---
 
 <InfoLayout title="Nicodes | Portfolio">
-  <h2>My work!</h2>
+  <h2>My Work</h2>
 
   <FlexGrid>
     <Fragment slot="left">
@@ -20,15 +20,33 @@ const ipsum =
           Here you'll find a list of my creations. Each has a breif description
           and embedded demo.
         </p>
+
         <p>To learn more please <a>reach out</a>!</p>
       </Section>
 
       <Section>
         <h3>Pink Sofa Hour</h3>
+
         <IframeBrowser src="https://pinksofahour.com" />
+
         <p>
-          {ipsum}
+          <a>Pink Sofa Hour</a> is an YouTube show/podcast featuring local musical
+          artists in Boulder CO. I built this site to host their site, including
+          YouTube and Google Calendar integration.
         </p>
+
+        <div class={styles.coreTech}>
+          <p>Core technologies:</p>
+          <ul>
+            <li>Astro</li>
+            <li>TypeScript</li>
+            <li>Google Drive API</li>
+            <li>Google Calendar API</li>
+            <li>YouTube API</li>
+          </ul>
+        </div>
+
+        <p>Checkout the code on <a>GitHub</a></p>
       </Section>
     </Fragment>
 
@@ -36,17 +54,45 @@ const ipsum =
       <Section>
         <h3>Schlop Stop</h3>
         <IframeBrowser src="https://www.schlopstop.com" />
+
         <p>
-          {ipsum}
+          <a>Schlop Stop</a> is a food truck based in Boulder CO. I built this site
+          to host their menu, with more additions planned for the future!
         </p>
+
+        <div class={styles.coreTech}>
+          <p>Core technologies:</p>
+          <ul>
+            <li>Astro</li>
+            <li>TypeScript</li>
+            <li>Google Drive API</li>
+          </ul>
+        </div>
+
+        <p>Checkout the code on <a>GitHub</a></p>
       </Section>
 
       <Section>
         <h3>CT Calc</h3>
+
         <IframeBrowser src="https://www.ctcalc.com" />
+
         <p>
-          {ipsum}
+          <a>CT Calc</a> is used to provide contact time inactivation of Giardia
+          and viruses for several disinfectants. These calculations can be useful
+          for determining compliance with EPA guidelines.
         </p>
+
+        <div class={styles.coreTech}>
+          <p>Core technologies:</p>
+          <ul>
+            <li>Astro</li>
+            <li>TypeScript</li>
+            <li>Python</li>
+          </ul>
+        </div>
+
+        <p>Checkout the code on <a>GitHub</a></p>
       </Section>
     </Fragment>
   </FlexGrid>

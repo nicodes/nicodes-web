@@ -36,8 +36,7 @@
   // all: unset;
   box-sizing: border-box;
   margin: 0;
-  padding: 0;
-  border: 0;
+  border: none;
   text-decoration: none;
 }
 
@@ -52,4 +51,10 @@ html {
 a {
   color: var(--white);
   cursor: pointer;
+}
+
+li {
+  &:not(:first-child) {
+    margin-top: var(--space-sm);
+  }
 }
