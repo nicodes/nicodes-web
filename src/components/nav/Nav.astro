@@ -31,13 +31,29 @@ const resumeId = import.meta.env.GOOGLE_DRIVE_RESUME_ID;
 </div>
 
 <script>
+  import { navigate } from "astro:transitions/client";
+
   import { getNav, getNavIndexAnchor } from "../../scripts/client/elements";
+  import { timeout } from "../../scripts/utils";
   import { navigateHome } from "../../scripts/client/navigation";
-  import { navId } from "../../scripts/elementIds";
+
   import { navToggle } from "./nav";
 
+  // Close nav and header border for nav link to index
   getNavIndexAnchor()?.addEventListener("click", navigateHome);
-  // getNav()
-  //   ?.querySelectorAll(`a:not(#${navId})`)
-  //   .forEach((a) => a.addEventListener("click", () => navToggle("close")));
+
+  // Close nav for nav links to portfolio and about
+  getNav()
+    ?.querySelectorAll(`a:nth-child(3),a:nth-child(4)`)
+    .forEach((a) =>
+      a.addEventListener("click", async (e) => {
+        e.preventDefault();
+
+        navToggle("close");
+        await timeout(500);
+
+        const { href } = e?.target as any; // TS complains that this attribute doesn't exist, but it does
+        href && navigate(href);
+      })
+    );
 </script>
