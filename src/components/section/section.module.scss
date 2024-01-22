@@ -9,7 +9,6 @@
 
   p {
     font-size: var(--font-md);
-    align-self: flex-start;
   }
 
   a {
@@ -26,6 +25,7 @@
   img {
     max-width: 100%;
     max-height: 400px;
+    align-self: center;
 
     object-fit: cover;
     border-radius: var(--border-radius);

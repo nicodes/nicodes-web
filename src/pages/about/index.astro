@@ -8,22 +8,30 @@ import Section from "../../components/section/Section.astro";
 import styles from "./about.module.scss";
 
 import fiveRingsImg from "../../assets/icons/fiveRings.png";
+import stonebloomImg from "../../assets/photos/stonebloom.jpg";
+import revikImg from "../../assets/photos/revik.webp";
 import mountainsImg from "../../assets/photos/mountains.jpg";
 import jugglingImg from "../../assets/photos/juggling.jpg";
-import stonebloomImg from "../../assets/photos/stonebloom.jpg";
+import guitarImg from "../../assets/photos/guitar.jpg";
 
 const ipsum =
   "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Consectetur adipiscing elit ut aliquam purus. Dolor sit amet consectetur adipiscing elit duis tristique.";
 ---
 
 <InfoLayout title="Nicodes | Portfolio">
-  <h2>About me!</h2>
+  <h2>About Me</h2>
 
   <FlexGrid>
     <Fragment slot="left">
       <Section>
-        <p>A list of my hobies and interests.</p>
-        <p>To learn more please <a>reach out</a>!</p>
+        <p>
+          While I love to code, that isn't all I do! I hope this highlights who
+          I am and the quality I bring to work.
+        </p>
+        <p>
+          To learn more please
+          <a href="mailto:nicozessoules@gmail.com">reach out<span>!</span></a>
+        </p>
       </Section>
 
       <Section>
@@ -37,7 +45,15 @@ const ipsum =
         />
 
         <p>
-          {ipsum}
+          <span class={styles.musashiQutote}
+            >"Know the way broadly, and you see it in all things."</span
+          > - Miyamoto Musashi
+        </p>
+
+        <p>
+          This idea is a foundation for my life. I've learned that anything I do
+          improves my abilities in other areas, especially when I love what I'm
+          doing!
         </p>
       </Section>
 
@@ -50,14 +66,47 @@ const ipsum =
           alt="open navigation icon"
         />
         <p>
-          {ipsum}
+          Balance is one of my guiding principles. I built this sculpture, one
+          of many which I love to create!
+        </p>
+        <p>
+          Through my practice I've learned to fight entropy and work with
+          available materials. These concepts are instrumental in my engineering
+          practice, helping me navigate complex architectures while remaining
+          practical.
+        </p>
+        <p>
+          To see more check out my Instagram:
+          <a target="_blank" href="https://www.instagram.com/stonebloom/">
+            @stonebloom
+          </a>
+        </p>
+      </Section>
+
+      <Section>
+        <h3>Game Dev</h3>
+        <Image
+          src={revikImg}
+          width={600}
+          height={600}
+          alt="open navigation icon"
+        />
+        <p>
+          If you couldn't tell, I have an active imagination. While I love
+          creative engineering because of it's strict rules and challenges, I
+          also like to let loose!
+        </p>
+        <p>
+          Currently I'm developing two mobile games using the Godot engine. The
+          first is a modern twist on a classic arcade game, and the second is a
+          board-based fantasy card game. More info coming soon!
         </p>
       </Section>
     </Fragment>
 
     <Fragment slot="right">
       <Section>
-        <h3>Bird's Eye</h3>
+        <h3>Altitude</h3>
         <Image
           src={mountainsImg}
           width={600}
@@ -65,8 +114,11 @@ const ipsum =
           alt="open navigation icon"
         />
         <p>
-          {ipsum}
+          While working on projects is fun, it's important to get away and gain
+          perspective. In my free time I love hiking and climbing, especially
+          with my dog Anastasia!
         </p>
+        <p>Please remember there may be no cell service in the mountains!</p>
       </Section>
 
       <Section>
@@ -78,7 +130,32 @@ const ipsum =
           alt="open navigation icon"
         />
         <p>
-          {ipsum}
+          For me juggling is a form of meditation. Instead of focusing on each
+          club, it's best to clear one's mind and trust the flow.
+        </p>
+        <p>
+          My practice has taught me to focus on the present and managing
+          multiple time-critical tasks. This requires guiding each individual
+          element while tailoring the orchestration and circumstances.
+        </p>
+      </Section>
+
+      <Section>
+        <h3>Music</h3>
+        <Image
+          src={guitarImg}
+          width={600}
+          height={600}
+          alt="open navigation icon"
+        />
+        <p>
+          Music is one of my oldest passions. I've been playing piano since
+          childhood and saxophone in my school's jazz and marching bands.
+        </p>
+        <p>
+          My favorite part of music is composition. I've written many of my own
+          songs, and have recently started recording them independently. More
+          info coming soon!
         </p>
       </Section>
     </Fragment>
