@@ -6,15 +6,15 @@
   --green: #228b22;
 
   --desktop-break: 900px;
-  --header-height: 88.98px;
   --header-max-width: 1400px;
+  --header-height: 88.98px;
   --nav-width: 160px;
   --content-max-width: 1000px;
-  --border-radius: 5px;
 
   --border-sm: 1px;
   --border-md: 2px;
   --border-lg: 3px;
+  --border-radius: 5px;
 
   --font-xs: 0.8rem;
   --font-sm: 1rem;
@@ -23,6 +23,7 @@
   --font-xl: 1.8rem;
   --font-xxl: 2rem;
 
+  // fibonacci
   --space-xs: 5px;
   --space-sm: 8px;
   --space-md: 13px;
@@ -35,14 +36,14 @@
   // all: unset;
   box-sizing: border-box;
   margin: 0;
-  padding: 0;
-  border: 0;
+  border: none;
   text-decoration: none;
 }
 
 html {
   background-color: var(--black);
   color: var(--white);
+
   font-family: raleway;
   font-size: var(--font-md);
 }
@@ -50,4 +51,10 @@ html {
 a {
   color: var(--white);
   cursor: pointer;
+}
+
+li {
+  &:not(:first-child) {
+    margin-top: var(--space-sm);
+  }
 }

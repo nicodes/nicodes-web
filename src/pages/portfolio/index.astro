@@ -11,23 +11,81 @@ const ipsum =
 ---
 
 <InfoLayout title="Nicodes | Portfolio">
-  <h2>My work!</h2>
+  <h2>My Work</h2>
 
   <FlexGrid>
     <Fragment slot="left">
       <Section>
         <p>
-          Here you'll find a list of my creations. Each has a breif description
-          and embedded demo.
+          Here's a list of my creations. Each has a brief description and don't
+          miss out on the embedded demos!
         </p>
-        <p>To learn more please <a>reach out</a>!</p>
+
+        <p>
+          To learn more please
+          <a href="mailto:nicozessoules@gmail.com">reach out<span>!</span></a>
+        </p>
       </Section>
 
       <Section>
         <h3>Pink Sofa Hour</h3>
+
         <IframeBrowser src="https://pinksofahour.com" />
+
         <p>
-          {ipsum}
+          <a target="_blank" href="https://pinksofahour.com">Pink Sofa Hour</a>
+          is a YouTube show/podcast featuring local musical artists in Boulder CO.
+          This site is built with multiple capabilities including YouTube, Google
+          Calendar, and SMTP integration.
+        </p>
+
+        <div class={styles.coreTech}>
+          <p>Core technologies:</p>
+          <ul>
+            <li>Astro</li>
+            <li>TypeScript</li>
+            <li>Google Drive API</li>
+            <li>Google Calendar API</li>
+            <li>YouTube API</li>
+          </ul>
+        </div>
+
+        <p>
+          Checkout the code on
+          <a target="_blank" href="https://github.com/nicodes/pinksofahour">
+            GitHub<span>!</span>
+          </a>
+        </p>
+      </Section>
+
+      <Section>
+        <h3>CT Calc</h3>
+
+        <IframeBrowser src="https://www.ctcalc.com" />
+
+        <p>
+          <a target="_blank" href="https://www.ctcalc.com">CT Calc</a>
+          is used to provide contact time inactivation of Giardia and viruses for
+          several disinfectants. These calculations can be useful for determining
+          compliance with EPA guidelines.
+        </p>
+
+        <div class={styles.coreTech}>
+          <p>Core technologies:</p>
+          <ul>
+            <li>Astro</li>
+            <li>HTMX</li>
+            <li>TypeScript</li>
+            <li>Python</li>
+            <li>Vercel</li>
+          </ul>
+        </div>
+
+        <p>
+          Checkout the code on
+          <a target="_blank" href="https://github.com/nicodes/ctcalc">
+            GitHub<span>!</span>
+          </a>
         </p>
       </Section>
     </Fragment>
@@ -35,17 +93,100 @@ const ipsum =
     <Fragment slot="right">
       <Section>
         <h3>Schlop Stop</h3>
+
         <IframeBrowser src="https://www.schlopstop.com" />
+
         <p>
-          {ipsum}
+          <a target="_blank" href="https://www.schlopstop.com">Schlop Stop</a>
+          is a food truck based in Boulder CO. I used AI tools to design the logo
+          and built this site to host their menu. It also includes Google Drive support
+          to update the menu in real time. More additions are cooking up!
+        </p>
+
+        <div class={styles.coreTech}>
+          <p>Core technologies:</p>
+          <ul>
+            <li>Astro</li>
+            <li>TypeScript</li>
+            <li>Google Drive API</li>
+            <li>Vercel</li>
+          </ul>
+        </div>
+
+        <p>
+          Checkout the code on
+          <a target="_blank" href="https://github.com/nicodes/schlopstop">
+            GitHub<span>!</span>
+          </a>
         </p>
       </Section>
 
       <Section>
-        <h3>CT Calc</h3>
-        <IframeBrowser src="https://www.ctcalc.com" />
+        <h3>React Heading</h3>
+
         <p>
-          {ipsum}
+          <a
+            target="_blank"
+            href="https://www.npmjs.com/package/@nicodes/react-heading"
+          >
+            React Heading
+          </a>
+          is my first published node package! I wrote this to solve a problem I was
+          facing with conflicting HTML heading levels. With React Heading you can
+          easily manage the headings in your app to be ADA compliant.
+        </p>
+
+        <div class={styles.coreTech}>
+          <p>Core technologies:</p>
+          <ul>
+            <li>React</li>
+            <li>TypeScript</li>
+            <li>NPM Registry</li>
+          </ul>
+        </div>
+
+        <p>
+          Checkout the code on
+          <a target="_blank" href="https://github.com/nicodes/react-heading">
+            GitHub
+          </a>
+          and
+          <a
+            target="_blank"
+            href="https://www.npmjs.com/package/@nicodes/react-heading"
+          >
+            NPM<span>!</span>
+          </a>
+        </p>
+      </Section>
+
+      <Section>
+        <h3>Nicodes</h3>
+
+        <!-- <IframeBrowser src="https://www.ni.codes" /> -->
+        <!-- <p>Did I really embed this site within itself? Absolutly!</p> -->
+
+        <p>
+          This site includes some neat features! It's built with Astro and the
+          View Transitions browser API. This combination allows it to offload
+          work to the browser, while maintaining a component oriented
+          architecture and shipping minimal JavaScript to increase performance.
+        </p>
+
+        <div class={styles.coreTech}>
+          <p>Core technologies:</p>
+          <ul>
+            <li>Astro</li>
+            <li>TypeScript</li>
+            <li>Vercel</li>
+          </ul>
+        </div>
+
+        <p>
+          Checkout the code on
+          <a target="_blank" href="https://github.com/nicodes/nicodes-web">
+            GitHub<span>!</span>
+          </a>
         </p>
       </Section>
     </Fragment>
