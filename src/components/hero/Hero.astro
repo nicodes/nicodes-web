@@ -6,11 +6,19 @@ import Button from "../button/Button.astro";
 import WavingHand from "../wavingHand/WavingHand.astro";
 import styles from "./hero.module.scss";
 import nicoImg from "../../assets/photos/nico.jpg";
+
+const imgSize = 300;
 ---
 
 <section class={styles.hero}>
-  <Circle diameter="300px" class={styles.imgContainer}>
-    <Image src={nicoImg} alt="open navigation icon" />
+  <Circle diameter={`${imgSize}px`}>
+    <Image
+      src={nicoImg}
+      width={imgSize}
+      height={imgSize}
+      class={styles.img}
+      alt="open navigation icon"
+    />
   </Circle>
 
   <div class={styles.textContainer}>
