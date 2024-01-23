@@ -1,4 +1,5 @@
 ---
+import type { string } from "astro/zod";
 import styles from "./circle.module.scss";
 
 interface Props {
@@ -6,18 +7,20 @@ interface Props {
   color?: string;
   border?: string;
   opacity?: number;
+  class?: string;
 }
 
 const {
-  diameter = "60px",
-  color = "red",
+  diameter = "100%",
+  color = "none",
   border = "none",
   opacity = 1,
+  class: className,
 } = Astro.props;
 
 const style = `height: ${diameter}; width: ${diameter}; background-color: ${color}; border: ${border}; opacity: ${opacity}`;
 ---
 
-<div class={styles.circle} style={style}>
+<div class={`${styles.circle} ${className}`} style={style}>
   <slot />
 </div>

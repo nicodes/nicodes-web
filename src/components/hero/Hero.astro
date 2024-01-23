@@ -1,15 +1,17 @@
 ---
+import { Image } from "astro:assets";
+
+import Circle from "../circle/Circle.astro";
 import Button from "../button/Button.astro";
 import WavingHand from "../wavingHand/WavingHand.astro";
 import styles from "./hero.module.scss";
+import nicoImg from "../../assets/photos/nico.jpg";
 ---
 
 <section class={styles.hero}>
-  <div class={`${styles.circle} ${styles.imgContainer}`}>
-    <img
-      src="https://media.licdn.com/dms/image/C5103AQEq9TCVcdl8Kg/profile-displayphoto-shrink_400_400/0/1517586080421?e=2147483647&v=beta&t=GlJ93UvsE0smWLyOhwRyV_8zDAUkxAzmq0I49lFkZGQ"
-    />
-  </div>
+  <Circle diameter="300px" class={styles.imgContainer}>
+    <Image src={nicoImg} alt="open navigation icon" />
+  </Circle>
 
   <div class={styles.textContainer}>
     <p class={styles.helloContainer}>
