@@ -12,7 +12,7 @@ export interface Project {
   stack: string[];
   featured?: boolean;
   /** Rotates the accent so the grid does not read as one flat colour. */
-  accent: "coral" | "gold" | "rose" | "olive" | "mint-deep";
+  accent: "rose" | "gold" | "coral" | "olive" | "mint-deep";
 }
 
 export const categories: { id: Category | "all"; label: string }[] = [
@@ -34,7 +34,7 @@ export const projects: Project[] = [
     repo: "https://github.com/nicodes/ormos",
     stack: ["Go", "WebSockets", "PocketBase", "Expo"],
     featured: true,
-    accent: "coral",
+    accent: "rose",
   },
   {
     name: "Komizo",
@@ -57,7 +57,7 @@ export const projects: Project[] = [
     category: "apps",
     stack: ["Go", "Gin", "OpenAI", "Expo"],
     featured: true,
-    accent: "rose",
+    accent: "coral",
   },
   {
     name: "Tone Split",
@@ -90,7 +90,7 @@ export const projects: Project[] = [
     category: "games",
     repo: "https://github.com/aviorstudio/termcade",
     stack: ["Go", "Bubble Tea", "WebAssembly"],
-    accent: "coral",
+    accent: "rose",
   },
   {
     name: "GDAM",
@@ -112,7 +112,7 @@ export const projects: Project[] = [
     category: "tools",
     repo: "https://github.com/aviorstudio/gdlint",
     stack: ["Go", "GDScript"],
-    accent: "rose",
+    accent: "coral",
   },
   {
     name: "CT Calc",

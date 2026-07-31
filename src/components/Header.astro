@@ -14,10 +14,10 @@ const isCurrent = (href: string) =>
   >
     <a
       href="/"
-      class="text-2xl font-extrabold [font-stretch:118%] tracking-tight transition-colors hover:text-coral"
+      class="text-2xl font-extrabold [font-stretch:118%] tracking-tight transition-colors hover:text-rose"
       aria-label="Nicodes, home"
     >
-      n<span class="text-coral">i</span>codes
+      n<span class="text-rose">i</span>codes
     </a>
 
     <nav class="hidden items-center gap-1 md:flex" aria-label="Main">
@@ -27,9 +27,9 @@ const isCurrent = (href: string) =>
             href={link.href}
             aria-current={isCurrent(link.href) ? "page" : undefined}
             class:list={[
-              "px-3 py-1.5 text-lg font-bold transition-colors hover:text-coral",
+              "px-3 py-1.5 text-lg font-bold transition-colors hover:text-rose",
               isCurrent(link.href) &&
-                "text-coral underline decoration-2 underline-offset-8",
+                "text-rose underline decoration-2 underline-offset-8",
             ]}
           >
             {link.label}
