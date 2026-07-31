@@ -2,8 +2,8 @@
 import { Image } from "astro:assets";
 
 import Layout from "../layouts/Layout.astro";
-import FiveRings from "../components/FiveRings.astro";
 
+import FiveRings from "../assets/fiveRings.svg";
 import stonebloomImg from "../assets/photos/stonebloom.jpg";
 import revikImg from "../assets/photos/revik-2.jpg";
 import mountainsImg from "../assets/photos/mountains.jpg";
@@ -90,7 +90,7 @@ const chapters = [
         <blockquote
           class="border-[3px] border-ink bg-paper p-6 shadow-sticker"
         >
-          <FiveRings class="text-rose" />
+          <FiveRings width={56} height={56} class="text-rose" />
 
           <p class="mt-4 text-2xl font-extrabold leading-tight [font-stretch:112%]">
             "Know the way broadly, and you see it in all things."
