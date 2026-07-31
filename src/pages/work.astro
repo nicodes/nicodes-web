@@ -1,7 +1,7 @@
 ---
 import Layout from "../layouts/Layout.astro";
 import Tux from "../assets/tux.svg";
-import { DemoFrame } from "../components/DemoFrame";
+import DemoFrame from "../components/DemoFrame.astro";
 import { projects } from "../data/projects";
 ---
 
@@ -91,7 +91,6 @@ import { projects } from "../data/projects";
               url={project.url}
               name={project.name}
               panel={i % 2 === 0 ? "bg-mint" : "bg-cream"}
-              client:visible
             />
           </div>
 
