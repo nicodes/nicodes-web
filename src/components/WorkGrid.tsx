@@ -112,8 +112,7 @@ export const WorkGrid = component$<Props>(({ projects, categories }) => {
             </div>
 
             <div class="flex flex-1 flex-col p-5">
-              <p class="text-lg font-bold">{project.tagline}</p>
-              <p class="mt-2 text-ink-soft">{project.blurb}</p>
+              <p class="text-ink-soft">{project.blurb}</p>
 
               <div class="mt-auto flex flex-wrap gap-3 pt-6">
                 <a
