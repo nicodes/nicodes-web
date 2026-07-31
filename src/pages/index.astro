@@ -49,26 +49,16 @@ const accentClass = {
       class="relative mx-auto flex max-w-6xl flex-col items-center gap-12 px-4 py-16 sm:px-6 sm:py-20 lg:flex-row lg:justify-between lg:py-24"
     >
       <div class="max-w-xl animate-rise">
-        <p
-          class="inline-block border-[3px] border-ink bg-paper px-3 py-1 text-sm font-bold uppercase tracking-[0.14em]"
+        <!-- Fluid so the one line can never clip: at 320px it still fits. -->
+        <h1
+          class="whitespace-nowrap text-[clamp(2.5rem,13vw,4.5rem)] display-tight"
         >
-          Boulder, Colorado
-        </p>
-
-        <h1 class="mt-6 text-6xl sm:text-7xl lg:text-8xl display-tight">
-          Hi, I'm<br />
-          <span class="text-coral">Nico</span>.
+          Hi, I'm <span class="text-coral">Nico</span>.
         </h1>
 
         <p class="mt-6 text-xl font-semibold sm:text-2xl">
           I build for the browser, the terminal, and the odd video game in
           between.
-        </p>
-
-        <p class="mt-4 text-lg text-ink-soft">
-          Senior software engineer at GitHub, ten years in, and an independent
-          developer the rest of the time — self-hosted infrastructure, AI
-          tooling, developer CLIs and games that actually ship.
         </p>
 
         <div class="mt-8 flex flex-wrap gap-4">
