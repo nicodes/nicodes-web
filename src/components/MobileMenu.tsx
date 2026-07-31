@@ -1,20 +1,19 @@
 import { component$, useSignal, useStyles$ } from "@builder.io/qwik";
 
-interface Link {
-  href: string;
-  label: string;
-  external?: boolean;
-}
+import type { Link } from "../data/nav";
 
 interface Props {
-  links: Link[];
+  pages: Link[];
+  contact: Link[];
 }
 
 /**
- * The small-screen menu. The desktop nav is plain markup in Header.astro — this
- * island exists only because a panel that opens and closes needs a handler.
+ * The small-screen menu. The desktop nav is plain markup in Header.astro —
+ * this island exists only because a panel that opens and closes needs a
+ * handler. It carries the contact links inline rather than behind a second
+ * dropdown, because there is no header space to save on a phone.
  */
-export const MobileMenu = component$<Props>(({ links }) => {
+export const MobileMenu = component$<Props>(({ pages, contact }) => {
   const open = useSignal(false);
 
   useStyles$(`
@@ -70,27 +69,34 @@ export const MobileMenu = component$<Props>(({ links }) => {
           class="menu-panel absolute left-0 right-0 top-full z-40 border-y-[3px] border-ink bg-paper"
         >
           <nav class="flex flex-col">
-            {links.map((link) => (
+            {pages.map((link) => (
+              <a
+                key={link.href}
+                href={link.href}
+                onClick$={() => (open.value = false)}
+                class="border-b-2 border-ink/15 px-5 py-4 text-2xl font-extrabold [font-stretch:118%] hover:text-coral"
+              >
+                {link.label}
+              </a>
+            ))}
+
+            <p class="bg-cream px-5 py-2 text-sm font-extrabold uppercase tracking-[0.16em]">
+              Say hello
+            </p>
+
+            {contact.map((link) => (
               <a
                 key={link.href}
                 href={link.href}
                 target={link.external ? "_blank" : undefined}
                 rel={link.external ? "noopener noreferrer" : undefined}
                 onClick$={() => (open.value = false)}
-                class="border-b-2 border-ink/15 px-5 py-4 text-2xl font-extrabold [font-stretch:118%] hover:bg-gold"
+                class="border-b-2 border-ink/15 px-5 py-3.5 text-lg font-bold hover:text-coral"
               >
                 {link.label}
                 {link.external && <span aria-hidden="true"> ↗</span>}
               </a>
             ))}
-
-            <a
-              href="mailto:nicozessoules@gmail.com"
-              onClick$={() => (open.value = false)}
-              class="bg-coral px-5 py-4 text-2xl font-extrabold text-paper [font-stretch:118%]"
-            >
-              Say hello
-            </a>
           </nav>
         </div>
       )}
