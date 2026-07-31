@@ -59,7 +59,12 @@ import { projects } from "../data/projects";
               i % 2 === 0 ? "lg:col-start-1" : "lg:col-start-2",
             ]}
           >
-            <DemoFrame url={project.url} name={project.name} client:visible />
+            <DemoFrame
+              url={project.url}
+              name={project.name}
+              panel={i % 2 === 0 ? "bg-mint" : "bg-cream"}
+              client:visible
+            />
           </div>
 
           <div
