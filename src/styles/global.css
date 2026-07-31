@@ -140,42 +140,6 @@
   }
 }
 
-/*
-  Tux is one silhouette, so the colour has to come from the gradient he is
-  filled with. The two stops swap ends, which washes ink through rose and back.
-  Base stop-colors live here too, so with motion reduced he holds a static
-  ink-to-rose gradient rather than disappearing.
-*/
-@keyframes tux-a {
-  0%,
-  100% {
-    stop-color: var(--color-ink);
-  }
-  50% {
-    stop-color: var(--color-rose);
-  }
-}
-
-@keyframes tux-b {
-  0%,
-  100% {
-    stop-color: var(--color-rose);
-  }
-  50% {
-    stop-color: var(--color-ink);
-  }
-}
-
-.tux-stop-a {
-  stop-color: var(--color-ink);
-  animation: tux-a 7s ease-in-out infinite;
-}
-
-.tux-stop-b {
-  stop-color: var(--color-rose);
-  animation: tux-b 7s ease-in-out infinite;
-}
-
 @keyframes spin-rings {
   to {
     transform: rotate(360deg);
