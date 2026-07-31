@@ -41,11 +41,11 @@ export const projects: Project[] = [
     accent: "gold",
   },
   {
-    name: "ClearImg",
-    url: "https://www.clearimg.ai",
+    name: "Cazper",
+    url: "https://www.cazper.ai",
     tagline: "Sprites with real transparency",
     blurb:
-      "Each sprite is generated twice in one image — once over white, once over black — and reconciling that pair recovers the alpha channel. No manual cutouts, no fringing.",
+      "Describe a sprite sheet and get the assets back as individual PNGs with a real alpha channel — soft edges, glass and glow intact. No manual cutouts, no fringing.",
     category: "apps",
     stack: ["Go", "Gin", "OpenAI", "Expo"],
     featured: true,
