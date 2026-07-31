@@ -1,0 +1,48 @@
+---
+import Layout from "../layouts/Layout.astro";
+---
+
+<Layout
+  title="Not found — Nico Zessoules"
+  description="That page does not exist."
+  accent="var(--color-coral)"
+>
+  <section class="relative overflow-hidden">
+    <div class="halftone pointer-events-none absolute inset-0"></div>
+
+    <div
+      class="relative mx-auto flex max-w-3xl flex-col items-start px-4 py-24 sm:px-6 sm:py-32"
+    >
+      <p
+        class="border-[3px] border-ink bg-coral px-3 py-1 text-sm font-extrabold uppercase tracking-[0.16em] text-paper"
+      >
+        Error 404
+      </p>
+
+      <h1 class="mt-6 text-7xl sm:text-8xl display-tight">
+        Nothing<br />here.
+      </h1>
+
+      <p class="mt-6 text-xl font-semibold">
+        The page you asked for does not exist — or it did, once, on a version of
+        this site that no longer does.
+      </p>
+
+      <div class="mt-8 flex flex-wrap gap-4">
+        <a
+          href="/"
+          class="border-[3px] border-ink bg-rose px-6 py-3 text-lg font-extrabold text-paper shadow-button transition-transform hover:-translate-y-1"
+        >
+          Back home
+        </a>
+
+        <a
+          href="/work"
+          class="border-[3px] border-ink bg-paper px-6 py-3 text-lg font-extrabold shadow-button transition-transform hover:-translate-y-1"
+        >
+          See the work
+        </a>
+      </div>
+    </div>
+  </section>
+</Layout>

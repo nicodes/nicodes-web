@@ -1,21 +1,83 @@
 ---
-import BaseLayout from "../layouts/baseLayout/BaseLayout.astro";
-import Hero from "../components/hero/Hero.astro";
+import { Image } from "astro:assets";
 
-import styles from "./index.module.scss";
+import Layout from "../layouts/Layout.astro";
+
+import nicoImg from "../assets/nico.png";
 ---
 
-<BaseLayout type="fixed" title="Nicodes" class={styles.pageContainer}>
-  <Hero />
-</BaseLayout>
+<Layout
+  title="Nico Zessoules — engineer, tool-maker, game builder"
+  description="Nico Zessoules is a software engineer and an independent developer in Boulder, Colorado, building web apps, developer tools and games."
+  accent="var(--color-rose)"
+>
+  <!--
+    The whole page. The header measures ~4.5rem with its accent rule, so the
+    hero fills the first screen exactly and the footer starts below it.
+  -->
+  <section
+    class="relative flex min-h-[calc(100svh-4.5rem)] items-center overflow-hidden border-b-[3px] border-ink"
+  >
+    <div class="halftone pointer-events-none absolute inset-0"></div>
 
-<script>
-  import { headerBorderAnimate } from "../components/header/header";
+    <div
+      class="relative mx-auto flex w-full max-w-3xl flex-col items-center gap-8 px-4 py-12 text-center sm:gap-10 sm:px-6 sm:py-16"
+    >
+      <!-- Fluid so the one line can never clip: at 320px it still fits. -->
+      <h1
+        class="animate-rise whitespace-nowrap text-[clamp(2.5rem,13vw,4.5rem)] display-tight"
+      >
+        Hi, I'm <span class="text-rose">Nico</span>
+      </h1>
 
-  headerBorderAnimate("open");
+      <div class="relative animate-rise [animation-delay:120ms]">
+        <!-- Flat layered shapes, the way the portrait itself is built. -->
+        <div
+          class="absolute -right-4 -top-4 h-full w-full border-[3px] border-ink bg-rose"
+          aria-hidden="true"
+        >
+        </div>
+        <div
+          class="absolute -bottom-4 -left-4 h-full w-full border-[3px] border-ink bg-gold"
+          aria-hidden="true"
+        >
+        </div>
 
-  document.addEventListener(
-    "astro:after-swap",
-    () => window.location.pathname === "/" && headerBorderAnimate("open")
-  );
-</script>
+        <Image
+          src={nicoImg}
+          alt="Illustrated portrait of Nico in a cap and heart-shaped glasses"
+          width={360}
+          height={360}
+          class="relative block h-[240px] w-[240px] border-[3px] border-ink object-cover sm:h-[320px] sm:w-[320px]"
+          loading="eager"
+        />
+
+      </div>
+
+      <p
+        class="max-w-xl animate-rise text-xl font-semibold [animation-delay:240ms] sm:text-2xl"
+      >
+        I build for the browser, the terminal, and the odd video game in
+        between
+      </p>
+
+      <div
+        class="flex animate-rise flex-wrap justify-center gap-4 [animation-delay:360ms]"
+      >
+        <a
+          href="/work"
+          class="border-[3px] border-ink bg-rose px-6 py-3 text-lg font-extrabold text-paper shadow-button transition-transform hover:-translate-y-1 active:translate-x-[4px] active:translate-y-[4px] active:shadow-none"
+        >
+          My work
+        </a>
+
+        <a
+          href="/about"
+          class="border-[3px] border-ink bg-gold px-6 py-3 text-lg font-extrabold shadow-button transition-transform hover:-translate-y-1 active:translate-x-[4px] active:translate-y-[4px] active:shadow-none"
+        >
+          About me
+        </a>
+      </div>
+    </div>
+  </section>
+</Layout>
