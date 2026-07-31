@@ -20,39 +20,16 @@ import nicoImg from "../assets/nico.png";
     <div class="halftone pointer-events-none absolute inset-0"></div>
 
     <div
-      class="relative mx-auto flex w-full max-w-6xl flex-col items-center gap-12 px-4 py-16 sm:px-6 sm:py-20 lg:flex-row lg:justify-between lg:py-24"
+      class="relative mx-auto flex w-full max-w-3xl flex-col items-center gap-8 px-4 py-12 text-center sm:gap-10 sm:px-6 sm:py-16"
     >
-      <div class="max-w-xl animate-rise">
-        <!-- Fluid so the one line can never clip: at 320px it still fits. -->
-        <h1
-          class="whitespace-nowrap text-[clamp(2.5rem,13vw,4.5rem)] display-tight"
-        >
-          Hi, I'm <span class="text-coral">Nico</span>.
-        </h1>
+      <!-- Fluid so the one line can never clip: at 320px it still fits. -->
+      <h1
+        class="animate-rise whitespace-nowrap text-[clamp(2.5rem,13vw,4.5rem)] display-tight"
+      >
+        Hi, I'm <span class="text-coral">Nico</span>.
+      </h1>
 
-        <p class="mt-6 text-xl font-semibold sm:text-2xl">
-          I build for the browser, the terminal, and the odd video game in
-          between.
-        </p>
-
-        <div class="mt-8 flex flex-wrap gap-4">
-          <a
-            href="/work"
-            class="border-[3px] border-ink bg-coral px-6 py-3 text-lg font-extrabold text-paper shadow-sticker transition-transform hover:-translate-y-1 active:translate-x-[4px] active:translate-y-[4px] active:shadow-none"
-          >
-            See the work
-          </a>
-
-          <a
-            href="/about"
-            class="border-[3px] border-ink bg-paper px-6 py-3 text-lg font-extrabold shadow-sticker transition-transform hover:-translate-y-1 active:translate-x-[4px] active:translate-y-[4px] active:shadow-none"
-          >
-            Who I am
-          </a>
-        </div>
-      </div>
-
-      <div class="relative shrink-0 animate-rise [animation-delay:150ms]">
+      <div class="relative animate-rise [animation-delay:120ms]">
         <!-- Flat layered shapes, the way the portrait itself is built. -->
         <div
           class="absolute -right-4 -top-4 h-full w-full border-[3px] border-ink bg-coral"
@@ -60,7 +37,7 @@ import nicoImg from "../assets/nico.png";
         >
         </div>
         <div
-          class="absolute -bottom-4 -left-4 h-full w-full border-[3px] border-ink bg-olive"
+          class="absolute -bottom-4 -left-4 h-full w-full border-[3px] border-ink bg-gold"
           aria-hidden="true"
         >
         </div>
@@ -70,7 +47,7 @@ import nicoImg from "../assets/nico.png";
           alt="Illustrated portrait of Nico in a cap and heart-shaped glasses"
           width={360}
           height={360}
-          class="relative block h-[280px] w-[280px] border-[3px] border-ink object-cover sm:h-[360px] sm:w-[360px]"
+          class="relative block h-[240px] w-[240px] border-[3px] border-ink object-cover sm:h-[320px] sm:w-[320px]"
           loading="eager"
         />
 
@@ -79,6 +56,31 @@ import nicoImg from "../assets/nico.png";
         >
           ni.codes
         </p>
+      </div>
+
+      <p
+        class="max-w-xl animate-rise text-xl font-semibold [animation-delay:240ms] sm:text-2xl"
+      >
+        I build for the browser, the terminal, and the odd video game in
+        between.
+      </p>
+
+      <div
+        class="flex animate-rise flex-wrap justify-center gap-4 [animation-delay:360ms]"
+      >
+        <a
+          href="/work"
+          class="border-[3px] border-ink bg-coral px-6 py-3 text-lg font-extrabold text-paper shadow-sticker transition-transform hover:-translate-y-1 active:translate-x-[4px] active:translate-y-[4px] active:shadow-none"
+        >
+          See the work
+        </a>
+
+        <a
+          href="/about"
+          class="border-[3px] border-ink bg-gold px-6 py-3 text-lg font-extrabold shadow-sticker transition-transform hover:-translate-y-1 active:translate-x-[4px] active:translate-y-[4px] active:shadow-none"
+        >
+          Who I am
+        </a>
       </div>
     </div>
   </section>
