@@ -33,20 +33,42 @@ import { projects } from "../data/projects";
           i % 2 === 0 ? "bg-cream" : "",
         ]}
       >
+        {/*
+          Three grid children so the stack can be ordered: name, demo, then
+          words. On lg the demo spans both rows down one side and the name
+          sits directly above the text on the other.
+        */}
         <div
           class:list={[
-            "mx-auto flex max-w-6xl flex-col items-center gap-10 px-4 py-16 sm:px-6 sm:py-20 lg:gap-16",
-            i % 2 === 0 ? "lg:flex-row" : "lg:flex-row-reverse",
+            "mx-auto grid max-w-6xl gap-6 px-4 py-16 sm:px-6 sm:py-20 lg:grid-cols-[540px_1fr] lg:gap-x-16 lg:gap-y-4",
+            i % 2 !== 0 && "lg:grid-cols-[1fr_540px]",
           ]}
         >
-          <div class="w-full shrink-0 lg:w-[540px]">
+          <h2
+            class:list={[
+              "text-5xl lg:row-start-1 lg:self-end",
+              i % 2 === 0 ? "lg:col-start-2" : "lg:col-start-1",
+            ]}
+          >
+            {project.name}
+          </h2>
+
+          <div
+            class:list={[
+              "w-full lg:row-span-2 lg:row-start-1 lg:self-center",
+              i % 2 === 0 ? "lg:col-start-1" : "lg:col-start-2",
+            ]}
+          >
             <DemoFrame url={project.url} name={project.name} client:visible />
           </div>
 
-          <div class="max-w-xl">
-            <h2 class="text-5xl">{project.name}</h2>
-
-            <p class="mt-4 text-xl font-semibold">{project.blurb}</p>
+          <div
+            class:list={[
+              "max-w-xl lg:row-start-2 lg:self-start",
+              i % 2 === 0 ? "lg:col-start-2" : "lg:col-start-1",
+            ]}
+          >
+            <p class="text-xl font-semibold">{project.blurb}</p>
 
             <div class="mt-6 flex flex-wrap gap-6">
               <a
