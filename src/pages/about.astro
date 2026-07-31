@@ -2,7 +2,6 @@
 import { Image } from "astro:assets";
 
 import Layout from "../layouts/Layout.astro";
-import Marquee from "../components/Marquee.astro";
 
 import fiveRingsImg from "../assets/fiveRings.png";
 import stonebloomImg from "../assets/photos/stonebloom.jpg";
@@ -81,19 +80,11 @@ const chapters = [
     <div class="relative mx-auto max-w-6xl px-4 py-16 sm:px-6 sm:py-20">
       <h1 class="text-6xl sm:text-7xl display-tight">Who I am</h1>
 
-      <div class="mt-8 grid gap-10 lg:grid-cols-[1.2fr_1fr]">
-        <div>
-          <p class="max-w-2xl text-xl font-semibold">
-            I'm a senior software engineer at GitHub and an independent web
-            developer, ten years into the profession and still delighted by it.
-          </p>
-
-          <p class="mt-4 max-w-2xl text-lg text-ink-soft">
-            Code is not the whole story, though. What follows is the rest of it —
-            the hobbies that shaped how I work, and why I think they belong on an
-            engineer's site.
-          </p>
-        </div>
+      <div class="mt-8 grid items-start gap-10 lg:grid-cols-[1.2fr_1fr]">
+        <p class="max-w-2xl text-xl font-semibold">
+          I'm a senior software engineer at GitHub and an independent web
+          developer, ten years into the profession and still delighted by it.
+        </p>
 
         <blockquote
           class="border-[3px] border-ink bg-paper p-6 shadow-sticker"
@@ -122,8 +113,6 @@ const chapters = [
       </div>
     </div>
   </section>
-
-  <Marquee items={["Balance", "Altitude", "Rhythm", "Curiosity"]} />
 
   {
     chapters.map((chapter, i) => (
