@@ -38,7 +38,7 @@ export const ContactMenu = component$<Props>(({ links }) => {
         aria-expanded={open.value}
         aria-controls="contact-menu"
         onClick$={() => (open.value = !open.value)}
-        class="flex items-center gap-2 border-[3px] border-ink bg-rose px-4 py-1.5 text-lg font-bold text-paper shadow-sticker-sm transition-transform hover:-translate-y-0.5 active:translate-x-[2px] active:translate-y-[2px] active:shadow-none"
+        class="flex items-center gap-2 border-[3px] border-ink bg-rose px-4 py-1.5 text-lg font-bold text-paper shadow-sticker transition-transform hover:-translate-y-0.5 active:translate-x-[4px] active:translate-y-[4px] active:shadow-none"
       >
         Say hi
         <span

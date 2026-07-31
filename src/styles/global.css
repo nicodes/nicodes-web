@@ -26,8 +26,6 @@
 
   /* Hard offset shadows only. A blur would break the printed-sticker feel. */
   --shadow-sticker: 6px 6px 0 var(--color-ink);
-  --shadow-sticker-sm: 4px 4px 0 var(--color-ink);
-  --shadow-sticker-lg: 10px 10px 0 var(--color-ink);
 }
 
 @layer base {
