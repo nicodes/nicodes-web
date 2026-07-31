@@ -130,11 +130,12 @@ const chapters = [
           ]}
         >
           <div class="relative shrink-0">
-            <!-- Tan reads on the cream rows; on the mint ones it goes olive. -->
+            <!-- A darker shade of whatever the row is: cream sits under tan at
+                 1.73:1, mint under mint-deep at 1.74:1 — the same step. -->
             <div
               class:list={[
                 "absolute inset-0 translate-x-3 translate-y-3 border-[3px] border-ink",
-                i % 2 === 0 ? "bg-tan" : "bg-olive",
+                i % 2 === 0 ? "bg-tan" : "bg-mint-deep",
               ]}
               aria-hidden="true"
             />
