@@ -68,12 +68,9 @@ export const WorkGrid = component$<Props>(({ projects, categories }) => {
             class="flex flex-col border-[3px] border-ink bg-paper shadow-sticker"
           >
             <div
-              class={`${accentClass[project.accent]} flex items-baseline justify-between gap-3 border-b-[3px] border-ink px-5 py-4`}
+              class={`${accentClass[project.accent]} border-b-[3px] border-ink px-5 py-4`}
             >
               <h2 class="text-3xl">{project.name}</h2>
-              <span class="text-sm font-bold uppercase tracking-widest">
-                {project.category}
-              </span>
             </div>
 
             {/* Browser chrome, then the demo it frames. */}
@@ -117,17 +114,6 @@ export const WorkGrid = component$<Props>(({ projects, categories }) => {
             <div class="flex flex-1 flex-col p-5">
               <p class="text-lg font-bold">{project.tagline}</p>
               <p class="mt-2 text-ink-soft">{project.blurb}</p>
-
-              <ul class="mt-4 flex flex-wrap gap-2">
-                {project.stack.map((tech) => (
-                  <li
-                    key={tech}
-                    class="border-2 border-ink px-2 py-0.5 text-sm font-semibold"
-                  >
-                    {tech}
-                  </li>
-                ))}
-              </ul>
 
               <div class="mt-auto flex flex-wrap gap-3 pt-6">
                 <a
