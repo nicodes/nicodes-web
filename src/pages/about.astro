@@ -2,12 +2,12 @@
 import { Image } from "astro:assets";
 
 import Layout from "../layouts/Layout.astro";
+import FiveRings from "../components/FiveRings.astro";
 
-import fiveRingsImg from "../assets/fiveRings.png";
 import stonebloomImg from "../assets/photos/stonebloom.jpg";
-import revikImg from "../assets/photos/revik.webp";
+import revikImg from "../assets/photos/revik-2.jpg";
 import mountainsImg from "../assets/photos/mountains.jpg";
-import jugglingImg from "../assets/photos/juggling.jpg";
+import jugglingImg from "../assets/photos/juggling-2.jpg";
 import guitarImg from "../assets/photos/guitar.jpg";
 
 const chapters = [
@@ -15,7 +15,6 @@ const chapters = [
     title: "Balancing",
     image: stonebloomImg,
     alt: "A tall stack of balanced river stones on a rock beside a creek",
-    accent: "bg-rose text-paper",
     paragraphs: [
       "Balance is a guiding principle, and this sculpture is one of many I have built. Each one is a negotiation with gravity and whatever rocks the creek happened to leave.",
       "The practice taught me to fight entropy and work with the materials actually in front of me — which is most of what engineering turns out to be.",
@@ -28,8 +27,7 @@ const chapters = [
   {
     title: "Game dev",
     image: revikImg,
-    alt: "Fantasy game artwork of an armoured swordfish knight underwater",
-    accent: "bg-coral text-paper",
+    alt: "Fantasy game artwork of an armoured fox in a red cloak overlooking a hex-tiled world",
     paragraphs: [
       "I have an active imagination. Engineering is creative work with strict rules, which I love — but sometimes the rules should be mine.",
       "That became Avior Studio: a terminal arcade, a Godot addon manager, a linter, and a couple of games still behind the curtain.",
@@ -40,7 +38,6 @@ const chapters = [
     title: "Altitude",
     image: mountainsImg,
     alt: "Nico holding his husky on a mountain ridge in Colorado",
-    accent: "bg-mint-deep text-paper",
     paragraphs: [
       "Projects are fun, but perspective comes from getting away from them. Most weekends that means hiking or climbing, usually with my dog Anastasia.",
       "A reminder, in case you need me up there: there may be no cell service at the summit.",
@@ -49,8 +46,7 @@ const chapters = [
   {
     title: "Juggling",
     image: jugglingImg,
-    alt: "Nico juggling three white clubs in a park",
-    accent: "bg-gold text-ink",
+    alt: "Nico juggling glowing LED clubs at night",
     paragraphs: [
       "Juggling is a form of meditation. Focusing on any single club is how you drop it; you clear your mind and trust the pattern.",
       "It is also the best training I have found for running several time-critical things at once — guide each element, then let the orchestration do its job.",
@@ -60,7 +56,6 @@ const chapters = [
     title: "Music",
     image: guitarImg,
     alt: "Nico playing an acoustic guitar on a wooden deck",
-    accent: "bg-olive text-paper",
     paragraphs: [
       "One of my oldest passions. Piano since childhood, saxophone through jazz and marching band, guitar on the porch.",
       "Composition is my favourite part — I have written a pile of my own songs and have finally started recording them properly.",
@@ -95,13 +90,7 @@ const chapters = [
         <blockquote
           class="border-[3px] border-ink bg-paper p-6 shadow-sticker"
         >
-          <Image
-            src={fiveRingsImg}
-            alt=""
-            width={56}
-            height={56}
-            aria-hidden="true"
-          />
+          <FiveRings class="text-rose" />
 
           <p class="mt-4 text-2xl font-extrabold leading-tight [font-stretch:112%]">
             "Know the way broadly, and you see it in all things."
@@ -149,16 +138,7 @@ const chapters = [
           </div>
 
           <div class="max-w-xl">
-            <p
-              class:list={[
-                "inline-block border-[3px] border-ink px-3 py-1 text-sm font-extrabold uppercase tracking-[0.16em]",
-                chapter.accent,
-              ]}
-            >
-              0{i + 1}
-            </p>
-
-            <h2 class="mt-4 text-5xl">{chapter.title}</h2>
+            <h2 class="text-5xl">{chapter.title}</h2>
 
             {chapter.paragraphs.map((paragraph) => (
               <p class="mt-4 text-lg text-ink-soft">{paragraph}</p>
