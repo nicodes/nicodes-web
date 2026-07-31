@@ -1,0 +1,187 @@
+---
+import { Image } from "astro:assets";
+
+import Layout from "../layouts/Layout.astro";
+import Marquee from "../components/Marquee.astro";
+
+import fiveRingsImg from "../assets/fiveRings.png";
+import stonebloomImg from "../assets/photos/stonebloom.jpg";
+import revikImg from "../assets/photos/revik.webp";
+import mountainsImg from "../assets/photos/mountains.jpg";
+import jugglingImg from "../assets/photos/juggling.jpg";
+import guitarImg from "../assets/photos/guitar.jpg";
+
+const chapters = [
+  {
+    title: "Balancing",
+    image: stonebloomImg,
+    alt: "A tall stack of balanced river stones on a rock beside a creek",
+    accent: "bg-coral text-paper",
+    paragraphs: [
+      "Balance is a guiding principle, and this sculpture is one of many I have built. Each one is a negotiation with gravity and whatever rocks the creek happened to leave.",
+      "The practice taught me to fight entropy and work with the materials actually in front of me — which is most of what engineering turns out to be.",
+    ],
+    link: {
+      href: "https://www.instagram.com/stonebloom",
+      label: "@stonebloom on Instagram",
+    },
+  },
+  {
+    title: "Game dev",
+    image: revikImg,
+    alt: "Fantasy game artwork of an armoured swordfish knight underwater",
+    accent: "bg-rose text-paper",
+    paragraphs: [
+      "I have an active imagination. Engineering is creative work with strict rules, which I love — but sometimes the rules should be mine.",
+      "That became Avior Studio: a terminal arcade, a Godot addon manager, a linter, and a couple of games still behind the curtain.",
+    ],
+    link: { href: "https://www.avior.studio", label: "avior.studio" },
+  },
+  {
+    title: "Altitude",
+    image: mountainsImg,
+    alt: "Nico holding his husky on a mountain ridge in Colorado",
+    accent: "bg-mint-deep text-paper",
+    paragraphs: [
+      "Projects are fun, but perspective comes from getting away from them. Most weekends that means hiking or climbing, usually with my dog Anastasia.",
+      "A reminder, in case you need me up there: there may be no cell service at the summit.",
+    ],
+  },
+  {
+    title: "Juggling",
+    image: jugglingImg,
+    alt: "Nico juggling three white clubs in a park",
+    accent: "bg-gold text-ink",
+    paragraphs: [
+      "Juggling is a form of meditation. Focusing on any single club is how you drop it; you clear your mind and trust the pattern.",
+      "It is also the best training I have found for running several time-critical things at once — guide each element, then let the orchestration do its job.",
+    ],
+  },
+  {
+    title: "Music",
+    image: guitarImg,
+    alt: "Nico playing an acoustic guitar on a wooden deck",
+    accent: "bg-olive text-paper",
+    paragraphs: [
+      "One of my oldest passions. Piano since childhood, saxophone through jazz and marching band, guitar on the porch.",
+      "Composition is my favourite part — I have written a pile of my own songs and have finally started recording them properly.",
+    ],
+  },
+];
+---
+
+<Layout
+  title="About — Nico Zessoules"
+  description="Nico Zessoules: senior software engineer at GitHub, stone balancer, juggler, musician and game developer in Boulder, Colorado."
+  accent="var(--color-rose)"
+>
+  <section class="relative overflow-hidden border-b-[3px] border-ink">
+    <div class="halftone pointer-events-none absolute inset-0"></div>
+
+    <div class="relative mx-auto max-w-6xl px-4 py-16 sm:px-6 sm:py-20">
+      <h1 class="text-6xl sm:text-7xl display-tight">Who I am</h1>
+
+      <div class="mt-8 grid gap-10 lg:grid-cols-[1.2fr_1fr]">
+        <div>
+          <p class="max-w-2xl text-xl font-semibold">
+            I'm a senior software engineer at GitHub and an independent web
+            developer, ten years into the profession and still delighted by it.
+          </p>
+
+          <p class="mt-4 max-w-2xl text-lg text-ink-soft">
+            Code is not the whole story, though. What follows is the rest of it —
+            the hobbies that shaped how I work, and why I think they belong on an
+            engineer's site.
+          </p>
+        </div>
+
+        <blockquote
+          class="border-[3px] border-ink bg-paper p-6 shadow-sticker"
+        >
+          <Image
+            src={fiveRingsImg}
+            alt=""
+            width={56}
+            height={56}
+            aria-hidden="true"
+          />
+
+          <p class="mt-4 text-2xl font-extrabold leading-tight [font-stretch:112%]">
+            "Know the way broadly, and you see it in all things."
+          </p>
+
+          <footer class="mt-4 font-bold text-ink-soft">
+            — Miyamoto Musashi, <cite>The Book of Five Rings</cite>
+          </footer>
+
+          <p class="mt-4 text-ink-soft">
+            A foundation for how I live. Anything I do well makes me better at
+            everything else, especially when I love doing it.
+          </p>
+        </blockquote>
+      </div>
+    </div>
+  </section>
+
+  <Marquee items={["Balance", "Altitude", "Rhythm", "Curiosity"]} />
+
+  {
+    chapters.map((chapter, i) => (
+      <section
+        class:list={[
+          "border-b-[3px] border-ink",
+          i % 2 === 0 ? "bg-cream" : "",
+        ]}
+      >
+        <div
+          class:list={[
+            "mx-auto flex max-w-6xl flex-col items-center gap-10 px-4 py-16 sm:px-6 sm:py-20 lg:gap-16",
+            i % 2 === 0 ? "lg:flex-row" : "lg:flex-row-reverse",
+          ]}
+        >
+          <div class="relative shrink-0">
+            <div
+              class="absolute inset-0 translate-x-3 translate-y-3 border-[3px] border-ink bg-tan"
+              aria-hidden="true"
+            />
+            <Image
+              src={chapter.image}
+              alt={chapter.alt}
+              width={460}
+              height={460}
+              class="relative block h-[280px] w-[280px] border-[3px] border-ink object-cover sm:h-[380px] sm:w-[380px]"
+            />
+          </div>
+
+          <div class="max-w-xl">
+            <p
+              class:list={[
+                "inline-block border-[3px] border-ink px-3 py-1 text-sm font-extrabold uppercase tracking-[0.16em]",
+                chapter.accent,
+              ]}
+            >
+              0{i + 1}
+            </p>
+
+            <h2 class="mt-4 text-5xl">{chapter.title}</h2>
+
+            {chapter.paragraphs.map((paragraph) => (
+              <p class="mt-4 text-lg text-ink-soft">{paragraph}</p>
+            ))}
+
+            {chapter.link && (
+              <a
+                href={chapter.link.href}
+                target="_blank"
+                rel="noopener noreferrer"
+                class="mt-6 inline-block border-b-[3px] border-ink text-lg font-extrabold hover:border-coral hover:text-coral"
+              >
+                {chapter.link.label} ↗
+              </a>
+            )}
+          </div>
+        </div>
+      </section>
+    ))
+  }
+</Layout>

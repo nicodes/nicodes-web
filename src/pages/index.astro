@@ -1,12 +1,264 @@
 ---
-import { Counter } from '../components/Counter';
-import Title from '../components/Title.astro';
-import Layout from '../layouts/Layout.astro';
+import { Image } from "astro:assets";
+
+import Layout from "../layouts/Layout.astro";
+import Marquee from "../components/Marquee.astro";
+import { featured } from "../data/projects";
+
+import nicoImg from "../assets/nico.png";
+import jugglingImg from "../assets/photos/juggling.jpg";
+import stonebloomImg from "../assets/photos/stonebloom.jpg";
+import mountainsImg from "../assets/photos/mountains.jpg";
+
+const practice = [
+  {
+    title: "Product engineering",
+    body: "Ten years of it, currently at GitHub. Web apps that hold up once real people are using them.",
+    accent: "bg-coral text-paper",
+  },
+  {
+    title: "Developer tools",
+    body: "CLIs, linters, deploy pipelines, package managers. If a chore repeats, I would rather delete it.",
+    accent: "bg-gold text-ink",
+  },
+  {
+    title: "Games & sound",
+    body: "A Godot studio, a terminal arcade, a stereo synthesizer. The loud end of the workshop.",
+    accent: "bg-rose text-paper",
+  },
+];
+
+const accentClass = {
+  coral: "bg-coral",
+  gold: "bg-gold",
+  rose: "bg-rose",
+  olive: "bg-olive",
+  "mint-deep": "bg-mint-deep",
+} as const;
 ---
 
-<Layout>
-	<main class="flex flex-col items-center gap-12 px-6 py-16">
-		<Title />
-		<Counter client:visible />
-	</main>
+<Layout
+  title="Nico Zessoules — engineer, tool-maker, game builder"
+  description="Nico Zessoules is a senior software engineer at GitHub and an independent developer in Boulder, Colorado, building web apps, developer tools and games."
+>
+  <!-- Hero -->
+  <section class="relative overflow-hidden border-b-[3px] border-ink">
+    <div class="halftone pointer-events-none absolute inset-0"></div>
+
+    <div
+      class="relative mx-auto flex max-w-6xl flex-col items-center gap-12 px-4 py-16 sm:px-6 sm:py-20 lg:flex-row lg:justify-between lg:py-24"
+    >
+      <div class="max-w-xl animate-rise">
+        <p
+          class="inline-block border-[3px] border-ink bg-paper px-3 py-1 text-sm font-bold uppercase tracking-[0.14em]"
+        >
+          Boulder, Colorado
+        </p>
+
+        <h1 class="mt-6 text-6xl sm:text-7xl lg:text-8xl display-tight">
+          Hi, I'm<br />
+          <span class="text-coral">Nico</span>.
+        </h1>
+
+        <p class="mt-6 text-xl font-semibold sm:text-2xl">
+          I build for the browser, the terminal, and the odd video game in
+          between.
+        </p>
+
+        <p class="mt-4 text-lg text-ink-soft">
+          Senior software engineer at GitHub, ten years in, and an independent
+          developer the rest of the time — self-hosted infrastructure, AI
+          tooling, developer CLIs and games that actually ship.
+        </p>
+
+        <div class="mt-8 flex flex-wrap gap-4">
+          <a
+            href="/work"
+            class="border-[3px] border-ink bg-coral px-6 py-3 text-lg font-extrabold text-paper shadow-sticker transition-transform hover:-translate-y-1 active:translate-x-[4px] active:translate-y-[4px] active:shadow-none"
+          >
+            See the work
+          </a>
+
+          <a
+            href="/about"
+            class="border-[3px] border-ink bg-paper px-6 py-3 text-lg font-extrabold shadow-sticker transition-transform hover:-translate-y-1 active:translate-x-[4px] active:translate-y-[4px] active:shadow-none"
+          >
+            Who I am
+          </a>
+        </div>
+      </div>
+
+      <div class="relative shrink-0 animate-rise [animation-delay:150ms]">
+        <!-- Flat layered shapes, the way the portrait itself is built. -->
+        <div
+          class="absolute -right-4 -top-4 h-full w-full border-[3px] border-ink bg-gold"
+          aria-hidden="true"
+        >
+        </div>
+        <div
+          class="absolute -bottom-4 -left-4 h-full w-full border-[3px] border-ink bg-olive"
+          aria-hidden="true"
+        >
+        </div>
+
+        <Image
+          src={nicoImg}
+          alt="Illustrated portrait of Nico in a cap and heart-shaped glasses"
+          width={360}
+          height={360}
+          class="relative block h-[280px] w-[280px] border-[3px] border-ink object-cover sm:h-[360px] sm:w-[360px]"
+          loading="eager"
+        />
+
+        <p
+          class="absolute -bottom-5 left-6 -rotate-3 border-[3px] border-ink bg-paper px-3 py-1 text-sm font-extrabold uppercase tracking-wider shadow-sticker-sm"
+        >
+          ni.codes
+        </p>
+      </div>
+    </div>
+  </section>
+
+  <Marquee
+    items={[
+      "Go",
+      "TypeScript",
+      "Astro",
+      "React Native",
+      "PocketBase",
+      "Godot",
+      "Docker",
+      "WebAssembly",
+    ]}
+  />
+
+  <!-- What I do -->
+  <section class="border-b-[3px] border-ink bg-cream">
+    <div class="mx-auto max-w-6xl px-4 py-16 sm:px-6 sm:py-20">
+      <h2 class="text-4xl sm:text-5xl">What I make</h2>
+
+      <div class="mt-10 grid gap-6 md:grid-cols-3">
+        {
+          practice.map((item, i) => (
+            <article class="border-[3px] border-ink bg-paper shadow-sticker">
+              <div class={`${item.accent} border-b-[3px] border-ink px-5 py-3`}>
+                <p class="text-sm font-extrabold uppercase tracking-[0.16em]">
+                  0{i + 1}
+                </p>
+              </div>
+
+              <div class="p-5">
+                <h3 class="text-2xl">{item.title}</h3>
+                <p class="mt-3 text-ink-soft">{item.body}</p>
+              </div>
+            </article>
+          ))
+        }
+      </div>
+    </div>
+  </section>
+
+  <!-- Featured work -->
+  <section class="border-b-[3px] border-ink">
+    <div class="mx-auto max-w-6xl px-4 py-16 sm:px-6 sm:py-20">
+      <div class="flex flex-wrap items-end justify-between gap-4">
+        <h2 class="text-4xl sm:text-5xl">Recent work</h2>
+
+        <a
+          href="/work"
+          class="border-b-[3px] border-ink text-lg font-extrabold hover:text-coral hover:border-coral"
+        >
+          All ten projects →
+        </a>
+      </div>
+
+      <div class="mt-10 grid gap-6 sm:grid-cols-2">
+        {
+          featured.map((project) => (
+            <a
+              href="/work"
+              class="group flex flex-col border-[3px] border-ink bg-paper shadow-sticker transition-transform hover:-translate-y-1"
+            >
+              <div
+                class={`${accentClass[project.accent]} flex items-baseline justify-between gap-3 border-b-[3px] border-ink px-5 py-4`}
+              >
+                <h3 class="text-3xl">{project.name}</h3>
+                <span class="text-sm font-bold uppercase tracking-widest">
+                  {project.category}
+                </span>
+              </div>
+
+              <div class="flex flex-1 flex-col p-5">
+                <p class="text-lg font-bold">{project.tagline}</p>
+                <p class="mt-2 text-ink-soft">{project.blurb}</p>
+
+                <ul class="mt-4 flex flex-wrap gap-2">
+                  {project.stack.map((tech) => (
+                    <li class="border-2 border-ink px-2 py-0.5 text-sm font-semibold">
+                      {tech}
+                    </li>
+                  ))}
+                </ul>
+              </div>
+            </a>
+          ))
+        }
+      </div>
+    </div>
+  </section>
+
+  <!-- About teaser -->
+  <section class="bg-mint-deep text-paper">
+    <div
+      class="mx-auto grid max-w-6xl items-center gap-10 px-4 py-16 sm:px-6 sm:py-20 lg:grid-cols-2"
+    >
+      <div>
+        <h2 class="text-4xl sm:text-5xl">There is more to it than code</h2>
+
+        <p class="mt-5 text-lg">
+          I balance stones in creeks, juggle clubs in the park, write songs I
+          keep meaning to record, and hike above cell service with my dog. Every
+          one of them has taught me something I use at work.
+        </p>
+
+        <p class="mt-4 text-lg font-semibold text-gold">
+          "Know the way broadly, and you see it in all things." — Miyamoto
+          Musashi
+        </p>
+
+        <a
+          href="/about"
+          class="mt-8 inline-block border-[3px] border-ink bg-gold px-6 py-3 text-lg font-extrabold text-ink shadow-sticker transition-transform hover:-translate-y-1 active:translate-x-[4px] active:translate-y-[4px] active:shadow-none"
+        >
+          More about me
+        </a>
+      </div>
+
+      <div class="grid grid-cols-2 gap-4">
+        <Image
+          src={stonebloomImg}
+          alt="A stack of balanced river stones beside a creek"
+          width={400}
+          height={400}
+          class="h-full w-full rotate-2 border-[3px] border-ink object-cover shadow-sticker"
+        />
+        <div class="flex flex-col gap-4">
+          <Image
+            src={jugglingImg}
+            alt="Nico juggling clubs in a park"
+            width={400}
+            height={260}
+            class="-rotate-2 border-[3px] border-ink object-cover shadow-sticker"
+          />
+          <Image
+            src={mountainsImg}
+            alt="Nico holding his dog on a mountain ridge"
+            width={400}
+            height={260}
+            class="rotate-1 border-[3px] border-ink object-cover shadow-sticker"
+          />
+        </div>
+      </div>
+    </div>
+  </section>
 </Layout>

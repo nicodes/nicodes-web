@@ -1,46 +1,61 @@
-# Astro Starter Kit: Basics
+# nicodes-web
+
+The personal site at [ni.codes](https://www.ni.codes) — a home page, the work,
+and who I am.
 
 ```sh
-bun create astro@latest -- --template basics
+mise install
+bun install
+bun run dev      # http://localhost:4321
+bun run build    # -> dist/
+bun run preview
 ```
 
-> 🧑‍🚀 **Seasoned astronaut?** Delete this file. Have fun!
+## What is here
 
-## 🚀 Project Structure
-
-Inside of your Astro project, you'll see the following folders and files:
-
-```text
-/
-├── public/
-│   └── favicon.svg
-├── src
-│   ├── assets
-│   │   └── astro.svg
-│   ├── components
-│   │   └── Welcome.astro
-│   ├── layouts
-│   │   └── Layout.astro
-│   └── pages
-│       └── index.astro
-└── package.json
+```
+src/data/projects.ts      every project, in one place
+src/layouts/Layout.astro  <head>, header, footer, the page shell
+src/components/           the shared pieces; two of them are Qwik islands
+src/pages/                index, work, about, 404
+src/styles/global.css     the palette, the type, the printed-sticker utilities
+_old/                     the previous site, kept for reference
 ```
 
-To learn more about the folder structure of an Astro project, refer to [our guide on project structure](https://docs.astro.build/en/basics/project-structure/).
+## The design comes out of the portrait
 
-## 🧞 Commands
+`src/assets/nico.png` is a flat vector illustration: heavy outlines, no
+gradients, a small palette. The site is built to match it, and every colour in
+`global.css` was **sampled from that file** rather than picked to taste — ink
+`#22260d`, mint `#70bfa3`, cream `#f1dfa8`, plus coral, gold, olive and rose.
 
-All commands are run from the root of the project, from a terminal:
+The rules that follow from it:
 
-| Command                   | Action                                           |
-| :------------------------ | :----------------------------------------------- |
-| `bun install`             | Installs dependencies                            |
-| `bun dev`             | Starts local dev server at `localhost:4321`      |
-| `bun build`           | Build your production site to `./dist/`          |
-| `bun preview`         | Preview your build locally, before deploying     |
-| `bun astro ...`       | Run CLI commands like `astro add`, `astro check` |
-| `bun astro -- --help` | Get help using the Astro CLI                     |
+- **Shadows are hard offsets**, never blurred (`--shadow-sticker`). Blur is a
+  photographic effect and there is no photography in the artwork.
+- **Borders are 3px ink**, the weight of the linework in the portrait.
+- **Headings use the width axis** of Archivo Variable (`font-stretch: 118%`),
+  which is what makes them read as printed lettering rather than as UI text.
+- The halftone dots and the barber-pole stripes are CSS gradients, so they cost
+  nothing and stay sharp on any display.
 
-## 👀 Want to learn more?
+## JavaScript
 
-Feel free to check [our documentation](https://docs.astro.build) or jump into our [Discord server](https://astro.build/chat).
+The site is static. Two components ship JavaScript, both Qwik islands, and both
+because they genuinely need it:
+
+- `MobileMenu` — the small-screen nav panel.
+- `WorkGrid` — the category filter, and holding each project's live demo behind
+  a button. Ten iframes on load would be ten page loads the visitor never asked
+  for.
+
+Everything else is HTML and CSS.
+
+### The rollup workaround in `astro.config.mjs`
+
+With `@qwikdev/astro` 0.8.3 (tested against astro `^5.9.2`) on Astro 5.18,
+rollup folds Astro's server internals into the shared `Layout` chunk, which
+then imports the server chunk back, and the SSR entry dies on `Cannot access
+'ASTRO_VERSION' before initialization`. A `manualChunks` rule keeps those
+internals in a chunk of their own. Drop it and rebuild after the next
+`@qwikdev/astro` release.
