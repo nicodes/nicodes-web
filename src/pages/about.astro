@@ -130,8 +130,12 @@ const chapters = [
           ]}
         >
           <div class="relative shrink-0">
+            <!-- Tan reads on the cream rows; on the mint ones it goes olive. -->
             <div
-              class="absolute inset-0 translate-x-3 translate-y-3 border-[3px] border-ink bg-tan"
+              class:list={[
+                "absolute inset-0 translate-x-3 translate-y-3 border-[3px] border-ink",
+                i % 2 === 0 ? "bg-tan" : "bg-olive",
+              ]}
               aria-hidden="true"
             />
             <Image
