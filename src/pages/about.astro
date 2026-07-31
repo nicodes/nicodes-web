@@ -78,15 +78,19 @@ const chapters = [
     <div class="halftone pointer-events-none absolute inset-0"></div>
 
     <div class="relative mx-auto max-w-6xl px-4 py-16 sm:px-6 sm:py-20">
-      <h1 class="text-6xl sm:text-7xl display-tight">
-        Who <span class="text-rose">I</span> am
-      </h1>
+      <!-- The title and its paragraph are one column, so the quote sits
+           alongside both rather than starting below the title. -->
+      <div class="grid items-start gap-10 lg:grid-cols-[1.2fr_1fr]">
+        <div>
+          <h1 class="text-6xl sm:text-7xl display-tight">
+            Who <span class="text-rose">I</span> am
+          </h1>
 
-      <div class="mt-8 grid items-start gap-10 lg:grid-cols-[1.2fr_1fr]">
-        <p class="max-w-2xl text-xl font-semibold">
-          I'm a senior software engineer at GitHub and an independent web
-          developer, ten years into the profession and still delighted by it.
-        </p>
+          <p class="mt-8 max-w-2xl text-xl font-semibold">
+            I'm a senior software engineer at GitHub and an independent web
+            developer, ten years into the profession and still delighted by it.
+          </p>
+        </div>
 
         <blockquote
           class="border-[3px] border-ink bg-paper p-6 shadow-sticker"
