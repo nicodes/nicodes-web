@@ -19,7 +19,6 @@ src/layouts/Layout.astro  <head>, header, footer, the page shell
 src/components/           the shared pieces; two of them are Qwik islands
 src/pages/                index, work, about, 404
 src/styles/global.css     the palette, the type, the printed-sticker utilities
-_old/                     the previous site, kept for reference
 ```
 
 ## The design comes out of the portrait
