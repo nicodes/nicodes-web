@@ -74,7 +74,7 @@ export const MobileMenu = component$<Props>(({ pages, contact }) => {
                 key={link.href}
                 href={link.href}
                 onClick$={() => (open.value = false)}
-                class="border-b-2 border-ink/15 px-5 py-4 text-2xl font-extrabold [font-stretch:118%] hover:text-coral"
+                class="border-b-2 border-ink/15 px-5 py-4 text-2xl font-extrabold [font-stretch:118%] hover:text-rose"
               >
                 {link.label}
               </a>
@@ -91,7 +91,7 @@ export const MobileMenu = component$<Props>(({ pages, contact }) => {
                 target={link.external ? "_blank" : undefined}
                 rel={link.external ? "noopener noreferrer" : undefined}
                 onClick$={() => (open.value = false)}
-                class="border-b-2 border-ink/15 px-5 py-3.5 text-lg font-bold hover:text-coral"
+                class="border-b-2 border-ink/15 px-5 py-3.5 text-lg font-bold hover:text-rose"
               >
                 {link.label}
                 {link.external && <span aria-hidden="true"> ↗</span>}
