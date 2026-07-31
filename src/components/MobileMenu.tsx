@@ -35,7 +35,7 @@ export const MobileMenu = component$<Props>(({ pages, contact }) => {
         aria-controls="mobile-menu"
         aria-label={open.value ? "Close menu" : "Open menu"}
         onClick$={() => (open.value = !open.value)}
-        class="flex h-11 w-11 items-center justify-center border-[3px] border-ink bg-rose shadow-sticker transition-transform active:translate-x-[4px] active:translate-y-[4px] active:shadow-none"
+        class="flex h-11 w-11 items-center justify-center border-[3px] border-ink bg-rose shadow-button transition-transform active:translate-x-[4px] active:translate-y-[4px] active:shadow-none"
       >
         <span class="sr-only">Menu</span>
         <svg

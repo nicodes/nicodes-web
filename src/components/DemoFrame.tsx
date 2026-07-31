@@ -37,7 +37,7 @@ export const DemoFrame = component$<Props>(({ url, name, panel }) => {
             onClick$={() => (loaded.value = true)}
             class="group absolute inset-0 flex flex-col items-center justify-center gap-3"
           >
-            <span class="border-[3px] border-ink bg-rose px-5 py-2.5 text-lg font-extrabold text-paper shadow-sticker transition-transform group-hover:-translate-y-1">
+            <span class="border-[3px] border-ink bg-rose px-5 py-2.5 text-lg font-extrabold text-paper shadow-button transition-transform group-hover:-translate-y-1">
               ▶ Load live demo
             </span>
             <span class="text-sm font-semibold text-ink-soft">

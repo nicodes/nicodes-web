@@ -12,6 +12,15 @@ import guitarImg from "../assets/photos/guitar.jpg";
 
 const chapters = [
   {
+    title: "Altitude",
+    image: mountainsImg,
+    alt: "Nico holding his husky on a mountain ridge in Colorado",
+    paragraphs: [
+      "Projects are fun, but perspective comes from getting away from them. Most weekends that means hiking or climbing, usually with my dog Anastasia.",
+      "A reminder, in case you need me up there: there may be no cell service at the summit.",
+    ],
+  },
+  {
     title: "Balancing",
     image: stonebloomImg,
     alt: "A tall stack of balanced river stones on a rock beside a creek",
@@ -25,6 +34,15 @@ const chapters = [
     },
   },
   {
+    title: "Juggling",
+    image: jugglingImg,
+    alt: "Nico juggling glowing LED clubs at night",
+    paragraphs: [
+      "Juggling is a form of meditation. Focusing on any single club is how you drop it; you clear your mind and trust the pattern.",
+      "It is also the best training I have found for running several time-critical things at once — guide each element, then let the orchestration do its job.",
+    ],
+  },
+  {
     title: "Game dev",
     image: revikImg,
     alt: "Fantasy game artwork of an armoured fox in a red cloak overlooking a hex-tiled world",
@@ -33,24 +51,6 @@ const chapters = [
       "That became Avior Studio: a terminal arcade, a Godot addon manager, a linter, and a couple of games still behind the curtain.",
     ],
     link: { href: "https://www.avior.studio", label: "avior.studio" },
-  },
-  {
-    title: "Altitude",
-    image: mountainsImg,
-    alt: "Nico holding his husky on a mountain ridge in Colorado",
-    paragraphs: [
-      "Projects are fun, but perspective comes from getting away from them. Most weekends that means hiking or climbing, usually with my dog Anastasia.",
-      "A reminder, in case you need me up there: there may be no cell service at the summit.",
-    ],
-  },
-  {
-    title: "Juggling",
-    image: jugglingImg,
-    alt: "Nico juggling glowing LED clubs at night",
-    paragraphs: [
-      "Juggling is a form of meditation. Focusing on any single club is how you drop it; you clear your mind and trust the pattern.",
-      "It is also the best training I have found for running several time-critical things at once — guide each element, then let the orchestration do its job.",
-    ],
   },
   {
     title: "Music",
@@ -152,7 +152,7 @@ const chapters = [
             width={460}
             height={460}
             class:list={[
-              "block h-[280px] w-[280px] border-[3px] border-ink object-cover shadow-sticker sm:h-[380px] sm:w-[380px] lg:row-span-2 lg:row-start-1 lg:self-center",
+              "block h-[280px] w-[280px] justify-self-center border-[3px] border-ink object-cover shadow-sticker sm:h-[380px] sm:w-[380px] lg:row-span-2 lg:row-start-1 lg:self-center",
               i % 2 === 0 ? "lg:col-start-1" : "lg:col-start-2",
             ]}
           />
