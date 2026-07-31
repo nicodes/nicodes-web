@@ -1,0 +1,28 @@
+---
+interface Props {
+  url: string;
+  name: string;
+  /** The panel takes the colour the row is not, so it never sits on itself. */
+  panel: "bg-mint" | "bg-cream";
+}
+
+const { url, name, panel } = Astro.props;
+---
+
+<!--
+  The live site, framed. loading="lazy" is doing the work the load button used
+  to: the browser only fetches a demo as it approaches the viewport, so opening
+  the page does not pull ten sites at once. The panel colour shows through
+  until the frame paints.
+-->
+<div class="border-[3px] border-ink shadow-sticker">
+  <div class:list={["relative aspect-[16/10]", panel]}>
+    <div class="halftone pointer-events-none absolute inset-0"></div>
+
+    <iframe
+      src={url}
+      title={`Live demo of ${name}`}
+      loading="lazy"
+      class="absolute inset-0 h-full w-full"></iframe>
+  </div>
+</div>

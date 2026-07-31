@@ -1,0 +1,25 @@
+<!--
+  The Book of Five Rings mark: five equal circles centred on a pentagon that
+  points down — one circle at the bottom, two arcs crossing at the top.
+
+  Radius 51.28, centre spacing 42.30 and stroke 8.98 around (100, 95.95),
+  which puts the outer edge of the stroke at 4 and 196 horizontally and at
+  5.96 and 194.02 vertically: inside the 200 box on every side, with room to
+  spare. Proportions were fitted against the original bitmap; this is that
+  shape scaled to fit its own viewBox.
+
+  stroke="currentColor" so the colour comes from the CSS that places it.
+-->
+<svg
+  xmlns="http://www.w3.org/2000/svg"
+  viewBox="0 0 200 200"
+  fill="none"
+  stroke="currentColor"
+  stroke-width="8.98"
+>
+  <circle cx="100.00" cy="138.25" r="51.28" />
+  <circle cx="59.77" cy="109.02" r="51.28" />
+  <circle cx="75.14" cy="61.73" r="51.28" />
+  <circle cx="124.86" cy="61.73" r="51.28" />
+  <circle cx="140.23" cy="109.02" r="51.28" />
+</svg>
