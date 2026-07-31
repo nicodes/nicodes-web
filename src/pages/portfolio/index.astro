@@ -14,7 +14,7 @@ import styles from "./portfolio.module.scss";
     <Fragment slot="left">
       <Section>
         <p>
-          I'm a Senior Softare Engineer at GitHub and independent Web
+          I'm a Senior Software Engineer at GitHub and independent Web
           Developer with 10 years of professional experience.
         </p>
 
@@ -63,6 +63,126 @@ import styles from "./portfolio.module.scss";
       </Section> -->
 
       <Section>
+        <h3>Ormos</h3>
+
+        <IframeBrowser src="https://www.ormos.dev" />
+
+        <p>
+          <a target="_blank" href="https://www.ormos.dev">Ormos</a>
+          is a personal remote-access tool. An agent runs on a machine you own and
+          makes a single outbound connection to a hosted relay, so a browser
+          anywhere can open a live terminal on that machine or view a local port
+          in an iframe. The agent never opens a listening socket, and one
+          multiplexed WebSocket carries every terminal and every proxied port.
+        </p>
+
+        <div class={styles.coreTech}>
+          <p>Core technologies:</p>
+          <ul>
+            <li>Go</li>
+            <li>WebSockets</li>
+            <li>Bubble Tea</li>
+            <li>PocketBase</li>
+            <li>Expo</li>
+            <li>Docker</li>
+          </ul>
+        </div>
+
+        <p>
+          Checkout the code on
+          <a target="_blank" href="https://github.com/nicodes/ormos">
+            GitHub<span>!</span>
+          </a>
+        </p>
+      </Section>
+
+      <Section>
+        <h3>Komizo</h3>
+
+        <IframeBrowser src="https://www.komizo.dev" />
+
+        <p>
+          <a target="_blank" href="https://www.komizo.dev">Komizo</a>
+          deploys apps to your own server straight from GitHub Actions. A terminal
+          interface sets the box up over SSH, gives each app its own deploy
+          account and its own two privileged commands, and puts one shared proxy
+          in front of everything. Nothing is installed by hand, and almost
+          nothing lives on the server at all.
+        </p>
+
+        <div class={styles.coreTech}>
+          <p>Core technologies:</p>
+          <ul>
+            <li>Go</li>
+            <li>Bubble Tea</li>
+            <li>SSH</li>
+            <li>Docker</li>
+            <li>Caddy</li>
+            <li>GitHub Actions</li>
+          </ul>
+        </div>
+
+        <p>
+          Checkout the code on
+          <a target="_blank" href="https://github.com/nicodes/komizo">
+            GitHub<span>!</span>
+          </a>
+        </p>
+      </Section>
+
+      <Section>
+        <h3>ClearImg</h3>
+
+        <IframeBrowser src="https://www.clearimg.ai" />
+
+        <p>
+          <a target="_blank" href="https://www.clearimg.ai">ClearImg</a>
+          turns AI-generated art into transparent sprite assets. Each sprite is
+          generated twice in one image — once over white, once over black — and
+          reconciling that pair recovers the alpha channel, no manual cutouts
+          required. It ships as an API, a CLI, and an app.
+        </p>
+
+        <div class={styles.coreTech}>
+          <p>Core technologies:</p>
+          <ul>
+            <li>Go</li>
+            <li>Gin</li>
+            <li>PocketBase</li>
+            <li>OpenAI API</li>
+            <li>Expo</li>
+            <li>Docker</li>
+          </ul>
+        </div>
+      </Section>
+
+      <Section>
+        <h3>Tone Split</h3>
+
+        <IframeBrowser src="https://www.tonesplit.com" />
+
+        <p>
+          <a target="_blank" href="https://www.tonesplit.com">Tone Split</a>
+          is a stereo synthesizer. Stack oscillators, give each one a waveform, a
+          level and a place between hard left and hard right, and watch both
+          channels on a scope while you move them. A library of 93 chord voicings
+          is a place to start rather than a preset — every voice stays
+          independent. There's no backend at all; the audio graph is built on the
+          device.
+        </p>
+
+        <div class={styles.coreTech}>
+          <p>Core technologies:</p>
+          <ul>
+            <li>Expo</li>
+            <li>React Native</li>
+            <li>TypeScript</li>
+            <li>Web Audio API</li>
+          </ul>
+        </div>
+      </Section>
+
+      <Section>
         <h3>CT Calc</h3>
 
         <IframeBrowser src="https://www.ctcalc.com" />
@@ -95,6 +215,132 @@ import styles from "./portfolio.module.scss";
     </Fragment>
 
     <Fragment slot="right">
+      <Section>
+        <h3>Avior Studio</h3>
+
+        <IframeBrowser src="https://www.avior.studio" />
+
+        <p>
+          <a target="_blank" href="https://www.avior.studio">Avior Studio</a>
+          is my game studio, and its site is the index to everything under it:
+          the developer tools on one side and the games on the other. It's three
+          static pages that ship no JavaScript at all, and every product on it is
+          either linkable or explicitly marked as not — a status dot is filled
+          only for something you can actually run today.
+        </p>
+
+        <div class={styles.coreTech}>
+          <p>Core technologies:</p>
+          <ul>
+            <li>Astro</li>
+            <li>TypeScript</li>
+          </ul>
+        </div>
+
+        <p>
+          Checkout the code on
+          <a target="_blank" href="https://github.com/aviorstudio/aviorstudio-web">
+            GitHub<span>!</span>
+          </a>
+        </p>
+      </Section>
+
+      <Section>
+        <h3>GDAM</h3>
+
+        <IframeBrowser src="https://www.gdam.dev" />
+
+        <p>
+          <a target="_blank" href="https://www.gdam.dev">GDAM</a>
+          is the Godot Addon Manager: install, link, remove and publish Godot
+          addons from a small CLI backed by a public registry. Addons come from
+          GitHub release assets, publishing is authenticated with an owner-scoped
+          key, and a local addon can be linked in place while you're still
+          building it.
+        </p>
+
+        <div class={styles.coreTech}>
+          <p>Core technologies:</p>
+          <ul>
+            <li>Go</li>
+            <li>Astro</li>
+            <li>PocketBase</li>
+            <li>Godot</li>
+            <li>Docker</li>
+          </ul>
+        </div>
+
+        <p>
+          Checkout the code on
+          <a target="_blank" href="https://github.com/aviorstudio/gdam">
+            GitHub<span>!</span>
+          </a>
+        </p>
+      </Section>
+
+      <Section>
+        <h3>gdlint</h3>
+
+        <IframeBrowser src="https://www.gdlint.dev" />
+
+        <p>
+          <a target="_blank" href="https://www.gdlint.dev">gdlint</a>
+          is a project-local GDScript hygiene checker for Godot projects. It finds
+          the things that quietly accumulate — unused functions and signals, stray
+          debug prints, orphaned UID files, missing return types — and it's
+          deliberately not an architecture checker, so it stays out of the way of
+          how you've chosen to lay a project out.
+        </p>
+
+        <div class={styles.coreTech}>
+          <p>Core technologies:</p>
+          <ul>
+            <li>Go</li>
+            <li>GDScript</li>
+            <li>Godot</li>
+          </ul>
+        </div>
+
+        <p>
+          Checkout the code on
+          <a target="_blank" href="https://github.com/aviorstudio/gdlint">
+            GitHub<span>!</span>
+          </a>
+        </p>
+      </Section>
+
+      <Section>
+        <h3>termcade</h3>
+
+        <IframeBrowser src="https://www.termca.de" />
+
+        <p>
+          <a target="_blank" href="https://www.termca.de">termcade</a>
+          is an arcade that runs in your terminal, drawing at sub-cell resolution
+          with block pixels. No game is compiled into it — each one is a sandboxed
+          WebAssembly package, so the bundled starter pack and anything you write
+          against the SDK are installed the exact same way.
+        </p>
+
+        <div class={styles.coreTech}>
+          <p>Core technologies:</p>
+          <ul>
+            <li>Go</li>
+            <li>Bubble Tea</li>
+            <li>WebAssembly</li>
+            <li>PocketBase</li>
+            <li>Docker</li>
+          </ul>
+        </div>
+
+        <p>
+          Checkout the code on
+          <a target="_blank" href="https://github.com/aviorstudio/termcade">
+            GitHub<span>!</span>
+          </a>
+        </p>
+      </Section>
+
       <Section>
         <h3>Schlop Stop</h3>
 
