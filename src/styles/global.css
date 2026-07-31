@@ -24,8 +24,12 @@
   --font-body: "Archivo Variable", "Archivo", ui-sans-serif, system-ui,
     sans-serif;
 
-  /* Hard offset shadows only. A blur would break the printed-sticker feel. */
+  /* Hard offset shadows only. A blur would break the printed-sticker feel.
+     Buttons take a smaller offset than panels: 6px is a tenth of a button's
+     height but a sixtieth of a photo's, so the same number reads heavier on
+     the small thing. These two are chosen to look equal, not to measure it. */
   --shadow-sticker: 6px 6px 0 var(--color-ink);
+  --shadow-button: 4px 4px 0 var(--color-ink);
 }
 
 @layer base {
