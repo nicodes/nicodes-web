@@ -1,16 +1,7 @@
 ---
+import { ContactMenu } from "./ContactMenu";
 import { MobileMenu } from "./MobileMenu";
-
-const links = [
-  { href: "/work", label: "Work" },
-  { href: "/about", label: "About" },
-  { href: "https://github.com/nicodes", label: "GitHub", external: true },
-  {
-    href: "https://www.linkedin.com/in/nicozessoules",
-    label: "LinkedIn",
-    external: true,
-  },
-];
+import { contact, pages } from "../data/nav";
 
 const path = Astro.url.pathname;
 const isCurrent = (href: string) =>
@@ -23,45 +14,34 @@ const isCurrent = (href: string) =>
   >
     <a
       href="/"
-      class="group flex items-center gap-2 text-2xl font-extrabold [font-stretch:118%] tracking-tight"
+      class="text-2xl font-extrabold [font-stretch:118%] tracking-tight transition-colors hover:text-coral"
       aria-label="Nicodes, home"
     >
-      <span
-        class="flex h-9 w-9 items-center justify-center border-[3px] border-ink bg-coral text-paper transition-transform group-hover:-rotate-6"
-        aria-hidden="true">N</span
-      >
-      <span>ni<span class="text-coral">.</span>codes</span>
+      n<span class="text-coral">i</span>codes
     </a>
 
     <nav class="hidden items-center gap-1 md:flex" aria-label="Main">
       {
-        links.map((link) => (
+        pages.map((link) => (
           <a
             href={link.href}
-            target={link.external ? "_blank" : undefined}
-            rel={link.external ? "noopener noreferrer" : undefined}
             aria-current={isCurrent(link.href) ? "page" : undefined}
             class:list={[
-              "border-[3px] px-3 py-1.5 text-lg font-bold transition-colors",
-              isCurrent(link.href)
-                ? "border-ink bg-gold"
-                : "border-transparent hover:border-ink hover:bg-mint",
+              "px-3 py-1.5 text-lg font-bold transition-colors hover:text-coral",
+              isCurrent(link.href) &&
+                "text-coral underline decoration-2 underline-offset-8",
             ]}
           >
             {link.label}
-            {link.external && <span aria-hidden="true"> ↗</span>}
           </a>
         ))
       }
 
-      <a
-        href="mailto:nicozessoules@gmail.com"
-        class="ml-2 border-[3px] border-ink bg-coral px-4 py-1.5 text-lg font-bold text-paper shadow-sticker-sm transition-transform hover:-translate-y-0.5 active:translate-x-[2px] active:translate-y-[2px] active:shadow-none"
-      >
-        Say hello
-      </a>
+      <div class="ml-2">
+        <ContactMenu links={contact} client:load />
+      </div>
     </nav>
 
-    <MobileMenu links={links} client:load />
+    <MobileMenu pages={pages} contact={contact} client:load />
   </div>
 </header>
