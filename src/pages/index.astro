@@ -1,21 +1,12 @@
 ---
-import BaseLayout from "../layouts/baseLayout/BaseLayout.astro";
-import Hero from "../components/hero/Hero.astro";
-
-import styles from "./index.module.scss";
+import { Counter } from '../components/Counter';
+import Title from '../components/Title.astro';
+import Layout from '../layouts/Layout.astro';
 ---
 
-<BaseLayout type="fixed" title="Nicodes" class={styles.pageContainer}>
-  <Hero />
-</BaseLayout>
-
-<script>
-  import { headerBorderAnimate } from "../components/header/header";
-
-  headerBorderAnimate("open");
-
-  document.addEventListener(
-    "astro:after-swap",
-    () => window.location.pathname === "/" && headerBorderAnimate("open")
-  );
-</script>
+<Layout>
+	<main class="flex flex-col items-center gap-12 px-6 py-16">
+		<Title />
+		<Counter client:visible />
+	</main>
+</Layout>
