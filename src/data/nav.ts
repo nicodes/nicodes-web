@@ -10,7 +10,7 @@ export const pages: Link[] = [
   { href: "/about", label: "About" },
 ];
 
-/** Everywhere else to find me, tucked behind "Say hello". */
+/** Everywhere else to find me, tucked behind "Say hi". */
 export const contact: Link[] = [
   { href: "mailto:nicozessoules@gmail.com", label: "Email me" },
   { href: "https://github.com/nicodes", label: "GitHub", external: true },
