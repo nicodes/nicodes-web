@@ -129,19 +129,15 @@ const chapters = [
             i % 2 === 0 ? "lg:flex-row" : "lg:flex-row-reverse",
           ]}
         >
-          <div class="relative shrink-0">
-            <!-- Ink on both row colours, so the offset reads as the same hard
-                 shadow the cards and buttons use. -->
-            <div
-              class="absolute inset-0 translate-x-3 translate-y-3 border-[3px] border-ink bg-ink"
-              aria-hidden="true"
-            />
+          <div class="shrink-0">
+            <!-- shadow-sticker, the same 6px offset the quote card carries,
+                 rather than a hand-placed block behind the photo. -->
             <Image
               src={chapter.image}
               alt={chapter.alt}
               width={460}
               height={460}
-              class="relative block h-[280px] w-[280px] border-[3px] border-ink object-cover sm:h-[380px] sm:w-[380px]"
+              class="block h-[280px] w-[280px] border-[3px] border-ink object-cover shadow-sticker sm:h-[380px] sm:w-[380px]"
             />
           </div>
 
@@ -149,7 +145,7 @@ const chapters = [
             <h2 class="text-5xl">{chapter.title}</h2>
 
             {chapter.paragraphs.map((paragraph) => (
-              <p class="mt-4 text-lg text-ink-soft">{paragraph}</p>
+              <p class="mt-4 text-xl font-semibold">{paragraph}</p>
             ))}
 
             {chapter.link && (
