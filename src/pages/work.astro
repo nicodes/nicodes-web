@@ -1,7 +1,7 @@
 ---
 import Layout from "../layouts/Layout.astro";
-import { WorkGrid } from "../components/WorkGrid";
-import { projects, categories } from "../data/projects";
+import { DemoFrame } from "../components/DemoFrame";
+import { projects } from "../data/projects";
 ---
 
 <Layout
@@ -17,15 +17,61 @@ import { projects, categories } from "../data/projects";
         Doing the <span class="text-rose">work</span>
       </h1>
 
-      <p class="mt-6 max-w-2xl text-xl font-semibold">
+      <p class="mt-8 max-w-2xl text-xl font-semibold">
         Everything here is live, and most of it is open source.
       </p>
     </div>
   </section>
 
-  <section class="bg-cream">
-    <div class="mx-auto max-w-6xl px-4 py-16 sm:px-6 sm:py-20">
-      <WorkGrid projects={projects} categories={categories} client:load />
-    </div>
-  </section>
+  {
+    /* Same row rhythm as the about chapters: alternating background,
+       alternating side, the demo standing in for the photograph. */
+    projects.map((project, i) => (
+      <section
+        class:list={[
+          "border-b-[3px] border-ink",
+          i % 2 === 0 ? "bg-cream" : "",
+        ]}
+      >
+        <div
+          class:list={[
+            "mx-auto flex max-w-6xl flex-col items-center gap-10 px-4 py-16 sm:px-6 sm:py-20 lg:gap-16",
+            i % 2 === 0 ? "lg:flex-row" : "lg:flex-row-reverse",
+          ]}
+        >
+          <div class="w-full shrink-0 lg:w-[540px]">
+            <DemoFrame url={project.url} name={project.name} client:visible />
+          </div>
+
+          <div class="max-w-xl">
+            <h2 class="text-5xl">{project.name}</h2>
+
+            <p class="mt-4 text-xl font-semibold">{project.blurb}</p>
+
+            <div class="mt-6 flex flex-wrap gap-6">
+              <a
+                href={project.url}
+                target="_blank"
+                rel="noopener noreferrer"
+                class="inline-block border-b-[3px] border-ink text-lg font-extrabold hover:border-rose hover:text-rose"
+              >
+                Visit ↗
+              </a>
+
+              {project.repo && (
+                <a
+                  href={project.repo}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  class="inline-block border-b-[3px] border-ink text-lg font-extrabold hover:border-rose hover:text-rose"
+                >
+                  Source ↗
+                </a>
+              )}
+            </div>
+          </div>
+        </div>
+      </section>
+    ))
+  }
 </Layout>

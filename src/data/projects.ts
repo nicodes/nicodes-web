@@ -15,14 +15,6 @@ export interface Project {
   accent: "rose" | "gold" | "coral" | "olive" | "mint-deep";
 }
 
-export const categories: { id: Category | "all"; label: string }[] = [
-  { id: "all", label: "Everything" },
-  { id: "tools", label: "Tools" },
-  { id: "apps", label: "Apps" },
-  { id: "games", label: "Games" },
-  { id: "sites", label: "Sites" },
-];
-
 export const projects: Project[] = [
   {
     name: "Ormos",
