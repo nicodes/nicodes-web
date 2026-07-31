@@ -3,6 +3,8 @@ import { component$, useSignal } from "@builder.io/qwik";
 interface Props {
   url: string;
   name: string;
+  /** The panel takes the colour the row is not, so it never sits on itself. */
+  panel: "bg-mint" | "bg-cream";
 }
 
 /** Strips the scheme so the address bar reads like a real one. */
@@ -14,12 +16,12 @@ const pretty = (url: string) => url.replace(/^https?:\/\//, "");
  * page loads the visitor never requested. That hold is the only reason this
  * is an island rather than markup.
  */
-export const DemoFrame = component$<Props>(({ url, name }) => {
+export const DemoFrame = component$<Props>(({ url, name, panel }) => {
   const loaded = useSignal(false);
 
   return (
     <div class="border-[3px] border-ink shadow-sticker">
-      <div class="relative aspect-[16/10] bg-paper">
+      <div class={`relative aspect-[16/10] ${panel}`}>
         <div class="halftone pointer-events-none absolute inset-0" />
 
         {loaded.value ? (
