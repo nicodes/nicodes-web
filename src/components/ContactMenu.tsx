@@ -7,7 +7,7 @@ interface Props {
 }
 
 /**
- * The "Say hello" button, which opens every way of reaching me. It exists so
+ * The "Say hi" button, which opens every way of reaching me. It exists so
  * the header carries two page links instead of five items — the rest live one
  * click away rather than across the top bar.
  */
@@ -40,7 +40,7 @@ export const ContactMenu = component$<Props>(({ links }) => {
         onClick$={() => (open.value = !open.value)}
         class="flex items-center gap-2 border-[3px] border-ink bg-rose px-4 py-1.5 text-lg font-bold text-paper shadow-sticker-sm transition-transform hover:-translate-y-0.5 active:translate-x-[2px] active:translate-y-[2px] active:shadow-none"
       >
-        Say hello
+        Say hi
         <span
           aria-hidden="true"
           class={`text-sm transition-transform ${open.value ? "rotate-180" : ""}`}

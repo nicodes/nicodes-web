@@ -81,7 +81,7 @@ export const MobileMenu = component$<Props>(({ pages, contact }) => {
             ))}
 
             <p class="bg-cream px-5 py-2 text-sm font-extrabold uppercase tracking-[0.16em]">
-              Say hello
+              Say hi
             </p>
 
             {contact.map((link) => (
