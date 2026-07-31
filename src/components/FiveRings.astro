@@ -1,0 +1,42 @@
+---
+interface Props {
+  size?: number;
+  class?: string;
+}
+
+const { size = 56, class: className } = Astro.props;
+
+/*
+  The Book of Five Rings mark: five equal circles with their centres on a
+  pentagon around the middle. Radius, spacing, stroke and centre were fitted
+  against the original PNG (565×555) by rendering candidates and maximising
+  overlap, so this sits where the bitmap did without the soft edges. The
+  pentagon points down — one circle at the bottom, two arcs crossing at the
+  top — which is the detail the eye notices if it is wrong.
+*/
+const RADIUS = 54.25;
+const SPACING = 44.75;
+const CX = 100;
+const CY = 97;
+
+const rings = [0, 1, 2, 3, 4].map((step) => {
+  const angle = ((90 + step * 72) * Math.PI) / 180;
+  return {
+    cx: Number((CX + SPACING * Math.cos(angle)).toFixed(2)),
+    cy: Number((CY + SPACING * Math.sin(angle)).toFixed(2)),
+  };
+});
+---
+
+<svg
+  viewBox="0 0 200 200"
+  width={size}
+  height={size}
+  class={className}
+  fill="none"
+  stroke="currentColor"
+  stroke-width="9.5"
+  aria-hidden="true"
+>
+  {rings.map((ring) => <circle cx={ring.cx} cy={ring.cy} r={RADIUS} />)}
+</svg>
