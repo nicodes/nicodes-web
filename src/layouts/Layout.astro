@@ -1,17 +1,61 @@
 ---
-import '../styles/global.css';
+import "../styles/global.css";
+
+import Header from "../components/Header.astro";
+import Footer from "../components/Footer.astro";
+
+interface Props {
+  title: string;
+  description: string;
+  /** Page-level accent, used for the top rule under the header. */
+  accent?: string;
+}
+
+const {
+  title,
+  description,
+  accent = "var(--color-coral)",
+} = Astro.props;
+
+const canonical = new URL(Astro.url.pathname, Astro.site ?? Astro.url);
 ---
 
 <!doctype html>
 <html lang="en">
-	<head>
-		<meta charset="UTF-8" />
-		<meta name="viewport" content="width=device-width" />
-		<link rel="icon" type="image/svg+xml" href="/favicon.svg" />
-		<meta name="generator" content={Astro.generator} />
-		<title>Astro + Qwik</title>
-	</head>
-	<body class="min-h-screen bg-gradient-to-b from-gray-50 to-gray-100 text-gray-900 flex items-center justify-center antialiased">
-		<slot />
-	</body>
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+    <link rel="canonical" href={canonical} />
+    <meta name="generator" content={Astro.generator} />
+    <meta name="theme-color" content="#70bfa3" />
+
+    <title>{title}</title>
+    <meta name="description" content={description} />
+
+    <meta property="og:type" content="website" />
+    <meta property="og:title" content={title} />
+    <meta property="og:description" content={description} />
+    <meta property="og:url" content={canonical} />
+    <meta name="twitter:card" content="summary_large_image" />
+  </head>
+
+  <body class="min-h-screen flex flex-col">
+    <a
+      href="#main"
+      class="sr-only focus:not-sr-only focus:absolute focus:z-50 focus:m-3 focus:bg-paper focus:px-4 focus:py-2 focus:ink-border focus:font-bold"
+    >
+      Skip to content
+    </a>
+
+    <Header />
+
+    <div class="h-2 w-full" style={`background-color: ${accent}`}></div>
+
+    <main id="main" class="flex-1">
+      <slot />
+    </main>
+
+    <Footer />
+  </body>
 </html>

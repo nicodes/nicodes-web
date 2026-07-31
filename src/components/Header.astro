@@ -1,0 +1,67 @@
+---
+import { MobileMenu } from "./MobileMenu";
+
+const links = [
+  { href: "/work", label: "Work" },
+  { href: "/about", label: "About" },
+  { href: "https://github.com/nicodes", label: "GitHub", external: true },
+  {
+    href: "https://www.linkedin.com/in/nicozessoules",
+    label: "LinkedIn",
+    external: true,
+  },
+];
+
+const path = Astro.url.pathname;
+const isCurrent = (href: string) =>
+  href === "/" ? path === "/" : path.startsWith(href);
+---
+
+<header class="sticky top-0 z-40 border-b-[3px] border-ink bg-paper">
+  <div
+    class="mx-auto flex max-w-6xl items-center justify-between gap-4 px-4 py-3 sm:px-6"
+  >
+    <a
+      href="/"
+      class="group flex items-center gap-2 text-2xl font-extrabold [font-stretch:118%] tracking-tight"
+      aria-label="Nicodes, home"
+    >
+      <span
+        class="flex h-9 w-9 items-center justify-center border-[3px] border-ink bg-coral text-paper transition-transform group-hover:-rotate-6"
+        aria-hidden="true">N</span
+      >
+      <span>ni<span class="text-coral">.</span>codes</span>
+    </a>
+
+    <nav class="hidden items-center gap-1 md:flex" aria-label="Main">
+      {
+        links.map((link) => (
+          <a
+            href={link.href}
+            target={link.external ? "_blank" : undefined}
+            rel={link.external ? "noopener noreferrer" : undefined}
+            aria-current={isCurrent(link.href) ? "page" : undefined}
+            class:list={[
+              "border-[3px] px-3 py-1.5 text-lg font-bold transition-colors",
+              isCurrent(link.href)
+                ? "border-ink bg-gold"
+                : "border-transparent hover:border-ink hover:bg-mint",
+            ]}
+          >
+            {link.label}
+            {link.external && <span aria-hidden="true"> ↗</span>}
+          </a>
+        ))
+      }
+
+      <a
+        href="mailto:nicozessoules@gmail.com"
+        class="ml-2 border-[3px] border-ink bg-coral px-4 py-1.5 text-lg font-bold text-paper shadow-sticker-sm transition-transform hover:-translate-y-0.5 active:translate-x-[2px] active:translate-y-[2px] active:shadow-none"
+      >
+        Say hello
+      </a>
+    </nav>
+
+    <MobileMenu links={links} client:load />
+  </div>
+</header>
