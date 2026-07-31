@@ -1,8 +1,6 @@
 ---
 import { navId, navIndexAnchorId } from "../../scripts/elementIds";
 import styles from "./nav.module.scss";
-
-const resumeId = import.meta.env.GOOGLE_DRIVE_RESUME_ID;
 ---
 
 <div class={styles.navFixedContainer} transition:persist>
@@ -13,9 +11,6 @@ const resumeId = import.meta.env.GOOGLE_DRIVE_RESUME_ID;
         <a id={navIndexAnchorId}>Home</a>
         <a href="/portfolio">Portfolio</a>
         <a href="/about">About</a>
-        <a href=`https://drive.google.com/uc?export=download&id=${resumeId}`
-          >Resume</a
-        >
         <a target="_blank" href="https://github.com/nicodes">GitHub</a>
         <a target="_blank" href="https://www.linkedin.com/in/nicozessoules"
           >Linkedin</a
