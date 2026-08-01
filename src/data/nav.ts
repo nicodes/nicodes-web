@@ -6,8 +6,8 @@ export interface Link {
 
 /** The pages, which stay visible in the header bar. */
 export const pages: Link[] = [
-  { href: "/portfolio", label: "Portfolio" },
   { href: "/consulting", label: "Consulting" },
+  { href: "/portfolio", label: "Portfolio" },
   { href: "/about", label: "About" },
 ];
 
