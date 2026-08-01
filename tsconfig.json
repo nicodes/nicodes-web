@@ -1,5 +1,15 @@
 {
   "extends": "astro/tsconfigs/strict",
   "include": [".astro/types.d.ts", "**/*"],
-  "exclude": ["dist"]
+  "exclude": ["dist"],
+  "compilerOptions": {
+    // The .tsx files here are Qwik components, not Astro ones. Without these,
+    // TypeScript has no JSX.IntrinsicElements to resolve <div> or <button>
+    // against and every tag in them is an implicit any -- 37 errors across
+    // ContactMenu and MobileMenu, none of which the build ever reported,
+    // because the Qwik integration transforms them through vite and never
+    // consults tsconfig.
+    "jsx": "react-jsx",
+    "jsxImportSource": "@builder.io/qwik"
+  }
 }
