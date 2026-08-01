@@ -19,6 +19,21 @@ description: >
 runs:
   using: composite
   steps:
+    # Cheapest first, and the one most likely to be the only thing wrong.
+    #
+    # `astro check` rather than plain tsc: it understands .astro files, and it
+    # is the only thing here that looks at the Qwik .tsx components at all --
+    # the integration transforms them through vite without consulting tsconfig,
+    # so the build never had an opinion about their types.
+    #
+    # typescript is pinned to 6 in package.json. TypeScript 7's native compiler
+    # does not expose the programmatic API @astrojs/check needs, and installing
+    # `typescript` unpinned resolves to 7 and fails at startup rather than on
+    # anything about this code.
+    - name: Type check
+      shell: bash
+      run: bun run typecheck
+
     # A build that emits nothing still "succeeds", so the artefact is checked
     # rather than the exit code.
     - name: The page was actually written
