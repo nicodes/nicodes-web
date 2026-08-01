@@ -9,6 +9,13 @@ import tailwindcss from '@tailwindcss/vite';
 export default defineConfig({
   site: 'https://www.ni.codes',
 
+  // /work was the route until the page became /portfolio. A static build emits
+  // a meta-refresh page with a canonical link, which is enough to keep old
+  // links and anything already indexed pointing at the right place.
+  redirects: {
+    '/work': '/portfolio',
+  },
+
   integrations: [qwikdev()],
 
   vite: {
