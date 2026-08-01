@@ -1,7 +1,7 @@
 # nicodes-web
 
 The personal site at [ni.codes](https://www.ni.codes) — a home page, the work,
-and who I am.
+what I can be hired for, and who I am.
 
 ```sh
 mise install
@@ -17,7 +17,7 @@ bun run preview
 src/data/projects.ts      every project, in one place
 src/layouts/Layout.astro  <head>, header, footer, the page shell
 src/components/           the shared pieces; two of them are Qwik islands
-src/pages/                index, work, about, 404
+src/pages/                index, portfolio, consulting, about, 404
 src/styles/global.css     the palette, the type, the printed-sticker utilities
 ```
 
