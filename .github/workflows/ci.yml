@@ -1,0 +1,56 @@
+name: ci
+
+# Every pull request and every merge to main: build, then test, on one runner.
+#
+# Nothing is published and nothing is deployed. Vercel deploys this site from
+# its own build, configured in Vercel rather than here, so a green tick means
+# one thing -- this commit is good.
+#
+# The push trigger is NOT redundant the way it would be in a -be repo. There,
+# cd.yml re-runs Build and Test after a merge, so ci.yml can be pull_request
+# only. Here there is no cd.yml, and Vercel's build does not run
+# .github/actions/test -- it runs `bun run build` and ships the result. This
+# workflow is the only thing that ever runs the assertions.
+#
+# One job, because a job is a machine: two would each pay their own checkout and
+# their own `bun install` to split one green tick in two. Build and Test are
+# separate STEPS, so the log still shows which is which and a failure still says
+# so.
+
+on:
+  pull_request:
+  push:
+    branches: [main]
+  workflow_dispatch:
+
+# Read-only. This workflow only inspects the tree.
+permissions:
+  contents: read
+
+concurrency:
+  group: ci-${{ github.ref }}
+  cancel-in-progress: true
+
+jobs:
+  ci:
+    runs-on: ubuntu-latest
+    # This build is seconds. Ten minutes means something has hung, and it should
+    # say so here rather than sit until the runner's own timeout hours later.
+    timeout-minutes: 10
+    steps:
+      # Third-party actions are pinned by SHA, with the tag in a trailing
+      # comment so the version is still readable. A tag is a moving reference:
+      # whoever can move it can run code in this job.
+      - uses: actions/checkout@11d5960a326750d5838078e36cf38b85af677262 # v4
+
+      # Reads .mise.toml, which is where bun's version is already pinned for
+      # everyone working on this repo. This used to be oven-sh/setup-bun with
+      # `bun-version: "1.3"` written out here -- a second place to change one
+      # version, and two places drift.
+      - uses: jdx/mise-action@c37c93293d6b742fc901e1406b8f764f6fb19dac # v2
+
+      - name: Build
+        uses: ./.github/actions/build
+
+      - name: Test
+        uses: ./.github/actions/test

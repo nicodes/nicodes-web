@@ -1,0 +1,26 @@
+name: Test
+description: >
+  Is this commit good. Nothing is published here; a failure means the site is
+  wrong, not that the pipeline is.
+
+  Runs AFTER ../build, because everything it asserts is a property of ./dist. A
+  static site has two ways to be broken that matter -- it did not build, and it
+  built the wrong thing -- and only the second one needs a test.
+
+  Vercel runs none of this. Vercel runs `bun run build` and ships whatever comes
+  out, so this action is the only thing that would say otherwise.
+
+  NO no-JavaScript assertion, unlike the other -web repos. This site ships
+  JavaScript on purpose: two of the components are Qwik islands, and a build
+  currently emits sixteen .js files. The assertion the others carry would fail
+  here on the first run, and it would be the check that is wrong rather than the
+  site.
+
+runs:
+  using: composite
+  steps:
+    # A build that emits nothing still "succeeds", so the artefact is checked
+    # rather than the exit code.
+    - name: The page was actually written
+      shell: bash
+      run: test -s dist/index.html
