@@ -117,17 +117,6 @@ export const projects: Project[] = [
     stack: ["Astro", "HTMX", "Python"],
     accent: "mint-deep",
   },
-  {
-    name: "Schlop Stop",
-    url: "https://www.schlopstop.com",
-    tagline: "A Boulder food truck",
-    blurb:
-      "Menus that the owners update from a Google Drive folder and the site picks up in real time. The logo came out of AI tooling, the rest is hand-built.",
-    category: "sites",
-    repo: "https://github.com/nicodes/schlopstop",
-    stack: ["Astro", "Google Drive API"],
-    accent: "olive",
-  },
 ];
 
 export const featured = projects.filter((p) => p.featured);
