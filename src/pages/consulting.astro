@@ -1,53 +1,37 @@
 ---
 import Layout from "../layouts/Layout.astro";
 
-/*
-  Six lanes. The `bar` class is written out in full rather than composed from
-  the accent name, because Tailwind scans this file as text — a `bg-${accent}`
-  template would compile to nothing.
-*/
+/* Ordered by what a visitor is most likely to have come here wanting. */
 const services = [
-  {
-    title: "Product engineering",
-    lead: "An empty repo to a thing your customers use.",
-    body: "The whole build: schema, API, interface, auth, payments, and the deploy that puts it live. I have shipped ten of these on my own, so I know which corners are safe to cut and which ones bill you back later.",
-    tags: ["Astro", "React", "Qwik", "Go", "Postgres"],
-    bar: "bg-rose",
-  },
   {
     title: "Websites for businesses",
     lead: "Fast, accessible, and yours.",
     body: "A marketing site or a storefront that loads instantly, reads well to search engines and screen readers alike, and lives in a repo you own — not inside a page builder charging rent on your own content.",
-    tags: ["Static-first", "SEO", "CMS", "Analytics"],
-    bar: "bg-gold",
   },
   {
     title: "AI integrations",
     lead: "A model where it actually earns its keep.",
     body: "Assistants over your own documents, support triage, drafting and summarising inside the tools your team already uses. Scoped to a task worth automating, with evaluations, guardrails and a token bill that stays predictable.",
-    tags: ["Claude API", "RAG", "Evals", "Cost control"],
-    bar: "bg-coral",
   },
   {
-    title: "Developer tooling & CI/CD",
-    lead: "Merge, and it's live.",
-    body: "Pipelines that build, test and deploy without a human in the loop, on your own servers if you would rather not rent someone else's. Plus the unglamorous half: secrets hygiene, reproducible builds, and logs that say what broke.",
-    tags: ["GitHub Actions", "Docker", "SSH", "Self-hosted"],
-    bar: "bg-olive",
+    title: "Product engineering",
+    lead: "An empty repo to a thing your customers use.",
+    body: "The whole build: schema, API, interface, auth, payments, and the deploy that puts it live. I have shipped ten of these on my own, so I know which corners are safe to cut and which ones bill you back later.",
   },
   {
     title: "Technical advisory",
     lead: "A senior engineer, part-time.",
     body: "Architecture review before you commit to it, code review while you build, and a straight answer on build-versus-buy. Fractional lead work for teams that need the judgement more often than they need the hands.",
-    tags: ["Architecture", "Code review", "Mentoring"],
-    bar: "bg-mint-deep",
+  },
+  {
+    title: "Developer tooling & CI/CD",
+    lead: "Merge, and it's live.",
+    body: "Pipelines that build, test and deploy without a human in the loop, on your own servers if you would rather not rent someone else's. Plus the unglamorous half: secrets hygiene, reproducible builds, and logs that say what broke.",
   },
   {
     title: "Game development",
     lead: "Godot, and the tools around it.",
     body: "Editor addons, linting, asset pipelines and the engineering under a prototype that needs to become playable. This is what Avior Studio does when the game is mine; it works the same when the game is yours.",
-    tags: ["Godot", "GDScript", "Tooling", "Prototyping"],
-    bar: "bg-tan",
   },
 ];
 
@@ -71,7 +55,7 @@ const engagements = [
 <Layout
   title="Consulting — Nico Zessoules"
   description="Consulting from Nico Zessoules: product engineering, business websites, AI integrations, CI/CD and developer tooling, technical advisory and Godot game development."
-  accent="var(--color-gold)"
+  accent="var(--color-rose)"
 >
   <section class="relative overflow-hidden border-b-[3px] border-ink">
     <div class="halftone pointer-events-none absolute inset-0"></div>
@@ -129,27 +113,14 @@ const engagements = [
       <div class="mt-10 grid gap-8 md:grid-cols-2 lg:grid-cols-3">
         {
           services.map((service) => (
-            <article class="flex flex-col border-[3px] border-ink bg-paper shadow-sticker">
-              {/* Echoes the accent rule under the site header. */}
-              <div class:list={["h-2 w-full", service.bar]} />
+            <article class="flex flex-col border-[3px] border-ink bg-paper p-6 shadow-sticker">
+              <h3 class="text-3xl">{service.title}</h3>
 
-              <div class="flex flex-1 flex-col p-6">
-                <h3 class="text-3xl">{service.title}</h3>
+              <p class="mt-3 text-lg font-extrabold text-ink-soft">
+                {service.lead}
+              </p>
 
-                <p class="mt-3 text-lg font-extrabold text-ink-soft">
-                  {service.lead}
-                </p>
-
-                <p class="mt-4 flex-1 font-semibold">{service.body}</p>
-
-                <ul class="mt-6 flex flex-wrap gap-2">
-                  {service.tags.map((tag) => (
-                    <li class="ink-border-thin px-2 py-1 text-xs font-extrabold uppercase tracking-[0.12em]">
-                      {tag}
-                    </li>
-                  ))}
-                </ul>
-              </div>
+              <p class="mt-4 font-semibold">{service.body}</p>
             </article>
           ))
         }
@@ -163,13 +134,9 @@ const engagements = [
 
       <div class="mt-10 grid gap-8 md:grid-cols-3">
         {
-          engagements.map((engagement, i) => (
+          engagements.map((engagement) => (
             <div class="border-[3px] border-ink bg-paper p-6 shadow-sticker">
-              <p class="text-sm font-extrabold uppercase tracking-[0.2em] text-ink-soft">
-                0{i + 1}
-              </p>
-
-              <h3 class="mt-2 text-3xl">{engagement.title}</h3>
+              <h3 class="text-3xl">{engagement.title}</h3>
 
               <p class="mt-4 font-semibold">{engagement.body}</p>
             </div>
@@ -185,11 +152,9 @@ const engagements = [
     </div>
   </section>
 
-  <section class="relative overflow-hidden border-b-[3px] border-ink bg-mint">
-    <div class="halftone pointer-events-none absolute inset-0"></div>
-
+  <section class="border-b-[3px] border-ink bg-cream">
     <div
-      class="relative mx-auto flex max-w-3xl flex-col items-center px-4 py-20 text-center sm:px-6"
+      class="mx-auto flex max-w-3xl flex-col items-center px-4 py-20 text-center sm:px-6"
     >
       <h2 class="text-5xl sm:text-6xl display-tight">
         Got something<br />worth building?
@@ -202,7 +167,7 @@ const engagements = [
 
       <a
         href="mailto:nicozessoules@gmail.com?subject=Consulting"
-        class="mt-8 inline-block border-[3px] border-ink bg-gold px-6 py-3 text-lg font-extrabold shadow-button transition-transform hover:-translate-y-1 active:translate-x-[4px] active:translate-y-[4px] active:shadow-none"
+        class="mt-8 inline-block border-[3px] border-ink bg-rose px-6 py-3 text-lg font-extrabold text-paper shadow-button transition-transform hover:-translate-y-1 active:translate-x-[4px] active:translate-y-[4px] active:shadow-none"
       >
         nicozessoules@gmail.com
       </a>
