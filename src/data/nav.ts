@@ -4,11 +4,17 @@ export interface Link {
   external?: boolean;
 }
 
-/** The pages, which stay visible in the header bar. */
+/**
+ * The pages, which stay visible in the header bar.
+ *
+ * About is off the site for now. The page itself is intact at
+ * `src/pages/_about.astro` — the underscore is what keeps Astro from
+ * routing it. Putting it back is a rename and this line:
+ *   { href: "/about", label: "About" },
+ */
 export const pages: Link[] = [
   { href: "/consulting", label: "Consulting" },
   { href: "/portfolio", label: "Portfolio" },
-  { href: "/about", label: "About" },
 ];
 
 /** Everywhere else to find me, tucked behind "Say hi". */
