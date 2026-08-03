@@ -1,6 +1,7 @@
 name: Build
 description: >
-  The static site, into ./dist.
+  The static site, into ./dist -- type-checked first, so a type error does not
+  wait behind a build it was going to fail anyway.
 
   A composite action rather than a reusable workflow so it runs in the caller's
   job, under the caller's name -- ci / Build -- rather than as a nested
@@ -29,6 +30,28 @@ runs:
     - name: Install JS dependencies
       shell: bash
       run: bun install --frozen-lockfile
+
+    # Before the build rather than after it. `astro check` runs its own
+    # `astro sync`, so it needs nothing from ./dist -- and a type error is both
+    # the likeliest failure in this repo and the cheapest to reach, so building
+    # first only delayed it.
+    #
+    # It lived in ../test until the fleet-wide ordering pass. It could not go
+    # with the rest of that change -- ../test asserts on ./dist and genuinely
+    # has to run after the build -- so this step moved instead of the phase.
+    #
+    # `astro check` rather than plain tsc: it understands .astro files, and it
+    # is the only thing here that looks at the Qwik .tsx components at all --
+    # the integration transforms them through vite without consulting tsconfig,
+    # so the build never had an opinion about their types.
+    #
+    # typescript is pinned to 6 in package.json. TypeScript 7's native compiler
+    # does not expose the programmatic API @astrojs/check needs, and installing
+    # `typescript` unpinned resolves to 7 and fails at startup rather than on
+    # anything about this code.
+    - name: Type check
+      shell: bash
+      run: bun run typecheck
 
     - name: Build
       shell: bash
