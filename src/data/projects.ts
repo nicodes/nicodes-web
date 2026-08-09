@@ -2,13 +2,19 @@ export type Category = "tools" | "apps" | "games" | "sites";
 
 export interface Project {
   name: string;
-  url: string;
+  /** Live site, when there is one to frame. */
+  url?: string;
   /** Shown on the card, under the name. One line, no period. */
   tagline: string;
   blurb: string;
   category: Category;
   /** Public repository, when there is one. */
   repo?: string;
+  /**
+   * Stands in for the live demo when there is no site: the commands that
+   * install the thing, drawn as a terminal.
+   */
+  terminal?: string[];
   stack: string[];
   featured?: boolean;
   /** Rotates the accent so the grid does not read as one flat colour. */
@@ -116,6 +122,21 @@ export const projects: Project[] = [
     repo: "https://github.com/nicodes/ctcalc",
     stack: ["Astro", "HTMX", "Python"],
     accent: "mint-deep",
+  },
+  {
+    name: "kimi-plugin-cc",
+    tagline: "Kimi Code, from Claude Code",
+    blurb:
+      "A Claude Code plugin that hands work to the Kimi CLI: reviews run under a read-only agent profile and get checked against git afterwards, bigger tasks go to coder and explorer subagents. Every run is a one-shot stream-json process, so there is no server to keep alive.",
+    category: "tools",
+    repo: "https://github.com/nicodes/kimi-plugin-cc",
+    terminal: [
+      "/plugin marketplace add nicodes/kimi-plugin-cc",
+      "/plugin install kimi@kimi-plugin-cc",
+      "/kimi:review --background",
+    ],
+    stack: ["JavaScript", "Node.js", "Claude Code"],
+    accent: "olive",
   },
 ];
 
