@@ -1,0 +1,48 @@
+---
+interface Props {
+  lines: string[];
+  name: string;
+  /** The panel takes the colour the row is not, so it never sits on itself. */
+  panel: "bg-mint" | "bg-cream";
+}
+
+const { lines, name, panel } = Astro.props;
+---
+
+<!--
+  Same frame as DemoFrame, but for a project with no site to put in it. What
+  a plugin has instead of a homepage is the commands that install it, so
+  those are drawn as the demo: a terminal, kept to the same 16/10 panel so
+  the row rhythm holds.
+-->
+<div class="border-[3px] border-ink shadow-sticker">
+  <div class:list={["relative aspect-[16/10]", panel]}>
+    <div class="halftone pointer-events-none absolute inset-0"></div>
+
+    <div class="absolute inset-0 flex items-center justify-center p-6 sm:p-10">
+      <div
+        class="w-full border-[3px] border-ink bg-ink text-paper shadow-sticker"
+      >
+        <div
+          class="flex items-center gap-2 border-b-[3px] border-ink bg-paper px-4 py-2"
+        >
+          <span class="h-3 w-3 rounded-full border-2 border-ink bg-rose"></span>
+          <span class="h-3 w-3 rounded-full border-2 border-ink bg-gold"></span>
+          <span class="h-3 w-3 rounded-full border-2 border-ink bg-mint"></span>
+          <span class="ml-2 font-mono text-sm font-bold text-ink">{name}</span>
+        </div>
+
+        <div class="overflow-x-auto p-4 sm:p-5">
+          {
+            lines.map((line) => (
+              <p class="whitespace-nowrap font-mono text-sm font-bold leading-7">
+                <span class="select-none text-gold">&gt; </span>
+                {line}
+              </p>
+            ))
+          }
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
