@@ -2,6 +2,7 @@
 import Layout from "../layouts/Layout.astro";
 import Tux from "../assets/tux.svg";
 import DemoFrame from "../components/DemoFrame.astro";
+import TerminalFrame from "../components/TerminalFrame.astro";
 import { projects } from "../data/projects";
 ---
 
@@ -43,8 +44,9 @@ import { projects } from "../data/projects";
           </footer>
 
           <p class="mt-4 text-ink-soft">
-            Which is why every project below opens as a running demo with a link
-            to its source, rather than a screenshot and a claim.
+            Which is why every project below opens as a running demo — or the
+            commands that run it — with a link to its source, rather than a
+            screenshot and a claim.
           </p>
         </blockquote>
       </div>
@@ -87,11 +89,19 @@ import { projects } from "../data/projects";
               i % 2 === 0 ? "lg:col-start-1" : "lg:col-start-2",
             ]}
           >
-            <DemoFrame
-              url={project.url}
-              name={project.name}
-              panel={i % 2 === 0 ? "bg-mint" : "bg-cream"}
-            />
+            {project.url ? (
+              <DemoFrame
+                url={project.url}
+                name={project.name}
+                panel={i % 2 === 0 ? "bg-mint" : "bg-cream"}
+              />
+            ) : (
+              <TerminalFrame
+                lines={project.terminal ?? []}
+                name={project.name}
+                panel={i % 2 === 0 ? "bg-mint" : "bg-cream"}
+              />
+            )}
           </div>
 
           <div
@@ -103,14 +113,16 @@ import { projects } from "../data/projects";
             <p class="text-xl font-semibold">{project.blurb}</p>
 
             <div class="mt-6 flex flex-wrap gap-6">
-              <a
-                href={project.url}
-                target="_blank"
-                rel="noopener noreferrer"
-                class="inline-block border-b-[3px] border-ink text-lg font-extrabold hover:border-rose hover:text-rose"
-              >
-                Visit ↗
-              </a>
+              {project.url && (
+                <a
+                  href={project.url}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  class="inline-block border-b-[3px] border-ink text-lg font-extrabold hover:border-rose hover:text-rose"
+                >
+                  Visit ↗
+                </a>
+              )}
 
               {project.repo && (
                 <a
