@@ -47,6 +47,18 @@ export const projects: Project[] = [
     accent: "gold",
   },
   {
+    name: "Reindr",
+    url: "https://reindr.dev",
+    tagline: "Interfaces for OpenCode sessions",
+    blurb:
+      "Gives every OpenCode session an editable HTML canvas in a companion browser panel. The agent writes a normal file; Reindr handles live reload, sandboxing, session routing and interactions back to the agent.",
+    category: "tools",
+    repo: "https://github.com/nicodes/reindr-opencode",
+    stack: ["TypeScript", "OpenCode", "Chromium"],
+    featured: true,
+    accent: "mint-deep",
+  },
+  {
     name: "Cazper",
     url: "https://www.cazper.ai",
     tagline: "Sprites with real transparency",
