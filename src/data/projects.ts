@@ -135,21 +135,6 @@ export const projects: Project[] = [
     stack: ["Astro", "HTMX", "Python"],
     accent: "mint-deep",
   },
-  {
-    name: "kimi-plugin-cc",
-    tagline: "Kimi Code, from Claude Code",
-    blurb:
-      "A Claude Code plugin that hands work to the Kimi CLI: reviews run under a read-only agent profile and get checked against git afterwards, bigger tasks go to coder and explorer subagents. Every run is a one-shot stream-json process, so there is no server to keep alive.",
-    category: "tools",
-    repo: "https://github.com/nicodes/kimi-plugin-cc",
-    terminal: [
-      "/plugin marketplace add nicodes/kimi-plugin-cc",
-      "/plugin install kimi@kimi-plugin-cc",
-      "/kimi:review --background",
-    ],
-    stack: ["JavaScript", "Node.js", "Claude Code"],
-    accent: "olive",
-  },
 ];
 
 export const featured = projects.filter((p) => p.featured);
