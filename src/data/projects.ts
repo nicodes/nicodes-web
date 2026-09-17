@@ -23,6 +23,22 @@ export interface Project {
 
 export const projects: Project[] = [
   {
+    name: "Stavlos",
+    tagline: "A stable for your agents",
+    blurb:
+      "An open-source agent harness in Go. It runs a tree of AI coding agents on your machine as long-lived actors you can prompt, steer, cancel and kill — from a terminal interface, or any client that speaks its JSON-RPC protocol.",
+    category: "tools",
+    repo: "https://github.com/nicodes/stavlos",
+    terminal: [
+      "go install github.com/nicodes/stavlos/cmd/stavlos@latest",
+      "cd ~/some/project",
+      "stavlos",
+    ],
+    stack: ["Go", "Bubble Tea", "JSON-RPC"],
+    featured: true,
+    accent: "gold",
+  },
+  {
     name: "Ormos",
     url: "https://www.ormos.dev",
     tagline: "Your machine, from anywhere",
