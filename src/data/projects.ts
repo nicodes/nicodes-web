@@ -83,7 +83,7 @@ export const projects: Project[] = [
   },
   {
     name: "Petalboard",
-    url: "https://petalboard-web.vercel.app",
+    url: "https://www.petalboard.ai",
     tagline: "A pedalboard on your phone",
     blurb:
       "Guitar in, effects chain, amp, headphones out — a stack of stomp pedals with real knobs and footswitches, running on a Web Audio engine that monitors your playing live. A workshop builds custom pedals: serial and parallel lanes, four LFOs, and the enclosure to put them in.",
