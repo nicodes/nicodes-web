@@ -86,6 +86,17 @@ export const projects: Project[] = [
     accent: "coral",
   },
   {
+    name: "Petalboard",
+    url: "https://petalboard-web.vercel.app",
+    tagline: "A pedalboard on your phone",
+    blurb:
+      "Guitar in, effects chain, amp, headphones out — a stack of stomp pedals with real knobs and footswitches, running on a Web Audio engine that monitors your playing live. A workshop builds custom pedals: serial and parallel lanes, four LFOs, and the enclosure to put them in.",
+    category: "apps",
+    stack: ["Expo", "React Native", "Web Audio", "NativeWind"],
+    featured: true,
+    accent: "olive",
+  },
+  {
     name: "Tone Split",
     url: "https://www.tonesplit.com",
     tagline: "A stereo synthesizer",
