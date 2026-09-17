@@ -24,16 +24,12 @@ export interface Project {
 export const projects: Project[] = [
   {
     name: "Stavlos",
+    url: "https://www.stavlos.ai",
     tagline: "A stable for your agents",
     blurb:
       "An open-source agent harness in Go. It runs a tree of AI coding agents on your machine as long-lived actors you can prompt, steer, cancel and kill — from a terminal interface, or any client that speaks its JSON-RPC protocol.",
     category: "tools",
     repo: "https://github.com/nicodes/stavlos",
-    terminal: [
-      "go install github.com/nicodes/stavlos/cmd/stavlos@latest",
-      "cd ~/some/project",
-      "stavlos",
-    ],
     stack: ["Go", "Bubble Tea", "JSON-RPC"],
     featured: true,
     accent: "gold",
@@ -87,7 +83,7 @@ export const projects: Project[] = [
   },
   {
     name: "Petalboard",
-    url: "https://petalboard-web.vercel.app",
+    url: "https://www.petalboard.ai",
     tagline: "A pedalboard on your phone",
     blurb:
       "Guitar in, effects chain, amp, headphones out — a stack of stomp pedals with real knobs and footswitches, running on a Web Audio engine that monitors your playing live. A workshop builds custom pedals: serial and parallel lanes, four LFOs, and the enclosure to put them in.",
