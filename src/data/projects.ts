@@ -59,6 +59,18 @@ export const projects: Project[] = [
     accent: "gold",
   },
   {
+    name: "ghenv",
+    url: "https://www.ghenv.dev",
+    tagline: "Dev secrets, delivered locally",
+    blurb:
+      "Runs local development commands with explicitly approved GitHub Preview credentials. A companion Action encrypts the selected values for a temporary key held by the CLI, which decrypts them in memory and injects them into the child process — no local .env file.",
+    category: "tools",
+    repo: "https://github.com/nicodes/ghenv",
+    stack: ["Go", "GitHub Actions", "AES-GCM", "RSA"],
+    featured: true,
+    accent: "olive",
+  },
+  {
     name: "Reindr",
     url: "https://reindr.dev",
     tagline: "Interfaces for OpenCode sessions",
@@ -71,13 +83,13 @@ export const projects: Project[] = [
     accent: "mint-deep",
   },
   {
-    name: "Cazper",
-    url: "https://www.cazper.ai",
-    tagline: "Sprites with real transparency",
+    name: "Spritesmith",
+    url: "https://spritesmith.ai",
+    tagline: "Animated sprites, from a prompt",
     blurb:
-      "Describe a sprite sheet and get the assets back as individual PNGs with a real alpha channel — soft edges, glass and glow intact. No manual cutouts, no fringing.",
+      "Describe a sprite and its animations, bring a reference, and refine the result through chat. An agent draws, renders and inspects each revision; export editable SVG frames, transparent PNG sheets and timing manifests for your game.",
     category: "apps",
-    stack: ["Go", "Gin", "OpenAI", "Expo"],
+    stack: ["Go", "Gin", "Expo", "SVG"],
     featured: true,
     accent: "coral",
   },
