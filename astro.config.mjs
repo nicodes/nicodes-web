@@ -18,7 +18,7 @@ export default defineConfig({
 
   integrations: [qwikdev()],
 
-  vite: {
+  vite: { envDir: false,
     plugins: [tailwindcss()],
     build: {
       rollupOptions: {
